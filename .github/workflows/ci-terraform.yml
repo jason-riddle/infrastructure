@@ -29,6 +29,20 @@ jobs:
         id: fmt
         run: terraform fmt -check -recursive -diff
 
+      - name: Get changed directories
+        id: changed-directories
+        uses: tj-actions/changed-files@v35
+        with:
+          files: |
+            **/*.tf
+          dir_names: "true"
+
+      - name: Show output
+        run: |
+          echo '${{ toJSON(steps.changed-files-dir-names-max-depth.outputs) }}'
+        shell:
+          bash
+
       # - name: Terraform Init
       #   id: init
       #   run: terraform init
