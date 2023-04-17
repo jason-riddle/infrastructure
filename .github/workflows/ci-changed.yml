@@ -32,3 +32,27 @@ jobs:
           echo '${{ toJSON(steps.changed.outputs) }}'
         shell:
           bash
+
+      - name: Show modified_files
+        run: |
+          for file in ${{ steps.changed.outputs.modified_files }}; do
+            echo "$file was modified_files"
+          done
+
+      - name: Show all_changed_and_modified_files
+        run: |
+          for file in ${{ steps.changed.outputs.all_changed_and_modified_files }}; do
+            echo "$file was all_changed_and_modified_files"
+          done
+
+      - name: Show all_changed_files
+        run: |
+          for file in ${{ steps.changed.outputs.all_changed_files }}; do
+            echo "$file was all_changed_files"
+          done
+
+      - name: Show all_modified_files
+        run: |
+          for file in ${{ steps.changed.outputs.all_modified_files }}; do
+            echo "$file was all_modified_files"
+          done
