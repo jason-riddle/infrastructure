@@ -23,8 +23,8 @@ jobs:
         id: changed
         uses: tj-actions/changed-files@v35
         with:
-          files: |
-            **/*.tf
+          # files: |
+          #   **/*.tf
           dir_names: "true"
 
       - name: Show output
