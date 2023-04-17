@@ -39,7 +39,7 @@ jobs:
 
       - name: Show output
         run: |
-          echo '${{ toJSON(steps.changed-files-dir-names-max-depth.outputs) }}'
+          echo '${{ toJSON(steps.changed-directories.outputs) }}'
         shell:
           bash
 
