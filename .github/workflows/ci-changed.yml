@@ -1,0 +1,34 @@
+---
+name: CI - Changed
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  changed:
+    name: changed
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Check out the codebase.
+        uses: actions/checkout@v3
+
+      - name: Get changed diffs
+        id: changed
+        uses: tj-actions/changed-files@v35
+        with:
+          files: |
+            **/*.tf
+          dir_names: "true"
+
+      - name: Show output
+        run: |
+          echo '${{ toJSON(steps.changed.outputs) }}'
+        shell:
+          bash
