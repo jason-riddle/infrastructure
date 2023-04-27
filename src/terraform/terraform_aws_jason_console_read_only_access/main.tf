@@ -7,11 +7,11 @@ module "aws_jason_console_read_only_access" {
   source  = "cloudposse/iam-user/aws"
   version = "0.8.4"
 
-  namespace   = "jr"
-  environment = "infrastructure"
-  stage       = ""
-  name        = "jason-console-read-only-access"
-  attributes  = []
+  namespace   = var.namespace
+  environment = var.environment
+  stage       = var.stage
+  name        = var.name
+  attributes  = var.attributes
 
   # Enable the IAM user
   enabled               = local.enabled
