@@ -8,11 +8,11 @@ module "aws_console_jason_read_only_access" {
   version = "0.8.4"
 
   # backups-servers-us-west-1-jasons-home-nas-backups
-  # namespace   = "my-namespace"
-  # environment = "my-env"
-  # stage       = ""
-  # name        = "my-name"
-  # attributes  = []
+  namespace   = "my-namespace"
+  environment = "my-env"
+  stage       = ""
+  name        = "my-name"
+  attributes  = []
 
   # Enable the IAM user
   enabled               = local.enabled
