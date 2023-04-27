@@ -21,6 +21,10 @@ terraform {
   }
 }
 
+provider "aws" {
+  region = "us-west-1"
+}
+
 # https://github.com/settings/tokens
 # GitHub - Jason's iMac - Jason Riddle Infrastructure
 # public_repo, read:org, read:discussion
