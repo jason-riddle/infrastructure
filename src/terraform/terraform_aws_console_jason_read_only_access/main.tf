@@ -18,5 +18,4 @@ module "aws_console_jason_read_only_access" {
   enabled               = local.enabled
   login_profile_enabled = false
   user_name             = "jason"
-  pgp_key               = "my_pgp_key"
 }
