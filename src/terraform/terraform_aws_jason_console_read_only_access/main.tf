@@ -7,11 +7,10 @@ module "aws_jason_console_read_only_access" {
   source  = "cloudposse/iam-user/aws"
   version = "0.8.4"
 
-  # backups-servers-us-west-1-jasons-home-nas-backups
-  namespace   = "my-namespace"
-  environment = "my-env"
+  namespace   = "jr"
+  environment = "infrastructure"
   stage       = ""
-  name        = "my-name"
+  name        = "jason-console-read-only-access"
   attributes  = []
 
   # Enable the IAM user
