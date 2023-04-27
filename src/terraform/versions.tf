@@ -21,6 +21,11 @@ terraform {
   }
 }
 
+# https://github.com/settings/tokens
+# GitHub - Jason's iMac - Jason Riddle Infrastructure
+# public_repo, read:org, read:discussion
+
+# export GITHUB_TOKEN
 provider "github" {
   # Configuration options
 }
