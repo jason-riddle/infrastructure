@@ -3,7 +3,7 @@ locals {
 }
 
 # WIP: Enable login profile and fill in namespace, environment, etc.
-module "aws_console_jason_read_only_access" {
+module "aws_jason_console_read_only_access" {
   source  = "cloudposse/iam-user/aws"
   version = "0.8.4"
 
@@ -18,4 +18,5 @@ module "aws_console_jason_read_only_access" {
   enabled               = local.enabled
   login_profile_enabled = false
   user_name             = "jason-console-read-only-access"
+  pgp_key               = ""
 }

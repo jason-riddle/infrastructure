@@ -1,5 +1,5 @@
-module "terraform_aws_console_jason_read_only_access" {
-  source  = "./terraform_aws_console_jason_read_only_access"
+module "terraform_aws_jason_console_read_only_access" {
+  source  = "./terraform_aws_jason_console_read_only_access"
   enabled = var.enabled
 }
 
