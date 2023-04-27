@@ -17,6 +17,6 @@ module "aws_console_jason_read_only_access" {
   # Enable the IAM user
   enabled               = local.enabled
   login_profile_enabled = false
-  user_name             = "my_username"
+  user_name             = "jason"
   pgp_key               = "my_pgp_key"
 }
