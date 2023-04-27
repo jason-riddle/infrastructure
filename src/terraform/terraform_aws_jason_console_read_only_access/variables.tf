@@ -45,5 +45,5 @@ variable "attributes" {
 
 variable "user_name" {
   type    = string
-  default = "Jason-Console-Read-Only-Access"
+  default = "JR-Jason-Console-Read-Only-Access"
 }
