@@ -18,7 +18,7 @@ variable "environment" {
 
 variable "stage" {
   type        = string
-  default     = ""
+  default     = "testing"
   description = "ID element. Usually used to indicate role, e.g. 'prod', 'staging', 'source', 'build', 'test', 'deploy', 'release'"
 }
 
