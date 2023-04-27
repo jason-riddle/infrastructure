@@ -3,5 +3,5 @@ data "github_repository" "jason_riddle_infrastructure" {
 }
 
 resource "github_branch_protection" "jason_riddle_infrastructure" {
-  repository_id = github_repository.jason_riddle_infrastructure.node_id
+  repository_id = data.github_repository.jason_riddle_infrastructure.node_id
 }
