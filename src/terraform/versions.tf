@@ -25,7 +25,7 @@ terraform {
 # GitHub - Jason's iMac - Jason Riddle Infrastructure
 # public_repo, read:org, read:discussion
 
-# export GITHUB_TOKEN
+# export GITHUB_TOKEN=ghp_
 provider "github" {
   # Configuration options
 }
