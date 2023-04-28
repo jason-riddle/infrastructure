@@ -1,2 +1,2 @@
 apply:
-	kubectl apply --kustomize='.'
+	kubectl -v=3 apply --kustomize='.'
