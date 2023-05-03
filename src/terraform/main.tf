@@ -7,6 +7,10 @@ module "terraform_aws_jason_console_read_only_access" {
   namespace = var.namespace
 }
 
+## Cloudflare
+
+## DigitalOcean
+
 ## GitHub
 
 module "terraform_github_jason_riddle_infrastructure" {
