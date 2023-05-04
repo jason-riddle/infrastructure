@@ -51,7 +51,7 @@ provider "aws" {
 
 # REF: https://registry.terraform.io/providers/integrations/github/latest/docs
 # Set token with `export GITHUB_TOKEN` or define `TF_VAR_github_token`.
-# Token: terraform-github-infrastructure
+# Token: terraform-infrastructure-github-token
 # Permissions: public_repo, read:discussion, read:org
 # URL: https://github.com/settings/tokens
 provider "github" {
