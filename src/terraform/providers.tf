@@ -10,10 +10,10 @@ terraform {
   }
 
   required_providers {
-    # aws = {
-    #   source  = "hashicorp/aws"
-    #   version = ">= 4.64.0"
-    # }
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 4.64.0"
+    }
     # digitalocean = {
     #   source  = "digitalocean/digitalocean"
     #   version = ">= 2.28.1"
@@ -28,10 +28,11 @@ terraform {
 ## AWS
 
 # REF: https://registry.terraform.io/providers/hashicorp/aws/latest/docs
-# provider "aws" {
-#   # Configuration options
-#   region = "us-west-1" # or `AWS_REGION`
-# }
+provider "aws" {
+  # Configuration options
+  # export 'TF_VAR_aws_region' to set `var.aws_region`
+  region = var.aws_region
+}
 
 ## Cloudflare
 
