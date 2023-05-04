@@ -7,22 +7,22 @@
 #   namespace = var.namespace
 # }
 
-module "aws_console_iam_user" {
-  source  = "cloudposse/iam-user/aws"
-  version = "0.8.4"
+# module "aws_console_iam_user" {
+#   source  = "cloudposse/iam-user/aws"
+#   version = "0.8.4"
 
-  namespace   = var.namespace
-  environment = var.environment
-  stage       = var.stage
-  name        = "aws-console-iam-user-jason"
-  attributes  = var.attributes
+#   namespace   = var.namespace
+#   environment = var.environment
+#   stage       = var.stage
+#   name        = "aws-console-iam-user-jason"
+#   attributes  = var.attributes
 
-  # Enable the IAM user
-  enabled               = var.aws_console_iam_user_enabled
-  login_profile_enabled = false
-  user_name             = "jason"
-  pgp_key               = ""
-}
+#   # Enable the IAM user
+#   enabled               = var.aws_console_iam_user_enabled
+#   login_profile_enabled = false
+#   user_name             = "jason"
+#   pgp_key               = ""
+# }
 
 ## Cloudflare
 
