@@ -50,11 +50,10 @@ provider "aws" {
 # public_repo, read:org, read:discussion
 
 # REF: https://registry.terraform.io/providers/integrations/github/latest/docs
-# export GITHUB_TOKEN=ghp_
+# Set token with `export GITHUB_TOKEN` or define `TF_VAR_github_token`.
 provider "github" {
   # Configuration options
 
   # export 'TF_VAR_github_token' to set `var.github_token`
   token = var.github_token
-  # or comment out `token = var.github_token` and export `GITHUB_TOKEN`
 }
