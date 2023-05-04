@@ -14,7 +14,7 @@ module "aws_console_iam_user" {
   namespace   = var.namespace
   environment = var.environment
   stage       = var.stage
-  name        = "jason-console-read-only-access"
+  name        = "aws-console-iam-user-jason"
   attributes  = var.attributes
 
   # Enable the IAM user
