@@ -9,6 +9,10 @@ on:
     branches:
       - '*'
 
+defaults:
+  run:
+    working-directory: ./src/terraform
+
 jobs:
   terraform:
     name: Terraform
