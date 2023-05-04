@@ -28,10 +28,10 @@ terraform {
 ## AWS
 
 # REF: https://registry.terraform.io/providers/hashicorp/aws/latest/docs
-provider "aws" {
-  # Configuration options
-  region = "us-west-1" # or `AWS_REGION`
-}
+# provider "aws" {
+#   # Configuration options
+#   region = "us-west-1" # or `AWS_REGION`
+# }
 
 ## Cloudflare
 
