@@ -36,3 +36,8 @@ variable "attributes" {
     and treated as a single ID element.
     EOT
 }
+
+variable "user_name" {
+  type    = string
+  default = "JR-Jason-Console-Read-Only-Access"
+}
