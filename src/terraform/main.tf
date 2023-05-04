@@ -24,6 +24,11 @@
 #   pgp_key               = ""
 # }
 
+module "terraform_infrastructure_ci_user" {
+  source  = "cloudposse/iam-system-user/aws"
+  version = "1.1.0"
+}
+
 ## Cloudflare
 
 ## DigitalOcean
