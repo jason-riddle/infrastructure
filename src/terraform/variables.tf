@@ -41,3 +41,7 @@ variable "attributes" {
 #   type    = string
 #   default = "JR-Jason-Console-Read-Only-Access"
 # }
+
+variable "github_token" {
+  type = string
+}
