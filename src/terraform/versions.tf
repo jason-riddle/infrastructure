@@ -18,10 +18,6 @@ terraform {
       source  = "digitalocean/digitalocean"
       version = ">= 2.28.1"
     }
-    github = {
-      source  = "integrations/github"
-      version = ">= 5.23.0"
-    }
   }
 }
 
