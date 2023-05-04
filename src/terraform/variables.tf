@@ -43,7 +43,8 @@ variable "attributes" {
 # }
 
 variable "aws_region" {
-  type = string
+  type    = string
+  default = "us-west-1"
 }
 
 variable "github_token" {
