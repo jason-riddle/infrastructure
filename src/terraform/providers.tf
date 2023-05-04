@@ -28,11 +28,8 @@ terraform {
 ## AWS
 
 # REF: https://registry.terraform.io/providers/hashicorp/aws/latest/docs
-provider "aws" {
-  # Configuration options
-  # export 'TF_VAR_aws_region' to set `var.aws_region`
-  region = var.aws_region
-}
+# Set `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`
+provider "aws" {}
 
 ## Cloudflare
 
@@ -55,9 +52,6 @@ provider "aws" {
 # Token: terraform-infrastructure-github-token
 # Permissions: public_repo, read:discussion, read:org
 # URL: https://github.com/settings/tokens
-provider "github" {
-  # Configuration options
 
-  # export 'TF_VAR_github_token' to set `var.github_token`
-  token = var.github_token
-}
+# Set `GITHUB_TOKEN`
+provider "github" {}
