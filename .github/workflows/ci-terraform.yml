@@ -29,9 +29,9 @@ jobs:
         id: fmt
         run: terraform fmt -check -recursive -diff
 
-      # - name: Terraform Init
-      #   id: init
-      #   run: terraform init
+      - name: Terraform Init
+        id: init
+        run: terraform init
 
       # - name: Terraform Validate
       #   id: validate
