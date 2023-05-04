@@ -37,7 +37,7 @@ variable "attributes" {
     EOT
 }
 
-variable "user_name" {
-  type    = string
-  default = "JR-Jason-Console-Read-Only-Access"
-}
+# variable "user_name" {
+#   type    = string
+#   default = "JR-Jason-Console-Read-Only-Access"
+# }

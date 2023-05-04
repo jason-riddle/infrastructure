@@ -20,7 +20,7 @@ module "aws_console_iam_user" {
   # Enable the IAM user
   enabled               = var.aws_console_iam_user_enabled
   login_profile_enabled = false
-  user_name             = var.user_name
+  user_name             = "jason"
   pgp_key               = ""
 }
 
