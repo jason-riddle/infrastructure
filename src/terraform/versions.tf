@@ -53,5 +53,8 @@ provider "aws" {
 # export GITHUB_TOKEN=ghp_
 provider "github" {
   # Configuration options
-  token = var.github_token # or `GITHUB_TOKEN`
+
+  # export 'TF_VAR_github_token' to set `var.github_token`
+  token = var.github_token
+  # or comment out `token = var.github_token` and export `GITHUB_TOKEN`
 }
