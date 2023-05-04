@@ -48,7 +48,9 @@ provider "aws" {
 # GitHub - Jason's iMac - Jason Riddle Infrastructure
 # public_repo, read:org, read:discussion
 
+# REF: https://registry.terraform.io/providers/integrations/github/latest/docs
 # export GITHUB_TOKEN=ghp_
 provider "github" {
   # Configuration options
+  token = var.token # or `GITHUB_TOKEN`
 }
