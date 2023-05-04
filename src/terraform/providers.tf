@@ -43,15 +43,10 @@ provider "aws" {}
 #   # Configuration options
 # }
 
-# https://github.com/settings/tokens
-# GitHub - Jason's iMac - Jason Riddle Infrastructure
-# public_repo, read:org, read:discussion
-
-# REF: https://registry.terraform.io/providers/integrations/github/latest/docs
-# Set token with `export GITHUB_TOKEN` or define `TF_VAR_github_token`.
-# Token: terraform-infrastructure-github-token
-# Permissions: public_repo, read:discussion, read:org
-# URL: https://github.com/settings/tokens
-
 # Set `GITHUB_TOKEN`
+# REF: https://registry.terraform.io/providers/integrations/github/latest/docs
+# Token Info
+# > Token Name: terraform-infrastructure-github-token
+# > Token Permissions: read:discussion, read:org
+# > Token Settings URL: https://github.com/settings/tokens
 provider "github" {}
