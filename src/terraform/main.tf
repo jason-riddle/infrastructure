@@ -7,7 +7,7 @@
 #   namespace = var.namespace
 # }
 
-module "aws_jason_console_read_only_access" {
+module "aws_console_iam_user" {
   source  = "cloudposse/iam-user/aws"
   version = "0.8.4"
 
