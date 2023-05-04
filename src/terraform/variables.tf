@@ -10,17 +10,17 @@ variable "namespace" {
   description = "ID element. Usually an abbreviation of your organization name, e.g. 'eg' or 'cp', to help ensure generated IDs are globally unique"
 }
 
-# variable "environment" {
-#   type        = string
-#   default     = "test-infrastructure"
-#   description = "ID element. Usually used for region e.g. 'uw2', 'us-west-2', OR role 'prod', 'staging', 'dev', 'UAT'"
-# }
+variable "environment" {
+  type        = string
+  default     = "test-infrastructure"
+  description = "ID element. Usually used for region e.g. 'uw2', 'us-west-2', OR role 'prod', 'staging', 'dev', 'UAT'"
+}
 
-# variable "stage" {
-#   type        = string
-#   default     = "testing"
-#   description = "ID element. Usually used to indicate role, e.g. 'prod', 'staging', 'source', 'build', 'test', 'deploy', 'release'"
-# }
+variable "stage" {
+  type        = string
+  default     = "testing"
+  description = "ID element. Usually used to indicate role, e.g. 'prod', 'staging', 'source', 'build', 'test', 'deploy', 'release'"
+}
 
 # variable "name" {
 #   type        = string
