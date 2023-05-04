@@ -25,10 +25,24 @@ terraform {
   }
 }
 
+## AWS
+
 provider "aws" {
   # Configuration options
   region = "us-west-1"
 }
+
+## Cloudflare
+
+# provider "cloudflare" {
+#   # Configuration options
+# }
+
+## DigitalOcean
+
+# provider "digitalocean" {
+#   # Configuration options
+# }
 
 # https://github.com/settings/tokens
 # GitHub - Jason's iMac - Jason Riddle Infrastructure
