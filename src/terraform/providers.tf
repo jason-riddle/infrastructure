@@ -27,8 +27,8 @@ terraform {
 
 ## AWS
 
-# REF: https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 # Set `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`
+# REF: https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 provider "aws" {}
 
 ## Cloudflare
