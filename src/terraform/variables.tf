@@ -48,5 +48,6 @@ variable "aws_region" {
 }
 
 variable "github_token" {
-  type = string
+  type      = string
+  sensitive = true
 }
