@@ -32,6 +32,7 @@ module "terraform_infrastructure_ci_user" {
   namespace   = var.namespace
   environment = var.environment
   stage       = var.stage
+  name        = "terraform-infrastructure-ci-user"
 
   ssm_enabled                   = false
   ssm_ses_smtp_password_enabled = false
