@@ -27,7 +27,7 @@
 module "terraform_infrastructure_aws_ci_user" {
   source  = "cloudposse/iam-system-user/aws"
   version = "1.1.0"
-  enabled = false
+  enabled = true
 
   namespace   = var.namespace
   environment = var.environment
