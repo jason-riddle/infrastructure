@@ -29,6 +29,10 @@ module "terraform_infrastructure_ci_user" {
   version = "1.1.0"
   enabled = false
 
+  namespace   = var.namespace
+  environment = var.environment
+  stage       = var.stage
+
   ssm_enabled                   = false
   ssm_ses_smtp_password_enabled = false
 }
