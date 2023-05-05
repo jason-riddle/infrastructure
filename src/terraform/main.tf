@@ -24,7 +24,7 @@
 #   pgp_key               = ""
 # }
 
-module "terraform_infrastructure_ci_user" {
+module "terraform_infrastructure_aws_ci_user" {
   source  = "cloudposse/iam-system-user/aws"
   version = "1.1.0"
   enabled = false
@@ -32,7 +32,7 @@ module "terraform_infrastructure_ci_user" {
   namespace   = var.namespace
   environment = var.environment
   stage       = var.stage
-  name        = "terraform-infrastructure-ci-user"
+  name        = "terraform-infrastructure-aws-ci-user"
 
   ssm_enabled                   = false
   ssm_ses_smtp_password_enabled = false
