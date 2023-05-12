@@ -1,3 +1,8 @@
+## DEVENV
+
+.devenv
+.devenv.flake.nix
+
 ## TERRAFORM
 
 .terraform
