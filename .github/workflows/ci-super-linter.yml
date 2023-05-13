@@ -8,6 +8,10 @@ on:
   pull_request:
     branches:
       - '*'
+  schedule:
+    # Run at 2am on Thursday.
+    # REF: https://crontab.guru/#0_2_*_*_4
+    - cron: "0 2 * * 4"
 
 jobs:
   lint:
