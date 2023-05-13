@@ -14,6 +14,10 @@ terraform {
       source  = "hashicorp/aws"
       version = ">= 4.64.0"
     }
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = ">= 4.5.0"
+    }
     # digitalocean = {
     #   source  = "digitalocean/digitalocean"
     #   version = ">= 2.28.1"
@@ -32,6 +36,8 @@ terraform {
 provider "aws" {}
 
 ## Cloudflare
+
+provider "cloudflare" {}
 
 # provider "cloudflare" {
 #   # Configuration options
