@@ -120,7 +120,7 @@ resource "cloudflare_record" "jasonriddle_com_10_in2-smtp_messagingengine_com" {
 # Fastmail
 # Allows you to receive email at subdomain addresses, e.g. foo@user.jasonriddle.com
 resource "cloudflare_record" "wildcard_jasonriddle_com_10_in1-smtp_messagingengine_com" {
-  zone_id  = data.cloudflare_zone.jasonriddlecom.id
+  zone_id  = data.cloudflare_zone.jasonriddle_com.id
   name     = "*"
   value    = "in1-smtp.messagingengine.com"
   comment  = "Allows you to receive email at subdomain addresses"
@@ -133,7 +133,7 @@ resource "cloudflare_record" "wildcard_jasonriddle_com_10_in1-smtp_messagingengi
 # Fastmail
 # Allows you to receive email at subdomain addresses, e.g. foo@user.jasonriddle.com
 resource "cloudflare_record" "wildcard_jasonriddle_com_20_in1-smtp_messagingengine_com" {
-  zone_id  = data.cloudflare_zone.jasonriddlecom.id
+  zone_id  = data.cloudflare_zone.jasonriddle_com.id
   name     = "*"
   value    = "in2-smtp.messagingengine.com"
   comment  = "Allows you to receive email at subdomain addresses"
