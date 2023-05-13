@@ -78,6 +78,32 @@ resource "cloudflare_record" "www_jasonriddle_com" {
   proxied = true
 }
 
+# Fastmail
+# Allows you to receive email at standard addresses, e.g. user@jasonriddle.com
+resource "cloudflare_record" "jasonriddle_com_10_in1-smtp_messagingengine_com" {
+  zone_id  = data.cloudflare_zone.jasonriddle_com.id
+  name     = "jasonriddle.com"
+  value    = "in1-smtp.messagingengine.com"
+  comment  = "Allows you to receive email at standard addresses"
+  type     = "MX"
+  priority = 10
+  ttl      = 1
+  proxied  = false
+}
+
+# Fastmail
+# Allows you to receive email at standard addresses, e.g. user@jasonriddle.com
+resource "cloudflare_record" "jasonriddle_com_10_in2-smtp_messagingengine_com" {
+  zone_id  = data.cloudflare_zone.jasonriddle_com.id
+  name     = "jasonriddle.com"
+  value    = "in2-smtp.messagingengine.com"
+  comment  = "Allows you to receive email at standard addresses"
+  type     = "MX"
+  priority = 20
+  ttl      = 1
+  proxied  = false
+}
+
 # jrapps.org
 data "cloudflare_zone" "jrapps_org" {
   name = "jrapps.org"
