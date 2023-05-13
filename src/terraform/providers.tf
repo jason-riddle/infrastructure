@@ -30,7 +30,11 @@ terraform {
     }
     tailscale = {
       source  = "tailscale/tailscale"
-      version = ">= 0.13.0"
+      version = ">= 0.13.7"
+    }
+    twilio = {
+      source  = "twilio/twilio"
+      version = ">= 0.18.27"
     }
   }
 }
