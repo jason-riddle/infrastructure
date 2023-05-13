@@ -40,6 +40,16 @@
 
 ## Cloudflare
 
+# Resource: https://dash.cloudflare.com/7880ee87feea1839fb5a815cc479b080/jasonriddle.com/dns/records
+
+# REF: https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/data-sources/zone
+
+data "cloudflare_zone" "jasonriddlecom" {
+  name = "jasonriddle.com"
+}
+
+# REF: https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record
+
 ## DigitalOcean
 
 ## GitHub
