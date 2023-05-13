@@ -44,10 +44,6 @@ provider "aws" {}
 # REF: https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs
 provider "cloudflare" {}
 
-# provider "cloudflare" {
-#   # Configuration options
-# }
-
 ## DigitalOcean
 
 # provider "digitalocean" {
