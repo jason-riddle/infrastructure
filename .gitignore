@@ -1,13 +1,6 @@
-## DEVENV
-
 .devenv
 .devenv.flake.nix
-
-## TERRAFORM
-
 .terraform
 .terraform.lock.hcl
-terraform.tfstate
-
-## Vagrant
 .vagrant
+terraform.tfstate
