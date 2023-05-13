@@ -58,6 +58,7 @@ resource "cloudflare_record" "google_site_verification" {
   proxied = false
 }
 
+# root
 resource "cloudflare_record" "jasonriddle_com" {
   zone_id = data.cloudflare_zone.jasonriddle_com.id
   name    = "jasonriddle.com"
@@ -68,6 +69,7 @@ resource "cloudflare_record" "jasonriddle_com" {
   proxied = true
 }
 
+# newsletter
 resource "cloudflare_record" "newsletter_jasonriddle_com" {
   zone_id = data.cloudflare_zone.jasonriddle_com.id
   name    = "newsletter"
@@ -78,6 +80,7 @@ resource "cloudflare_record" "newsletter_jasonriddle_com" {
   proxied = false
 }
 
+# www
 resource "cloudflare_record" "www_jasonriddle_com" {
   zone_id = data.cloudflare_zone.jasonriddle_com.id
   name    = "www"
@@ -145,6 +148,7 @@ data "cloudflare_zone" "jrapps_org" {
   name = "jrapps.org"
 }
 
+# Nextcloud
 resource "cloudflare_record" "jrapps_org_nx15310_your_storageshare_de" {
   zone_id = data.cloudflare_zone.jrapps_org.id
   name    = "nextcloud"
