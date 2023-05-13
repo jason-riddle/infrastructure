@@ -7,5 +7,8 @@ init:
 plan:
 	devenv shell -- terraform plan
 
+fmt:
+	devenv shell -- terraform fmt -recursive
+
 check:
 	devenv shell -- terraform fmt -check -recursive -diff
