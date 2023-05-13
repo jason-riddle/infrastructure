@@ -114,6 +114,32 @@ resource "cloudflare_record" "jasonriddle_com_10_in2-smtp_messagingengine_com" {
   proxied  = false
 }
 
+# Fastmail
+# Allows you to receive email at subdomain addresses, e.g. foo@user.jasonriddle.com
+resource "cloudflare_record" "wildcard_jasonriddle_com_10_in1-smtp_messagingengine_com" {
+  zone_id  = data.cloudflare_zone.jasonriddlecom.id
+  name     = "*"
+  value    = "in1-smtp.messagingengine.com"
+  comment  = "Allows you to receive email at subdomain addresses"
+  type     = "MX"
+  priority = 10
+  ttl      = 1
+  proxied  = false
+}
+
+# Fastmail
+# Allows you to receive email at subdomain addresses, e.g. foo@user.jasonriddle.com
+resource "cloudflare_record" "wildcard_jasonriddle_com_20_in1-smtp_messagingengine_com" {
+  zone_id  = data.cloudflare_zone.jasonriddlecom.id
+  name     = "*"
+  value    = "in2-smtp.messagingengine.com"
+  comment  = "Allows you to receive email at subdomain addresses"
+  type     = "MX"
+  priority = 20
+  ttl      = 1
+  proxied  = false
+}
+
 # jrapps.org
 data "cloudflare_zone" "jrapps_org" {
   name = "jrapps.org"
