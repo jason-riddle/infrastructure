@@ -109,6 +109,16 @@ data "cloudflare_zone" "jrapps_org" {
   name = "jrapps.org"
 }
 
+resource "cloudflare_record" "jrapps_org_nx15310_your_storageshare_de" {
+  zone_id  = data.cloudflare_zone.jrapps_org.id
+  name     = "nextcloud"
+  value    = "nx15310.your-storageshare.de"
+  comment  = "Nextcloud"
+  type     = "CNAME"
+  ttl      = 1
+  proxied  = false
+}
+
 ## DigitalOcean
 
 ## GitHub
