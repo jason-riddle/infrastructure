@@ -1,12 +1,5 @@
 ## AWS
 
-# module "terraform_aws_jason_console_read_only_access" {
-#   source  = "./terraform_aws_jason_console_read_only_access"
-#   enabled = var.enabled
-
-#   namespace = var.namespace
-# }
-
 module "aws_iam_user_jason" {
   source  = "cloudposse/iam-user/aws"
   version = "0.8.4"
