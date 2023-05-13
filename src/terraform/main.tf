@@ -40,20 +40,25 @@
 
 ## Cloudflare
 
-# REF: https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/data-sources/zone
+# DOCS: https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs
 
 # jasonriddle.com
-
-# Resource: https://dash.cloudflare.com/7880ee87feea1839fb5a815cc479b080/jasonriddle.com/dns/records
 data "cloudflare_zone" "jasonriddlecom" {
   name = "jasonriddle.com"
 }
 
-# REF: https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record
+# Google Site Verification
+resource "cloudflare_record" "google_site_verification" {
+  zone_id = data.cloudflare_zone.jasonriddlecom.id
+  name    = "jasonriddle.com"
+  value   = "google-site-verification=bl5rOxJb15yoC3-RP291bMktkMzrZrrKDLyFvAEXaMs"
+  comment = ""
+  type    = "TXT"
+  ttl     = 1
+  proxied = false
+}
 
 # jrapps.org
-
-# Resource: https://dash.cloudflare.com/7880ee87feea1839fb5a815cc479b080/jrapps.org/dns/records
 data "cloudflare_zone" "jrappsorg" {
   name = "jrapps.org"
 }
