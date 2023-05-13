@@ -34,7 +34,7 @@ terraform {
     }
     twilio = {
       source  = "twilio/twilio"
-      version = ">= 0.18.27"
+      version = ">= 0.18.21"
     }
   }
 }
