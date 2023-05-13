@@ -33,7 +33,7 @@ terraform {
       version = ">= 0.13.7"
     }
     tfe = {
-      source = "hashicorp/tfe"
+      source  = "hashicorp/tfe"
       version = ">= 0.44.1"
     }
     twilio = {
