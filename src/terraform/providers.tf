@@ -39,7 +39,7 @@ provider "aws" {}
 
 ## Cloudflare
 
-# Set `CLOUDFLARE_API_KEY` or `CLOUDFLARE_API_TOKEN`
+# Set (`CLOUDFLARE_API_KEY` and `CLOUDFLARE_EMAIL`) or `CLOUDFLARE_API_TOKEN`
 # API TOKENS: https://dash.cloudflare.com/profile/api-tokens
 # REF: https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs
 provider "cloudflare" {}
