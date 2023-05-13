@@ -161,6 +161,6 @@ resource "cloudflare_record" "jrapps_org_nx15310_your_storageshare_de" {
 
 ## Tailscale
 
-## Terraform Cloud - app.terraform.io
+## Terraform Cloud/Enterprise
 
 ## Twilio

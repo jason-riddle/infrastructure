@@ -32,6 +32,10 @@ terraform {
       source  = "tailscale/tailscale"
       version = ">= 0.13.7"
     }
+    tfe = {
+      source = "hashicorp/tfe"
+      version = ">= 0.44.1"
+    }
     twilio = {
       source  = "twilio/twilio"
       version = ">= 0.18.21"
@@ -69,5 +73,7 @@ provider "cloudflare" {}
 provider "github" {}
 
 ## Tailscale
+
+## Terraform Cloud/Enterprise
 
 ## Twilio
