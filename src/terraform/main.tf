@@ -24,19 +24,19 @@
 #   pgp_key               = ""
 # }
 
-module "terraform_infrastructure_aws_ci_user" {
-  source  = "cloudposse/iam-system-user/aws"
-  version = "1.1.0"
-  enabled = true
+# module "terraform_infrastructure_aws_ci_user" {
+#   source  = "cloudposse/iam-system-user/aws"
+#   version = "1.1.0"
+#   enabled = true
 
-  namespace   = var.namespace
-  environment = var.environment
-  stage       = var.stage
-  name        = "aws-ci-user"
+#   namespace   = var.namespace
+#   environment = var.environment
+#   stage       = var.stage
+#   name        = "aws-ci-user"
 
-  ssm_enabled                   = false
-  ssm_ses_smtp_password_enabled = false
-}
+#   ssm_enabled                   = false
+#   ssm_ses_smtp_password_enabled = false
+# }
 
 ## Cloudflare
 
