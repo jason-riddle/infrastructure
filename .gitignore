@@ -8,3 +8,6 @@
 .terraform
 .terraform.lock.hcl
 terraform.tfstate
+
+## Vagrant
+.vagrant
