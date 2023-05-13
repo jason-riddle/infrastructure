@@ -43,13 +43,13 @@
 # DOCS: https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs
 
 # jasonriddle.com
-data "cloudflare_zone" "jasonriddlecom" {
+data "cloudflare_zone" "jasonriddle_com" {
   name = "jasonriddle.com"
 }
 
 # Google Site Verification
 resource "cloudflare_record" "google_site_verification" {
-  zone_id = data.cloudflare_zone.jasonriddlecom.id
+  zone_id = data.cloudflare_zone.jasonriddle_com.id
   name    = "jasonriddle.com"
   value   = "google-site-verification=bl5rOxJb15yoC3-RP291bMktkMzrZrrKDLyFvAEXaMs"
   comment = ""
@@ -59,7 +59,7 @@ resource "cloudflare_record" "google_site_verification" {
 }
 
 # jrapps.org
-data "cloudflare_zone" "jrappsorg" {
+data "cloudflare_zone" "jrapps_org" {
   name = "jrapps.org"
 }
 
