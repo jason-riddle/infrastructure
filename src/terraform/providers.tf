@@ -58,9 +58,10 @@ provider "cloudflare" {}
 
 ## DigitalOcean
 
-# provider "digitalocean" {
-#   # Configuration options
-# }
+# Set `DIGITALOCEAN_TOKEN` or `DIGITALOCEAN_ACCESS_TOKEN`
+# API TOKENS: https://cloud.digitalocean.com/account/api/tokens
+# REF: https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs
+provider "digitalocean" {}
 
 ## GitHub
 
