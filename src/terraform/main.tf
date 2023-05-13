@@ -68,6 +68,16 @@ resource "cloudflare_record" "jasonriddle_com" {
   proxied = true
 }
 
+resource "cloudflare_record" "newsletter_jasonriddle_com" {
+  zone_id  = data.cloudflare_zone.jasonriddle_com.id
+  name     = "newsletter"
+  value    = "target.substack-custom-domains.com"
+  comment  = "Newsletter"
+  type     = "CNAME"
+  ttl      = 1
+  proxied  = false
+}
+
 resource "cloudflare_record" "www_jasonriddle_com" {
   zone_id = data.cloudflare_zone.jasonriddle_com.id
   name    = "www"
