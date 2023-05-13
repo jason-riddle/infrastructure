@@ -7,27 +7,27 @@ data "cloudflare_zone" "jasonriddlecom" {
 
 # Root level
 # jasonriddle.com > 185.212.71.169
-resource "cloudflare_record" "jasonriddle_com" {
-  zone_id = data.cloudflare_zone.jasonriddlecom.id
-  name    = "jasonriddle.com"
-  value   = "185.212.71.169"
-  comment = "Root Wordpress"
-  type    = "A"
-  ttl     = 1
-  proxied = true
-}
+# resource "cloudflare_record" "jasonriddle_com" {
+#   zone_id = data.cloudflare_zone.jasonriddlecom.id
+#   name    = "jasonriddle.com"
+#   value   = "185.212.71.169"
+#   comment = "Root Wordpress"
+#   type    = "A"
+#   ttl     = 1
+#   proxied = true
+# }
 
 # www subdomain
 # www.jasonriddle.com > 185.212.71.169
-resource "cloudflare_record" "www_jasonriddle_com" {
-  zone_id = data.cloudflare_zone.jasonriddlecom.id
-  name    = "www"
-  value   = "185.212.71.169"
-  comment = "Wordpress www subdomain redirect"
-  type    = "A"
-  ttl     = 1
-  proxied = true
-}
+# resource "cloudflare_record" "www_jasonriddle_com" {
+#   zone_id = data.cloudflare_zone.jasonriddlecom.id
+#   name    = "www"
+#   value   = "185.212.71.169"
+#   comment = "Wordpress www subdomain redirect"
+#   type    = "A"
+#   ttl     = 1
+#   proxied = true
+# }
 
 # Fastmail
 # Allows you to receive email at standard addresses, e.g. user@jasonriddle.com
