@@ -1,3 +1,5 @@
+# VARIABLES: https://app.terraform.io/app/jason-riddle/workspaces/infrastructure/variables
+
 terraform {
   required_version = ">= 0.13.0"
 
