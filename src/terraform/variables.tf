@@ -36,18 +36,3 @@ variable "attributes" {
     and treated as a single ID element.
     EOT
 }
-
-# variable "user_name" {
-#   type    = string
-#   default = "JR-Jason-Console-Read-Only-Access"
-# }
-
-# variable "aws_region" {
-#   type    = string
-#   default = "us-west-1"
-# }
-
-# variable "github_token" {
-#   type      = string
-#   sensitive = true
-# }
