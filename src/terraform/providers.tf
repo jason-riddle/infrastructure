@@ -28,6 +28,10 @@ terraform {
       source  = "integrations/github"
       version = ">= 5.24.0"
     }
+    tailscale = {
+      source  = "tailscale/tailscale"
+      version = ">= 0.13.0"
+    }
   }
 }
 
@@ -50,6 +54,8 @@ provider "cloudflare" {}
 #   # Configuration options
 # }
 
+## GitHub
+
 # Set `GITHUB_TOKEN`
 # REF: https://registry.terraform.io/providers/integrations/github/latest/docs
 # Token Info
@@ -57,3 +63,5 @@ provider "cloudflare" {}
 # > Token Permissions: read:discussion, read:org
 # > Token Settings URL: https://github.com/settings/tokens
 provider "github" {}
+
+## Tailscale
