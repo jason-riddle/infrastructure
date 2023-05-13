@@ -7,7 +7,7 @@
 #   namespace = var.namespace
 # }
 
-module "aws_iam_user" {
+module "aws_iam_user_jason" {
   source  = "cloudposse/iam-user/aws"
   version = "0.8.4"
   enabled = false
@@ -22,7 +22,7 @@ module "aws_iam_user" {
   pgp_key               = ""
 }
 
-module "aws_iam_system_user" {
+module "aws_iam_system_user_terraform_cloud" {
   source  = "cloudposse/iam-system-user/aws"
   version = "1.1.0"
   enabled = false
@@ -30,7 +30,7 @@ module "aws_iam_system_user" {
   namespace   = var.namespace
   environment = var.environment
   stage       = var.stage
-  name        = "aws-iam-system-user"
+  name        = "aws-iam-system-user-terraform-cloud"
 
   ssm_enabled                   = false
   ssm_ses_smtp_password_enabled = false
