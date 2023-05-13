@@ -168,6 +168,18 @@ resource "digitalocean_kubernetes_cluster" "jasons_cluster" {
 
 ## GitHub
 
+resource "github_repository" "example" {
+  count              = 0
+  name               = "example"
+  archive_on_destroy = false
+}
+
+resource "github_branch_protection" "example" {
+  count         = 0
+  repository_id = github_repository.example.node_id
+  pattern       = "main"
+}
+
 # module "terraform_github_jason_riddle_infrastructure" {
 #   source  = "./terraform_github_jason_riddle_infrastructure"
 #   enabled = var.enabled
