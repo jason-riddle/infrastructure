@@ -154,7 +154,16 @@ resource "cloudflare_record" "jrapps_org_nx15310_your_storageshare_de" {
 
 resource "digitalocean_kubernetes_cluster" "jasons_cluster" {
   count = 0
-  name  = "jasons-cluster"
+
+  name    = "jasons-cluster"
+  region  = "sfo3"
+  version = "1.26.3-do.0"
+
+  node_pool {
+    name       = "worker-pool"
+    size       = "s-2vcpu-2gb"
+    node_count = 1
+  }
 }
 
 ## GitHub
