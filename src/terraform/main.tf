@@ -58,6 +58,26 @@ resource "cloudflare_record" "google_site_verification" {
   proxied = false
 }
 
+resource "cloudflare_record" "jasonriddle_com" {
+  zone_id = data.cloudflare_zone.jasonriddle_com.id
+  name    = "jasonriddle.com"
+  value   = "185.212.71.169"
+  comment = "Root Domain - WordPress"
+  type    = "A"
+  ttl     = 1
+  proxied = true
+}
+
+resource "cloudflare_record" "www_jasonriddle_com" {
+  zone_id = data.cloudflare_zone.jasonriddle_com.id
+  name    = "www"
+  value   = "185.212.71.169"
+  comment = "WWW Subdomain - WordPress"
+  type    = "A"
+  ttl     = 1
+  proxied = true
+}
+
 # jrapps.org
 data "cloudflare_zone" "jrapps_org" {
   name = "jrapps.org"
