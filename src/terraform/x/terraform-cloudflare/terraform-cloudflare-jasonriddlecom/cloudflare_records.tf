@@ -82,12 +82,12 @@ resource "cloudflare_record" "wildcard_jasonriddle_com_20_in1-smtp_messagingengi
 }
 
 # txt subdomain for google site verification for google search console and google analytics verification
-resource "cloudflare_record" "google_site_verification" {
-  zone_id = data.cloudflare_zone.jasonriddlecom.id
-  name    = "jasonriddle.com"
-  value   = "google-site-verification=bl5rOxJb15yoC3-RP291bMktkMzrZrrKDLyFvAEXaMs"
-  comment = ""
-  type    = "TXT"
-  ttl     = 1
-  proxied = false
-}
+# resource "cloudflare_record" "google_site_verification" {
+#   zone_id = data.cloudflare_zone.jasonriddlecom.id
+#   name    = "jasonriddle.com"
+#   value   = "google-site-verification=bl5rOxJb15yoC3-RP291bMktkMzrZrrKDLyFvAEXaMs"
+#   comment = ""
+#   type    = "TXT"
+#   ttl     = 1
+#   proxied = false
+# }
