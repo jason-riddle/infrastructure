@@ -16,6 +16,10 @@ terraform {
       source  = "hashicorp/aws"
       version = ">= 4.64.0"
     }
+    boundary = {
+      source  = "hashicorp/boundary"
+      version = ">= 1.1.7"
+    }
     cloudflare = {
       source  = "cloudflare/cloudflare"
       version = ">= 4.5.0"
@@ -72,6 +76,8 @@ terraform {
 # Set `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY`
 # REF: https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 provider "aws" {}
+
+## Boundary
 
 ## Cloudflare
 
