@@ -16,18 +16,18 @@ terraform {
       source  = "hashicorp/aws"
       version = ">= 4.64.0"
     }
-    boundary = {
-      source  = "hashicorp/boundary"
-      version = ">= 1.1.7"
-    }
+    # boundary = {
+    #   source  = "hashicorp/boundary"
+    #   version = ">= 1.1.7"
+    # }
     cloudflare = {
       source  = "cloudflare/cloudflare"
       version = ">= 4.5.0"
     }
-    consul = {
-      source  = "hashicorp/consul"
-      version = ">= 2.17.0"
-    }
+    # consul = {
+    #   source  = "hashicorp/consul"
+    #   version = ">= 2.17.0"
+    # }
     digitalocean = {
       source  = "digitalocean/digitalocean"
       version = ">= 2.28.1"
@@ -36,38 +36,38 @@ terraform {
       source  = "integrations/github"
       version = ">= 5.24.0"
     }
-    helm = {
-      source  = "hashicorp/helm"
-      version = ">= 2.9.0"
-    }
-    kubernetes = {
-      source  = "hashicorp/kubernetes"
-      version = ">= 2.20.0"
-    }
-    namecheap = {
-      source  = "namecheap/namecheap"
-      version = ">= 2.1.0"
-    }
-    nomad = {
-      source  = "hashicorp/nomad"
-      version = ">= 1.4.20"
-    }
-    tailscale = {
-      source  = "tailscale/tailscale"
-      version = ">= 0.13.7"
-    }
-    tfe = {
-      source  = "hashicorp/tfe"
-      version = ">= 0.44.1"
-    }
-    twilio = {
-      source  = "twilio/twilio"
-      version = ">= 0.18.21"
-    }
-    vault = {
-      source  = "hashicorp/vault"
-      version = ">= 3.15.2"
-    }
+    # helm = {
+    #   source  = "hashicorp/helm"
+    #   version = ">= 2.9.0"
+    # }
+    # kubernetes = {
+    #   source  = "hashicorp/kubernetes"
+    #   version = ">= 2.20.0"
+    # }
+    # namecheap = {
+    #   source  = "namecheap/namecheap"
+    #   version = ">= 2.1.0"
+    # }
+    # nomad = {
+    #   source  = "hashicorp/nomad"
+    #   version = ">= 1.4.20"
+    # }
+    # tailscale = {
+    #   source  = "tailscale/tailscale"
+    #   version = ">= 0.13.7"
+    # }
+    # tfe = {
+    #   source  = "hashicorp/tfe"
+    #   version = ">= 0.44.1"
+    # }
+    # twilio = {
+    #   source  = "twilio/twilio"
+    #   version = ">= 0.18.21"
+    # }
+    # vault = {
+    #   source  = "hashicorp/vault"
+    #   version = ">= 3.15.2"
+    # }
   }
 }
 
