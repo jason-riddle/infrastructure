@@ -21,7 +21,7 @@ terraform {
       version = ">= 4.5.0"
     }
     consul = {
-      source = "hashicorp/consul"
+      source  = "hashicorp/consul"
       version = ">= 2.17.0"
     }
     digitalocean = {
@@ -45,7 +45,7 @@ terraform {
       version = ">= 2.1.0"
     }
     nomad = {
-      source = "hashicorp/nomad"
+      source  = "hashicorp/nomad"
       version = ">= 1.4.20"
     }
     tailscale = {
@@ -61,7 +61,7 @@ terraform {
       version = ">= 0.18.21"
     }
     vault = {
-      source = "hashicorp/vault"
+      source  = "hashicorp/vault"
       version = ">= 3.15.2"
     }
   }
