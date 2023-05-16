@@ -28,6 +28,10 @@ terraform {
       source  = "integrations/github"
       version = ">= 5.24.0"
     }
+    helm = {
+      source  = "hashicorp/helm"
+      version = ">= 2.9.0"
+    }
     kubernetes = {
       source  = "hashicorp/kubernetes"
       version = ">= 2.20.0"
@@ -80,6 +84,8 @@ provider "digitalocean" {}
 # > Token Permissions: read:discussion, read:org
 # > Token Settings URL: https://github.com/settings/tokens
 provider "github" {}
+
+## Helm
 
 ## Kubernetes
 
