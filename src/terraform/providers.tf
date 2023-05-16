@@ -52,6 +52,10 @@ terraform {
       source  = "twilio/twilio"
       version = ">= 0.18.21"
     }
+    vault = {
+      source = "hashicorp/vault"
+      version = ">= 3.15.2"
+    }
   }
 }
 
@@ -96,3 +100,5 @@ provider "github" {}
 ## Terraform Cloud/Enterprise
 
 ## Twilio
+
+## Vault
