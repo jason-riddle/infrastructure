@@ -20,6 +20,10 @@ terraform {
       source  = "cloudflare/cloudflare"
       version = ">= 4.5.0"
     }
+    consul = {
+      source = "hashicorp/consul"
+      version = ">= 2.17.0"
+    }
     digitalocean = {
       source  = "digitalocean/digitalocean"
       version = ">= 2.28.1"
@@ -39,6 +43,10 @@ terraform {
     namecheap = {
       source  = "namecheap/namecheap"
       version = ">= 2.1.0"
+    }
+    nomad = {
+      source = "hashicorp/nomad"
+      version = ">= 1.4.20"
     }
     tailscale = {
       source  = "tailscale/tailscale"
@@ -72,6 +80,8 @@ provider "aws" {}
 # REF: https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs
 provider "cloudflare" {}
 
+## Consul
+
 ## DigitalOcean
 
 # Set `DIGITALOCEAN_TOKEN` or `DIGITALOCEAN_ACCESS_TOKEN`
@@ -94,6 +104,8 @@ provider "github" {}
 ## Kubernetes
 
 ## Namecheap
+
+## Nomad
 
 ## Tailscale
 
