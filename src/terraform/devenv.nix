@@ -3,7 +3,7 @@
 {
   # https://devenv.sh/packages/
   packages = [
-    pkgs.terraform
+    pkgs.terraform_1
   ];
 
   # https://devenv.sh/pre-commit-hooks/
