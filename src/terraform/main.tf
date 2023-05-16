@@ -182,11 +182,6 @@ resource "github_branch_protection" "example" {
   pattern       = "main"
 }
 
-# module "terraform_github_jason_riddle_infrastructure" {
-#   source  = "./terraform_github_jason_riddle_infrastructure"
-#   enabled = var.enabled
-# }
-
 ## Tailscale
 
 ## Terraform Cloud/Enterprise
