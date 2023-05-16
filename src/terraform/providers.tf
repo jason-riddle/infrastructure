@@ -28,6 +28,10 @@ terraform {
       source  = "integrations/github"
       version = ">= 5.24.0"
     }
+    namecheap = {
+      source  = "namecheap/namecheap"
+      version = ">= 2.1.0"
+    }
     tailscale = {
       source  = "tailscale/tailscale"
       version = ">= 0.13.7"
@@ -72,6 +76,8 @@ provider "digitalocean" {}
 # > Token Permissions: read:discussion, read:org
 # > Token Settings URL: https://github.com/settings/tokens
 provider "github" {}
+
+## Namecheap
 
 ## Tailscale
 
