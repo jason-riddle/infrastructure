@@ -152,10 +152,10 @@ resource "cloudflare_record" "jrapps_org_nx15310_your_storageshare_de" {
 
 ## DigitalOcean
 
-resource "digitalocean_kubernetes_cluster" "jasons_cluster" {
+resource "digitalocean_kubernetes_cluster" "jasons_k8s_cluster" {
   count = 0
 
-  name    = "jasons-cluster"
+  name    = "jasons-k8s-cluster"
   region  = "sfo3"
   version = "1.26.3-do.0"
 
