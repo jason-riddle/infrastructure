@@ -178,7 +178,7 @@ resource "github_repository" "example" {
 resource "github_branch_protection" "example" {
   count = 0
 
-  repository_id = github_repository.example.[*].node_id
+  repository_id = github_repository.example.*.node_id
   pattern       = "main"
 }
 
