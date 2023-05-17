@@ -235,9 +235,10 @@ resource "digitalocean_kubernetes_cluster" "jasons_k8s_cluster" {
 resource "hcp_hvn" "example" {
   count = 0
 
-  hvn_id         = "hvn"
+  hvn_id         = "hvn-aws-us-west-2"
   cloud_provider = "aws"
-  region         = "us-west-1"
+  region         = "us-west-2"
+  cidr_block     = "172.25.16.0/20"
 
   lifecycle {
     prevent_destroy = true
