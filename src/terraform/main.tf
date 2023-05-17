@@ -47,6 +47,10 @@ resource "cloudflare_record" "google_site_verification" {
   type    = "TXT"
   ttl     = 1
   proxied = false
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 # jasonriddle.com
@@ -58,6 +62,10 @@ resource "cloudflare_record" "jasonriddle_com" {
   type    = "A"
   ttl     = 1
   proxied = true
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 # newsletter.jasonriddle.com
@@ -69,6 +77,10 @@ resource "cloudflare_record" "newsletter_jasonriddle_com" {
   type    = "CNAME"
   ttl     = 1
   proxied = false
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 # www.jasonriddle.com
@@ -80,6 +92,10 @@ resource "cloudflare_record" "www_jasonriddle_com" {
   type    = "A"
   ttl     = 1
   proxied = true
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 # Fastmail
@@ -93,6 +109,10 @@ resource "cloudflare_record" "jasonriddle_com_10_in1-smtp_messagingengine_com" {
   priority = 10
   ttl      = 1
   proxied  = false
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 # Fastmail
@@ -106,6 +126,10 @@ resource "cloudflare_record" "jasonriddle_com_10_in2-smtp_messagingengine_com" {
   priority = 20
   ttl      = 1
   proxied  = false
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 # Fastmail
@@ -119,6 +143,10 @@ resource "cloudflare_record" "wildcard_jasonriddle_com_10_in1-smtp_messagingengi
   priority = 10
   ttl      = 1
   proxied  = false
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 # Fastmail
@@ -132,6 +160,10 @@ resource "cloudflare_record" "wildcard_jasonriddle_com_20_in1-smtp_messagingengi
   priority = 20
   ttl      = 1
   proxied  = false
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 # jrapps.org
@@ -148,6 +180,10 @@ resource "cloudflare_record" "jrapps_org_nx15310_your_storageshare_de" {
   type    = "CNAME"
   ttl     = 1
   proxied = false
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 ## DigitalOcean
@@ -163,6 +199,10 @@ resource "digitalocean_kubernetes_cluster" "jasons_k8s_cluster" {
     name       = "worker-pool"
     size       = "s-2vcpu-2gb"
     node_count = 1
+  }
+
+  lifecycle {
+    prevent_destroy = true
   }
 }
 
@@ -198,15 +238,19 @@ resource "hcp_hvn" "example" {
   hvn_id         = "hvn"
   cloud_provider = "aws"
   region         = "us-west-1"
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 resource "hcp_vault_cluster" "jasons_vault_cluster" {
   count = 0
 
   cluster_id      = "jasons-vault-cluster"
-  hvn_id          = hcp_hvn.example.hvn_id
+  hvn_id          = hcp_hvn.example.*.hvn_id
   public_endpoint = true
-  tier            = "1"
+  tier            = "dev"
 
   lifecycle {
     prevent_destroy = true
