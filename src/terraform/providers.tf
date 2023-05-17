@@ -113,6 +113,10 @@ provider "github" {}
 
 ## HCP
 
+# Set `HCP_CLIENT_ID` and `HCP_CLIENT_SECRET`
+# REF: https://registry.terraform.io/providers/hashicorp/hcp/latest/docs
+provider "hcp" {}
+
 ## Kubernetes
 
 ## Namecheap
