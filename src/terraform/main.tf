@@ -185,16 +185,24 @@ resource "digitalocean_kubernetes_cluster" "jasons_k8s_cluster" {
 ## HCP
 
 resource "hcp_hvn" "example" {
-  hvn_id = "hvn"
+  count = 0
+
+  hvn_id         = "hvn"
+  cloud_provider = "aws"
+  region         = "us-west-1"
 }
 
 resource "hcp_vault_cluster" "jasons_vault_cluster" {
   count = 0
 
-  cluster_id = "jasons-vault-cluster"
-  tier       = "1"
-
+  cluster_id      = "jasons-vault-cluster"
+  hvn_id          = hcp_hvn.example.hvn_id
   public_endpoint = true
+  tier            = "1"
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 ## Tailscale
