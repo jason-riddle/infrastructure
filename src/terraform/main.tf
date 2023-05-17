@@ -173,6 +173,10 @@ resource "digitalocean_kubernetes_cluster" "jasons_k8s_cluster" {
 
 #   name               = "example"
 #   archive_on_destroy = false
+
+#   lifecycle {
+#     prevent_destroy = true
+#   }
 # }
 
 # resource "github_branch_protection" "example" {
@@ -180,6 +184,10 @@ resource "digitalocean_kubernetes_cluster" "jasons_k8s_cluster" {
 
 #   repository_id = github_repository.example.*.node_id
 #   pattern       = "main"
+
+#   lifecycle {
+#     prevent_destroy = true
+#   }
 # }
 
 ## HCP
