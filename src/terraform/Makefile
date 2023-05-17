@@ -1,14 +1,14 @@
 login:
-	devenv shell -- terraform login
+	terraform login
 
 init:
-	devenv shell -- terraform init
+	terraform init
 
 plan:
-	devenv shell -- terraform plan
+	terraform plan
 
 fmt:
-	devenv shell -- terraform fmt -recursive
+	terraform fmt -recursive
 
 check:
-	devenv shell -- terraform fmt -check -recursive -diff
+	terraform fmt -check -recursive -diff
