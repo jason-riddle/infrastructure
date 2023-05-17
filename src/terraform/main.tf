@@ -182,6 +182,14 @@ resource "digitalocean_kubernetes_cluster" "jasons_k8s_cluster" {
 #   pattern       = "main"
 # }
 
+## HCP
+
+resource "hcp_vault_cluster" "example" {
+  count = 0
+
+  cluster_id = "vault-cluster"
+}
+
 ## Tailscale
 
 ## Terraform Cloud/Enterprise
