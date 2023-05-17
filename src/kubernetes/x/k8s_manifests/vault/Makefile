@@ -10,5 +10,6 @@ base:
 apply: base
 	kubectl apply -f ./manifests/base/manifest.yml
 
-prune:
-	kubectl apply --prune -f ./manifests/base/manifest.yml -l app=vault
+.PHONY: delete
+delete:
+	kubectl delete -f ./manifests/base/manifest.yml
