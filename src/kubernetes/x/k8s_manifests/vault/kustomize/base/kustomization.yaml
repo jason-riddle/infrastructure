@@ -17,4 +17,4 @@ helmCharts:
     valuesInline:
       injector:
         enabled: true
-        externalVaultAddr: "asd"
+        externalVaultAddr: "1.2.8.1"
