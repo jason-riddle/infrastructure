@@ -10,3 +10,6 @@ base:
 apply: base
 	@mkdir -p ./manifests/base
 	kubectl apply -f ./manifests/base/manifest.yml
+
+prune:
+	kubectl apply --prune -f ./manifests/base/manifest.yml -l app=nginx
