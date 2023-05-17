@@ -5,4 +5,4 @@ build:
     	./base
 
 apply:
-	kubectl -v=3 apply --kustomize='.'
+	kubectl -v=3 apply --kustomize='./base'
