@@ -184,10 +184,10 @@ resource "digitalocean_kubernetes_cluster" "jasons_k8s_cluster" {
 
 ## HCP
 
-resource "hcp_vault_cluster" "example" {
+resource "hcp_vault_cluster" "jasons_vault_cluster" {
   count = 0
 
-  cluster_id = "vault-cluster"
+  cluster_id = "jasons-vault-cluster"
 }
 
 ## Tailscale
