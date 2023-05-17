@@ -8,7 +8,6 @@ base:
 
 .PHONY: apply
 apply: base
-	@mkdir -p ./manifests/base
 	kubectl apply -f ./manifests/base/manifest.yml
 
 prune:
