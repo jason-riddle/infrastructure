@@ -3,3 +3,6 @@ start:
 	minikube config set memory 8192 &> /dev/null
 	minikube config set driver docker &> /dev/null
 	minikube start
+
+delete:
+	minikube delete
