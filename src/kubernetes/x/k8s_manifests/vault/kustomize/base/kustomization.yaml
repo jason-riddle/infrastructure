@@ -15,9 +15,6 @@ helmCharts:
     repo: https://helm.releases.hashicorp.com
     releaseName: vault
     valuesInline:
-      server:
-        affinity: ""
-        ha:
-          enabled: true
-          raft:
-            enabled: true
+      injector:
+        enabled: true
+        externalVaultAddr: "asd"
