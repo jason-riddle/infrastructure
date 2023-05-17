@@ -9,10 +9,9 @@ resources:
 # https://github.com/kubernetes-sigs/kustomize/blob/master/examples/chart.md
 helmCharts:
   - name: vault
-    includeCRDs: true
-    valuesInline:
-      minecraftServer:
-        eula: true
-    releaseName: vault
     version: 0.24.0
     repo: https://helm.releases.hashicorp.com
+    releaseName: vault
+    valuesInline:
+      global:
+        enabled: true
