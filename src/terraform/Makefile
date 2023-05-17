@@ -12,3 +12,4 @@ fmt:
 
 check:
 	terraform fmt -check -recursive -diff
+	terraform validate .
