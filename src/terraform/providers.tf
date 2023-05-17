@@ -40,6 +40,10 @@ terraform {
     #   source  = "hashicorp/helm"
     #   version = ">= 2.9.0"
     # }
+    hcp = {
+      source  = "hashicorp/hcp"
+      version = ">= 0.56.0"
+    }
     # kubernetes = {
     #   source  = "hashicorp/kubernetes"
     #   version = ">= 2.20.0"
@@ -106,6 +110,8 @@ provider "digitalocean" {}
 provider "github" {}
 
 ## Helm
+
+## HCP
 
 ## Kubernetes
 
