@@ -1,12 +1,15 @@
 apiVersion: v1
 kind: Namespace
 metadata:
+  labels:
+    app: vault
   name: vault
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   labels:
+    app: vault
     app.kubernetes.io/instance: vault
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault
@@ -18,6 +21,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   labels:
+    app: vault
     app.kubernetes.io/instance: vault
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault-agent-injector
@@ -28,6 +32,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   labels:
+    app: vault
     app.kubernetes.io/instance: vault
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault-agent-injector
@@ -47,6 +52,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   labels:
+    app: vault
     app.kubernetes.io/instance: vault
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault-agent-injector
@@ -64,6 +70,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   labels:
+    app: vault
     app.kubernetes.io/instance: vault
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault
@@ -115,6 +122,7 @@ data:
 kind: ConfigMap
 metadata:
   labels:
+    app: vault
     app.kubernetes.io/instance: vault
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault
@@ -126,6 +134,7 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
+    app: vault
     app.kubernetes.io/instance: vault
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault
@@ -142,6 +151,7 @@ spec:
     targetPort: 8201
   publishNotReadyAddresses: true
   selector:
+    app: vault
     app.kubernetes.io/instance: vault
     app.kubernetes.io/name: vault
     component: server
@@ -150,6 +160,7 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
+    app: vault
     app.kubernetes.io/instance: vault
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault-agent-injector
@@ -161,6 +172,7 @@ spec:
     port: 443
     targetPort: 8080
   selector:
+    app: vault
     app.kubernetes.io/instance: vault
     app.kubernetes.io/name: vault-agent-injector
     component: webhook
@@ -169,6 +181,7 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
+    app: vault
     app.kubernetes.io/instance: vault
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault
@@ -187,6 +200,7 @@ spec:
     targetPort: 8201
   publishNotReadyAddresses: true
   selector:
+    app: vault
     app.kubernetes.io/instance: vault
     app.kubernetes.io/name: vault
     component: server
@@ -195,6 +209,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
+    app: vault
     app.kubernetes.io/instance: vault
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault-agent-injector
@@ -205,12 +220,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
+      app: vault
       app.kubernetes.io/instance: vault
       app.kubernetes.io/name: vault-agent-injector
       component: webhook
   template:
     metadata:
       labels:
+        app: vault
         app.kubernetes.io/instance: vault
         app.kubernetes.io/name: vault-agent-injector
         component: webhook
@@ -220,6 +237,7 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
               matchLabels:
+                app: vault
                 app.kubernetes.io/instance: vault
                 app.kubernetes.io/name: vault-agent-injector
                 component: webhook
@@ -313,6 +331,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   labels:
+    app: vault
     app.kubernetes.io/instance: vault
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault
@@ -323,6 +342,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
+      app: vault
       app.kubernetes.io/instance: vault
       app.kubernetes.io/name: vault
       component: server
@@ -330,6 +350,7 @@ spec:
   template:
     metadata:
       labels:
+        app: vault
         app.kubernetes.io/instance: vault
         app.kubernetes.io/name: vault
         component: server
@@ -340,6 +361,7 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
               matchLabels:
+                app: vault
                 app.kubernetes.io/instance: vault
                 app.kubernetes.io/name: vault
                 component: server
@@ -446,6 +468,8 @@ spec:
     type: OnDelete
   volumeClaimTemplates:
   - metadata:
+      labels:
+        app: vault
       name: data
     spec:
       accessModes:
@@ -459,6 +483,8 @@ kind: Pod
 metadata:
   annotations:
     helm.sh/hook: test
+  labels:
+    app: vault
   name: vault-server-test
   namespace: vault
 spec:
@@ -497,6 +523,7 @@ apiVersion: admissionregistration.k8s.io/v1
 kind: MutatingWebhookConfiguration
 metadata:
   labels:
+    app: vault
     app.kubernetes.io/instance: vault
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault-agent-injector

@@ -12,4 +12,4 @@ apply: base
 	kubectl apply -f ./manifests/base/manifest.yml
 
 prune:
-	kubectl apply --prune -f ./manifests/base/manifest.yml -l app=nginx
+	kubectl apply --prune -f ./manifests/base/manifest.yml -l app=vault
