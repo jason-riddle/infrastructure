@@ -168,19 +168,19 @@ resource "digitalocean_kubernetes_cluster" "jasons_k8s_cluster" {
 
 ## GitHub
 
-resource "github_repository" "example" {
-  count = 0
+# resource "github_repository" "example" {
+#   count = 0
 
-  name               = "example"
-  archive_on_destroy = false
-}
+#   name               = "example"
+#   archive_on_destroy = false
+# }
 
-resource "github_branch_protection" "example" {
-  count = 0
+# resource "github_branch_protection" "example" {
+#   count = 0
 
-  repository_id = github_repository.example.*.node_id
-  pattern       = "main"
-}
+#   repository_id = github_repository.example.*.node_id
+#   pattern       = "main"
+# }
 
 ## Tailscale
 
