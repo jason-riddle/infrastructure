@@ -15,5 +15,9 @@ helmCharts:
     repo: https://helm.releases.hashicorp.com
     releaseName: vault
     valuesInline:
-      global:
-        enabled: true
+      server:
+        affinity: ""
+        ha:
+          enabled: true
+          raft:
+            enabled: true
