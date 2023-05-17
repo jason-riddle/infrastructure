@@ -115,6 +115,10 @@ provider "github" {}
 
 # Set `HCP_CLIENT_ID` and `HCP_CLIENT_SECRET`
 # REF: https://registry.terraform.io/providers/hashicorp/hcp/latest/docs
+# Service Principal Info
+# > Service Principal ID: terraform-infrastructure-system-user
+# > Service Principal Role: Contributor
+# > Service Principal URL: https://portal.cloud.hashicorp.com/access/service-principals/terraform-infrastructure-system-user-122151@c3fd7556-9d82-49b1-9138-0207ce01936d?org_id=c3fd7556-9d82-49b1-9138-0207ce01936d
 provider "hcp" {}
 
 ## Kubernetes
