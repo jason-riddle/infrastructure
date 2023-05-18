@@ -10,6 +10,6 @@ plan:
 fmt:
 	terraform fmt -recursive
 
-check:
+validate:
 	terraform fmt -check -recursive -diff
 	terraform validate .
