@@ -189,7 +189,7 @@ resource "cloudflare_record" "jrapps_org_nx15310_your_storageshare_de" {
 ## DigitalOcean
 
 resource "digitalocean_kubernetes_cluster" "k8s" {
-  count = 0
+  count = 1
 
   name    = "jasons-k8s-cluster"
   region  = "sfo3"
