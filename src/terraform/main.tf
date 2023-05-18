@@ -188,7 +188,7 @@ resource "cloudflare_record" "jrapps_org_nx15310_your_storageshare_de" {
 
 ## DigitalOcean
 
-resource "digitalocean_kubernetes_cluster" "jasons_k8s_cluster" {
+resource "digitalocean_kubernetes_cluster" "k8s" {
   count = 0
 
   name    = "jasons-k8s-cluster"
@@ -245,7 +245,7 @@ resource "digitalocean_kubernetes_cluster" "jasons_k8s_cluster" {
 #   }
 # }
 
-# resource "hcp_vault_cluster" "jasons_vault_cluster" {
+# resource "hcp_vault_cluster" "vault" {
 #   count = 0
 
 #   cluster_id      = "jasons-vault-cluster"
