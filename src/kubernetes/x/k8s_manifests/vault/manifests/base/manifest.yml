@@ -161,7 +161,7 @@ spec:
         - name: AGENT_INJECT_TLS_AUTO
           value: vault-agent-injector-cfg
         - name: AGENT_INJECT_TLS_AUTO_HOSTS
-          value: vault-agent-injector-svc,vault-agent-injector-svc.vault,vault-agent-injector-svc.vault.svc
+          value: vault-agent-injector-svc,vault-agent-injector-svc.default,vault-agent-injector-svc.default.svc
         - name: AGENT_INJECT_LOG_FORMAT
           value: standard
         - name: AGENT_INJECT_REVOKE_ON_SHUTDOWN
