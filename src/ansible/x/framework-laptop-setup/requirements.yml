@@ -1,0 +1,6 @@
+---
+roles:
+  - name: geerlingguy.ansible
+  - name: geerlingguy.backup
+  - name: geerlingguy.docker
+  - name: geerlingguy.pip
