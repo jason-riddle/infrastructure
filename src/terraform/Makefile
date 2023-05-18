@@ -13,3 +13,6 @@ fmt:
 validate:
 	terraform fmt -check -recursive -diff
 	terraform validate .
+
+kubeconfig:
+	doctl kubernetes cluster kubeconfig save
