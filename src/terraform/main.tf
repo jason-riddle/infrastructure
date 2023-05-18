@@ -189,7 +189,7 @@ resource "cloudflare_record" "jrapps_org_nx15310_your_storageshare_de" {
 ## DigitalOcean
 
 resource "digitalocean_kubernetes_cluster" "k8s" {
-  count = 1
+  count = 0
 
   name    = "jasons-k8s-cluster"
   region  = "sfo3"
@@ -201,9 +201,9 @@ resource "digitalocean_kubernetes_cluster" "k8s" {
     node_count = 1
   }
 
-  lifecycle {
-    prevent_destroy = true
-  }
+  # lifecycle {
+  #   prevent_destroy = true
+  # }
 }
 
 ## GitHub
