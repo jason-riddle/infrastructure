@@ -9,7 +9,8 @@
 ## DigitalOcean
 
 output "kube_config" {
-  value = digitalocean_kubernetes_cluster.k8s.*.kube_config
+  value     = digitalocean_kubernetes_cluster.k8s.*.kube_config
+  sensitive = true
 }
 
 ## GitHub
