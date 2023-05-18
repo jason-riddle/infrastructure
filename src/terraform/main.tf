@@ -232,31 +232,31 @@ resource "digitalocean_kubernetes_cluster" "jasons_k8s_cluster" {
 
 ## HCP
 
-resource "hcp_hvn" "example" {
-  count = 0
+# resource "hcp_hvn" "example" {
+#   count = 0
 
-  hvn_id         = "hvn-aws-us-west-2"
-  cloud_provider = "aws"
-  region         = "us-west-2"
-  cidr_block     = "172.25.16.0/20"
+#   hvn_id         = "hvn-aws-us-west-2"
+#   cloud_provider = "aws"
+#   region         = "us-west-2"
+#   cidr_block     = "172.25.16.0/20"
 
-  lifecycle {
-    prevent_destroy = true
-  }
-}
+#   lifecycle {
+#     prevent_destroy = true
+#   }
+# }
 
-resource "hcp_vault_cluster" "jasons_vault_cluster" {
-  count = 0
+# resource "hcp_vault_cluster" "jasons_vault_cluster" {
+#   count = 0
 
-  cluster_id      = "jasons-vault-cluster"
-  hvn_id          = hcp_hvn.example.*.hvn_id
-  public_endpoint = true
-  tier            = "dev"
+#   cluster_id      = "jasons-vault-cluster"
+#   hvn_id          = hcp_hvn.example.*.hvn_id
+#   public_endpoint = true
+#   tier            = "dev"
 
-  lifecycle {
-    prevent_destroy = true
-  }
-}
+#   lifecycle {
+#     prevent_destroy = true
+#   }
+# }
 
 ## Tailscale
 
