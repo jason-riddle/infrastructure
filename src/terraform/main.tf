@@ -206,6 +206,18 @@ resource "digitalocean_kubernetes_cluster" "k8s" {
   }
 }
 
+resource "null_resource" "kubeconfig" {
+  provisioner "local-exec" {
+    command = <<EOT
+      doctl kubernetes cluster kubeconfig save
+    EOT
+  }
+
+  depends_on = [
+    digitalocean_kubernetes_cluster.k8s
+  ]
+}
+
 ## GitHub
 
 # resource "github_repository" "example" {
