@@ -1,33 +1,33 @@
 ## AWS
 
-module "aws_iam_user_jason" {
-  source  = "cloudposse/iam-user/aws"
-  version = "0.8.4"
-  enabled = false
+# module "aws_iam_user_jason" {
+#   source  = "cloudposse/iam-user/aws"
+#   version = "0.8.4"
+#   enabled = false
 
-  namespace   = var.namespace
-  environment = var.environment
-  stage       = var.stage
-  name        = "aws-iam-user-jason"
+#   namespace   = var.namespace
+#   environment = var.environment
+#   stage       = var.stage
+#   name        = "aws-iam-user-jason"
 
-  login_profile_enabled = false
-  user_name             = "jason"
-  pgp_key               = ""
-}
+#   login_profile_enabled = false
+#   user_name             = "jason"
+#   pgp_key               = ""
+# }
 
-module "aws_iam_system_user_terraform_cloud" {
-  source  = "cloudposse/iam-system-user/aws"
-  version = "1.1.0"
-  enabled = false
+# module "aws_iam_system_user_terraform_cloud" {
+#   source  = "cloudposse/iam-system-user/aws"
+#   version = "1.1.0"
+#   enabled = false
 
-  namespace   = var.namespace
-  environment = var.environment
-  stage       = var.stage
-  name        = "aws-iam-system-user-terraform-cloud"
+#   namespace   = var.namespace
+#   environment = var.environment
+#   stage       = var.stage
+#   name        = "aws-iam-system-user-terraform-cloud"
 
-  ssm_enabled                   = false
-  ssm_ses_smtp_password_enabled = false
-}
+#   ssm_enabled                   = false
+#   ssm_ses_smtp_password_enabled = false
+# }
 
 ## Cloudflare
 
