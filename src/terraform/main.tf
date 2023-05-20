@@ -68,6 +68,8 @@ resource "cloudflare_record" "google_site_verification" {
   ttl     = 1
   proxied = false
 
+  tags = local.tags
+
   lifecycle {
     prevent_destroy = true
   }
@@ -82,6 +84,8 @@ resource "cloudflare_record" "jasonriddle_com" {
   type    = "A"
   ttl     = 1
   proxied = true
+
+  tags = local.tags
 
   lifecycle {
     prevent_destroy = true
@@ -98,6 +102,8 @@ resource "cloudflare_record" "newsletter_jasonriddle_com" {
   ttl     = 1
   proxied = false
 
+  tags = local.tags
+
   lifecycle {
     prevent_destroy = true
   }
@@ -112,6 +118,8 @@ resource "cloudflare_record" "www_jasonriddle_com" {
   type    = "A"
   ttl     = 1
   proxied = true
+
+  tags = local.tags
 
   lifecycle {
     prevent_destroy = true
@@ -130,6 +138,8 @@ resource "cloudflare_record" "jasonriddle_com_10_in1-smtp_messagingengine_com" {
   ttl      = 1
   proxied  = false
 
+  tags = local.tags
+
   lifecycle {
     prevent_destroy = true
   }
@@ -146,6 +156,8 @@ resource "cloudflare_record" "jasonriddle_com_10_in2-smtp_messagingengine_com" {
   priority = 20
   ttl      = 1
   proxied  = false
+
+  tags = local.tags
 
   lifecycle {
     prevent_destroy = true
@@ -164,6 +176,8 @@ resource "cloudflare_record" "wildcard_jasonriddle_com_10_in1-smtp_messagingengi
   ttl      = 1
   proxied  = false
 
+  tags = local.tags
+
   lifecycle {
     prevent_destroy = true
   }
@@ -180,6 +194,8 @@ resource "cloudflare_record" "wildcard_jasonriddle_com_20_in1-smtp_messagingengi
   priority = 20
   ttl      = 1
   proxied  = false
+
+  tags = local.tags
 
   lifecycle {
     prevent_destroy = true
@@ -200,6 +216,8 @@ resource "cloudflare_record" "jrapps_org_nx15310_your_storageshare_de" {
   type    = "CNAME"
   ttl     = 1
   proxied = false
+
+  tags = local.tags
 
   lifecycle {
     prevent_destroy = true
