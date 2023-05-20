@@ -208,16 +208,16 @@ resource "cloudflare_record" "jrapps_org_nx15310_your_storageshare_de" {
 
 ## GitHub
 
-# resource "github_repository" "example" {
-#   count = 0
+resource "github_repository" "infrastructure" {
+  count = 1
 
-#   name               = "example"
-#   archive_on_destroy = false
+  name               = "infrastructure"
+  archive_on_destroy = true
 
-#   lifecycle {
-#     prevent_destroy = true
-#   }
-# }
+  lifecycle {
+    prevent_destroy = true
+  }
+}
 
 # resource "github_branch_protection" "example" {
 #   count = 0
