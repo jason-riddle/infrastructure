@@ -45,11 +45,6 @@ jobs:
         id: validate
         run: terraform validate -no-color
 
-      # TODO: Remove
-      - name: Terraform Import
-        id: import
-        run: terraform import github_repository.infrastructure infrastructure
-
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'pull_request'
