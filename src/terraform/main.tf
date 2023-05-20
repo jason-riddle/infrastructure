@@ -3,7 +3,7 @@
 module "label" {
   source  = "cloudposse/label/null"
   version = "0.25.0"
-  enabled = false
+  enabled = true
 
   namespace   = var.namespace
   environment = var.environment
