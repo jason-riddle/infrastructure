@@ -8,6 +8,10 @@ module "label" {
   namespace   = var.namespace
   environment = var.environment
   stage       = var.stage
+
+  tags = {
+    "Foo" = "BAR"
+  }
 }
 
 ## AWS
