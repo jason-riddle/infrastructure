@@ -17,10 +17,9 @@ module "label" {
 #   version = "0.8.4"
 #   enabled = false
 
-#   namespace   = var.namespace
-#   environment = var.environment
-#   stage       = var.stage
-#   name        = "iam-user-jason"
+#   name = "aws-iam-user-jason"
+#   # Copy all other fields from the base label
+#   context = module.label.context
 
 #   login_profile_enabled = false
 #   user_name             = "jason"
@@ -32,10 +31,9 @@ module "label" {
 #   version = "1.1.0"
 #   enabled = false
 
-#   namespace   = var.namespace
-#   environment = var.environment
-#   stage       = var.stage
-#   name        = "iam-system-user"
+#   name = "aws-iam-system-user-terraform-cloud"
+#   # Copy all other fields from the base label
+#   context = module.label.context
 
 #   ssm_enabled                   = false
 #   ssm_ses_smtp_password_enabled = false
