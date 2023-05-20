@@ -14,6 +14,12 @@ module "label" {
   }
 }
 
+locals {
+  tags = [
+    "Namespace=${module.label.namespace}"
+  ]
+}
+
 ## AWS
 
 # module "aws_iam_user_jason" {
