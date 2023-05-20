@@ -13,9 +13,9 @@
 #   sensitive = true
 # }
 
-output "k8s_cluster_name" {
-  value = digitalocean_kubernetes_cluster.k8s.*.name
-}
+# output "k8s_cluster_name" {
+#   value = digitalocean_kubernetes_cluster.k8s.*.name
+# }
 
 ## GitHub
 
