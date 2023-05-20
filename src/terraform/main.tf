@@ -8,7 +8,7 @@
 #   namespace   = var.namespace
 #   environment = var.environment
 #   stage       = var.stage
-#   name        = "aws-iam-user-jason"
+#   name        = "iam-user-jason"
 
 #   login_profile_enabled = false
 #   user_name             = "jason"
@@ -23,7 +23,7 @@
 #   namespace   = var.namespace
 #   environment = var.environment
 #   stage       = var.stage
-#   name        = "aws-iam-system-user-terraform-cloud"
+#   name        = "iam-system-user"
 
 #   ssm_enabled                   = false
 #   ssm_ses_smtp_password_enabled = false
