@@ -1,3 +1,15 @@
+## Label
+
+module "label" {
+  source  = "cloudposse/label/null"
+  version = "0.25.0"
+  enabled = false
+
+  namespace   = var.namespace
+  environment = var.environment
+  stage       = var.stage
+}
+
 ## AWS
 
 # module "aws_iam_user_jason" {
