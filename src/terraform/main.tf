@@ -293,3 +293,7 @@ resource "hcp_hvn" "hvn" {
 ## Twilio
 
 ## Vault
+
+resource "vault_namespace" "example" {
+  path = "example"
+}
