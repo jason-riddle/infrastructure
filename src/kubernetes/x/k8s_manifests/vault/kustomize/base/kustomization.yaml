@@ -15,6 +15,5 @@ helmCharts:
     repo: https://helm.releases.hashicorp.com
     releaseName: vault
     valuesInline:
-      injector:
-        enabled: true
-        externalVaultAddr: "1.2.8.1"
+      global:
+        externalVaultAddr: "https://jasons-vault-cluster-public-vault-f2141d90.14a4e04d.z1.hashicorp.cloud:8200"

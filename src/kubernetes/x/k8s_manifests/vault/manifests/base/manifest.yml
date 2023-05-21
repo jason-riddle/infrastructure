@@ -153,7 +153,7 @@ spec:
         - name: AGENT_INJECT_LOG_LEVEL
           value: info
         - name: AGENT_INJECT_VAULT_ADDR
-          value: 1.2.8.1
+          value: https://jasons-vault-cluster-public-vault-f2141d90.14a4e04d.z1.hashicorp.cloud:8200
         - name: AGENT_INJECT_VAULT_AUTH_PATH
           value: auth/kubernetes
         - name: AGENT_INJECT_VAULT_IMAGE
@@ -161,7 +161,7 @@ spec:
         - name: AGENT_INJECT_TLS_AUTO
           value: vault-agent-injector-cfg
         - name: AGENT_INJECT_TLS_AUTO_HOSTS
-          value: vault-agent-injector-svc,vault-agent-injector-svc.default,vault-agent-injector-svc.default.svc
+          value: vault-agent-injector-svc,vault-agent-injector-svc.vault,vault-agent-injector-svc.vault.svc
         - name: AGENT_INJECT_LOG_FORMAT
           value: standard
         - name: AGENT_INJECT_REVOKE_ON_SHUTDOWN
