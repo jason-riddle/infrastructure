@@ -146,5 +146,5 @@ provider "hcp" {}
 # }
 
 # provider "vault" {
-#   address = hcp_vault_cluster.vault_public_endpoint_url
+#   address = data.hcp_vault_cluster.vault.vault_public_endpoint_url
 # }
