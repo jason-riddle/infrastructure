@@ -4,6 +4,16 @@
 #   value = module.aws_iam_user_jason.user_name
 # }
 
+output "aws_iam_system_user_access_key_id" {
+  value     = module.aws_iam_system_user.access_key_id
+  sensitive = true
+}
+
+output "aws_iam_system_user_secret_access_key" {
+  value     = module.aws_iam_system_user.secret_access_key
+  sensitive = true
+}
+
 ## Cloudflare
 
 ## DigitalOcean
