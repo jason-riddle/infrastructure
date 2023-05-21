@@ -294,6 +294,6 @@ resource "hcp_vault_cluster" "vault" {
 
 ## Vault
 
-resource "vault_namespace" "example" {
-  path = "example"
-}
+# resource "vault_namespace" "example" {
+#   path = "example"
+# }
