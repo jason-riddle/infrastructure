@@ -247,24 +247,24 @@ resource "github_branch_protection" "infrastructure" {
 
 ## HCP
 
-# resource "hcp_hvn" "example" {
-#   count = 0
+resource "hcp_hvn" "hvn" {
+  count = 1
 
-#   hvn_id         = "hvn-aws-us-west-2"
-#   cloud_provider = "aws"
-#   region         = "us-west-2"
-#   cidr_block     = "172.25.16.0/20"
+  hvn_id         = "hvn-aws-us-west-2"
+  cloud_provider = "aws"
+  region         = "us-west-2"
+  cidr_block     = "172.25.16.0/20"
 
-#   lifecycle {
-#     prevent_destroy = true
-#   }
-# }
+  lifecycle {
+    prevent_destroy = true
+  }
+}
 
 # resource "hcp_vault_cluster" "vault" {
 #   count = 0
 
 #   cluster_id      = "jasons-vault-cluster"
-#   hvn_id          = hcp_hvn.example.*.hvn_id
+#   hvn_id          = hcp_hvn.hvn.*.hvn_id
 #   public_endpoint = true
 #   tier            = "dev"
 
