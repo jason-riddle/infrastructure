@@ -26,18 +26,18 @@ module "aws_iam_user_jason" {
   pgp_key               = ""
 }
 
-# module "aws_iam_system_user" {
-#   source  = "cloudposse/iam-system-user/aws"
-#   version = "1.1.0"
-#   enabled = true
+module "aws_iam_system_user" {
+  source  = "cloudposse/iam-system-user/aws"
+  version = "1.1.0"
+  enabled = true
 
-#   name = "aws-iam-system-user"
-#   # Copy all other fields from the base label
-#   context = module.label.context
+  name = "aws-iam-system-user"
+  # Copy all other fields from the base label
+  context = module.label.context
 
-#   ssm_enabled                   = false
-#   ssm_ses_smtp_password_enabled = false
-# }
+  ssm_enabled                   = false
+  ssm_ses_smtp_password_enabled = false
+}
 
 ## Cloudflare
 
