@@ -8,7 +8,7 @@ commonLabels:
 resources:
   - ./namespace.yaml
 
-# https://github.com/kubernetes-sigs/kustomize/blob/master/examples/chart.md
+# REF: https://developer.hashicorp.com/vault/tutorials/kubernetes/kubernetes-external-vault
 helmCharts:
   - name: vault
     version: 0.24.0
