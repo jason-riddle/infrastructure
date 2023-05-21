@@ -277,7 +277,7 @@ resource "hcp_vault_cluster" "vault" {
   count = 1
 
   cluster_id      = "jasons-vault-cluster"
-  hvn_id          = hcp_hvn.hvn.*.hvn_id
+  hvn_id          = hcp_hvn.hvn[0].hvn_id
   public_endpoint = true
   tier            = "dev"
 
