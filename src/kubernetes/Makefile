@@ -14,3 +14,6 @@ cluster:
 
 kubeconfig:
 	doctl kubernetes cluster kubeconfig save $(K8S_CLUSTER)
+
+dash:
+	open https://cloud.digitalocean.com/kubernetes/clusters/22455c81-c216-4187-9dc9-4450bbc51260/db/e83cb6be-f2b9-4b4c-9aff-f3289c7ca9ff/#/overview?namespace=_all
