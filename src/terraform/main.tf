@@ -12,6 +12,7 @@ module "label" {
 
 ## AWS
 
+# TODO: bug https://github.com/cloudposse/terraform-aws-iam-assumed-roles/issues/23
 # module "aws_iam_assumed_roles" {
 #   source  = "cloudposse/iam-assumed-roles/aws"
 #   version = "0.6.0"
