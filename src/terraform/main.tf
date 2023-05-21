@@ -12,6 +12,12 @@ module "label" {
 
 ## AWS
 
+# module "aws_iam_assumed_roles" {
+#   source  = "cloudposse/iam-assumed-roles/aws"
+#   version = "0.6.0"
+#   enabled = false
+# }
+
 module "aws_iam_user_jason" {
   source  = "cloudposse/iam-user/aws"
   version = "0.8.4"
