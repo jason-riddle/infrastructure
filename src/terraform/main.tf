@@ -211,25 +211,48 @@ resource "cloudflare_record" "wildcard_jasonriddle_com_20_in1-smtp_messagingengi
 }
 
 # jrapps.org
-data "cloudflare_zone" "jrapps_org" {
-  name = "jrapps.org"
-}
+# data "cloudflare_zone" "jrapps_org" {
+#   name = "jrapps.org"
+# }
 
 # nextcloud.jrapps.org
-resource "cloudflare_record" "jrapps_org_nx15310_your_storageshare_de" {
-  count = 1
+# resource "cloudflare_record" "jrapps_org_nx15310_your_storageshare_de" {
+#   count = 1
 
-  zone_id = data.cloudflare_zone.jrapps_org.id
-  name    = "nextcloud"
-  value   = "nx15310.your-storageshare.de"
-  comment = "Nextcloud"
-  type    = "CNAME"
-  ttl     = 1
-  proxied = false
+#   zone_id = data.cloudflare_zone.jrapps_org.id
+#   name    = "nextcloud"
+#   value   = "nx15310.your-storageshare.de"
+#   comment = "Nextcloud"
+#   type    = "CNAME"
+#   ttl     = 1
+#   proxied = false
 
-  lifecycle {
-    prevent_destroy = true
-  }
+#   lifecycle {
+#     prevent_destroy = true
+#   }
+# }
+
+# jrapps.org
+module "jrapps_org" {
+  source  = "cloudposse/zone/cloudflare"
+  version = "0.5.0"
+  enabled = true
+
+  account_id   = "7880ee87feea1839fb5a815cc479b080"
+  zone         = "jrapps.org"
+  zone_enabled = false
+  records      = [
+  # nextcloud.jrapps.org
+    {
+      name    = "nextcloud"
+      value   = "nx15310.your-storageshare.de"
+      type    = "CNAME"
+      ttl     = 1
+      proxied = false
+    }
+  ]
+
+  context = module.label.context
 }
 
 ## DigitalOcean
