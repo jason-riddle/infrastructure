@@ -19,6 +19,12 @@ module "label" {
 #   enabled = false
 # }
 
+# resource "aws_iam_group" "admin" {
+#   count = 0
+
+#   name = "admin"
+# }
+
 module "aws_iam_user_jason" {
   source  = "cloudposse/iam-user/aws"
   version = "0.8.4"
