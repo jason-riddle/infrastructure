@@ -24,6 +24,11 @@ module "aws_iam_user_jason" {
   login_profile_enabled = false
   user_name             = "aws-iam-user-jason"
   pgp_key               = ""
+
+  password_length         = 24
+  password_reset_required = true
+
+  groups = []
 }
 
 module "aws_iam_system_user" {
