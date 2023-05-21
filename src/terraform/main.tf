@@ -304,6 +304,12 @@ resource "hcp_vault_cluster" "vault" {
   }
 }
 
+resource "hcp_vault_cluster_admin_token" "cluster_token" {
+  count = 1
+
+  cluster_id = hcp_vault_cluster.vault[0].cluster_id
+}
+
 ## Tailscale
 
 ## Terraform Cloud/Enterprise
@@ -312,6 +318,6 @@ resource "hcp_vault_cluster" "vault" {
 
 ## Vault
 
-# resource "vault_namespace" "example" {
-#   path = "example"
-# }
+resource "vault_namespace" "example" {
+  path = "example"
+}
