@@ -31,6 +31,12 @@ output "aws_iam_system_user_secret_access_key" {
 
 ## HCP
 
+output "hcp_vault_cluster_vault_cluster_id" {
+  # value     = hcp_vault_cluster.vault[0]
+  value     = hcp_vault_cluster.vault[0].cluster_id
+  sensitive = false
+}
+
 ## Tailscale
 
 ## Terraform Cloud/Enterprise
