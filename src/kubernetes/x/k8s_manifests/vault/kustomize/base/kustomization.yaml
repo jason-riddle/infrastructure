@@ -8,6 +8,7 @@ commonLabels:
 resources:
   - ./namespace.yaml
 
+# REF: https://developer.hashicorp.com/vault/tutorials/cloud-ops/kubernetes-hcp-vault
 # REF: https://developer.hashicorp.com/vault/tutorials/kubernetes/kubernetes-external-vault
 helmCharts:
   - name: vault
