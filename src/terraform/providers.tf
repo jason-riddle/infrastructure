@@ -136,7 +136,7 @@ provider "hcp" {}
 ## Vault
 
 # data "hcp_vault_cluster" "vault" {
-#   cluster_id = hcp_vault_cluster.vault.id
+#   cluster_id = hcp_vault_cluster.vault[0].id
 # }
 
 # Set `VAULT_ADDR`
