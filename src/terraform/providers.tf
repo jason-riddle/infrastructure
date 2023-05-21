@@ -68,10 +68,10 @@ terraform {
     #   source  = "twilio/twilio"
     #   version = ">= 0.18.21"
     # }
-    # vault = {
-    #   source  = "hashicorp/vault"
-    #   version = ">= 3.15.2"
-    # }
+    vault = {
+      source  = "hashicorp/vault"
+      version = ">= 3.15.2"
+    }
   }
 }
 
@@ -147,6 +147,6 @@ data "hcp_vault_cluster" "vault" {
 
 # Set `VAULT_ADDR`
 # REF: https://registry.terraform.io/providers/hashicorp/vault/latest/docs
-# provider "vault" {
-#   address = data.hcp_vault_cluster.vault.vault_public_endpoint_url
-# }
+provider "vault" {
+  address = data.hcp_vault_cluster.vault.vault_public_endpoint_url
+}
