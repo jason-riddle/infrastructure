@@ -67,21 +67,21 @@ data "cloudflare_zone" "jasonriddle_com" {
 }
 
 # Google Site Verification
-resource "cloudflare_record" "google_site_verification" {
-  count = 1
+# resource "cloudflare_record" "google_site_verification" {
+#   count = 1
 
-  zone_id = data.cloudflare_zone.jasonriddle_com.id
-  name    = "jasonriddle.com"
-  value   = "google-site-verification=bl5rOxJb15yoC3-RP291bMktkMzrZrrKDLyFvAEXaMs"
-  comment = ""
-  type    = "TXT"
-  ttl     = 1
-  proxied = false
+#   zone_id = data.cloudflare_zone.jasonriddle_com.id
+#   name    = "jasonriddle.com"
+#   value   = "google-site-verification=bl5rOxJb15yoC3-RP291bMktkMzrZrrKDLyFvAEXaMs"
+#   comment = ""
+#   type    = "TXT"
+#   ttl     = 1
+#   proxied = false
 
-  lifecycle {
-    prevent_destroy = true
-  }
-}
+#   lifecycle {
+#     prevent_destroy = true
+#   }
+# }
 
 # jasonriddle.com
 resource "cloudflare_record" "jasonriddle_com" {
