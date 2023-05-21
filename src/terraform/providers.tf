@@ -145,6 +145,8 @@ provider "hcp" {}
 #   address = "http://127.0.0.1:8200"
 # }
 
+# Set `VAULT_ADDR`
+# REF: https://registry.terraform.io/providers/hashicorp/vault/latest/docs
 # provider "vault" {
 #   address = data.hcp_vault_cluster.vault.vault_public_endpoint_url
 # }
