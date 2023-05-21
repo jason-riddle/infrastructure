@@ -68,6 +68,8 @@ data "cloudflare_zone" "jasonriddle_com" {
 
 # Google Site Verification
 resource "cloudflare_record" "google_site_verification" {
+  count = 1
+
   zone_id = data.cloudflare_zone.jasonriddle_com.id
   name    = "jasonriddle.com"
   value   = "google-site-verification=bl5rOxJb15yoC3-RP291bMktkMzrZrrKDLyFvAEXaMs"
@@ -83,6 +85,8 @@ resource "cloudflare_record" "google_site_verification" {
 
 # jasonriddle.com
 resource "cloudflare_record" "jasonriddle_com" {
+  count = 1
+
   zone_id = data.cloudflare_zone.jasonriddle_com.id
   name    = "jasonriddle.com"
   value   = "185.212.71.169"
@@ -98,6 +102,8 @@ resource "cloudflare_record" "jasonriddle_com" {
 
 # newsletter.jasonriddle.com
 resource "cloudflare_record" "newsletter_jasonriddle_com" {
+  count = 1
+
   zone_id = data.cloudflare_zone.jasonriddle_com.id
   name    = "newsletter"
   value   = "target.substack-custom-domains.com"
@@ -113,6 +119,8 @@ resource "cloudflare_record" "newsletter_jasonriddle_com" {
 
 # www.jasonriddle.com
 resource "cloudflare_record" "www_jasonriddle_com" {
+  count = 1
+
   zone_id = data.cloudflare_zone.jasonriddle_com.id
   name    = "www"
   value   = "185.212.71.169"
@@ -129,6 +137,8 @@ resource "cloudflare_record" "www_jasonriddle_com" {
 # Fastmail
 # Allows you to receive email at standard addresses, e.g. user@jasonriddle.com
 resource "cloudflare_record" "jasonriddle_com_10_in1-smtp_messagingengine_com" {
+  count = 1
+
   zone_id  = data.cloudflare_zone.jasonriddle_com.id
   name     = "jasonriddle.com"
   value    = "in1-smtp.messagingengine.com"
@@ -146,6 +156,8 @@ resource "cloudflare_record" "jasonriddle_com_10_in1-smtp_messagingengine_com" {
 # Fastmail
 # Allows you to receive email at standard addresses, e.g. user@jasonriddle.com
 resource "cloudflare_record" "jasonriddle_com_10_in2-smtp_messagingengine_com" {
+  count = 1
+
   zone_id  = data.cloudflare_zone.jasonriddle_com.id
   name     = "jasonriddle.com"
   value    = "in2-smtp.messagingengine.com"
@@ -163,6 +175,8 @@ resource "cloudflare_record" "jasonriddle_com_10_in2-smtp_messagingengine_com" {
 # Fastmail
 # Allows you to receive email at subdomain addresses, e.g. foo@user.jasonriddle.com
 resource "cloudflare_record" "wildcard_jasonriddle_com_10_in1-smtp_messagingengine_com" {
+  count = 1
+
   zone_id  = data.cloudflare_zone.jasonriddle_com.id
   name     = "*"
   value    = "in1-smtp.messagingengine.com"
@@ -180,6 +194,8 @@ resource "cloudflare_record" "wildcard_jasonriddle_com_10_in1-smtp_messagingengi
 # Fastmail
 # Allows you to receive email at subdomain addresses, e.g. foo@user.jasonriddle.com
 resource "cloudflare_record" "wildcard_jasonriddle_com_20_in1-smtp_messagingengine_com" {
+  count = 1
+
   zone_id  = data.cloudflare_zone.jasonriddle_com.id
   name     = "*"
   value    = "in2-smtp.messagingengine.com"
@@ -201,6 +217,8 @@ data "cloudflare_zone" "jrapps_org" {
 
 # nextcloud.jrapps.org
 resource "cloudflare_record" "jrapps_org_nx15310_your_storageshare_de" {
+  count = 1
+
   zone_id = data.cloudflare_zone.jrapps_org.id
   name    = "nextcloud"
   value   = "nx15310.your-storageshare.de"
