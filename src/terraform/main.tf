@@ -218,27 +218,27 @@ resource "cloudflare_record" "jrapps_org_nx15310_your_storageshare_de" {
 
 ## GitHub
 
-# resource "github_repository" "example" {
-#   count = 0
+data "github_repository" "infrastructure" {
+  full_name = "jason-riddle/infrastructure"
+}
 
-#   name               = "example"
-#   archive_on_destroy = false
+resource "github_branch_protection" "infrastructure" {
+  count = 1
 
-#   lifecycle {
-#     prevent_destroy = true
-#   }
-# }
+  repository_id = data.github_repository.infrastructure.node_id
 
-# resource "github_branch_protection" "example" {
-#   count = 0
+  pattern                 = "main"
+  allows_deletions        = false
+  required_linear_history = true
 
-#   repository_id = github_repository.example.*.node_id
-#   pattern       = "main"
+  required_status_checks {
+    strict = true
+  }
 
-#   lifecycle {
-#     prevent_destroy = true
-#   }
-# }
+  lifecycle {
+    prevent_destroy = true
+  }
+}
 
 ## HCP
 
