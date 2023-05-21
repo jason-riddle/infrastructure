@@ -22,7 +22,7 @@ module "aws_iam_user_jason" {
   context = module.label.context
 
   login_profile_enabled = false
-  user_name             = "jason"
+  user_name             = "aws-iam-user-jason"
   pgp_key               = ""
 }
 
