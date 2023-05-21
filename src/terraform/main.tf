@@ -12,19 +12,19 @@ module "label" {
 
 ## AWS
 
-# module "aws_iam_user_jason" {
-#   source  = "cloudposse/iam-user/aws"
-#   version = "0.8.4"
-#   enabled = false
+module "aws_iam_user_jason" {
+  source  = "cloudposse/iam-user/aws"
+  version = "0.8.4"
+  enabled = true
 
-#   name = "aws-iam-user-jason"
-#   # Copy all other fields from the base label
-#   context = module.label.context
+  name = "aws-iam-user-jason"
+  # Copy all other fields from the base label
+  context = module.label.context
 
-#   login_profile_enabled = false
-#   user_name             = "jason"
-#   pgp_key               = ""
-# }
+  login_profile_enabled = false
+  user_name             = "jason"
+  pgp_key               = ""
+}
 
 # module "aws_iam_system_user" {
 #   source  = "cloudposse/iam-system-user/aws"
