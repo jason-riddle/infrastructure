@@ -210,6 +210,28 @@ resource "cloudflare_record" "wildcard_jasonriddle_com_20_in1-smtp_messagingengi
   }
 }
 
+# jasonriddle.com
+module "jasonriddle_com" {
+  source  = "cloudposse/zone/cloudflare"
+  version = "0.5.0"
+  enabled = true
+
+  account_id   = "7880ee87feea1839fb5a815cc479b080"
+  zone         = "jasonriddle.com"
+  zone_enabled = false
+  records      = [
+    {
+      name    = "jasonriddle.com"
+      value   = "google-site-verification=bl5rOxJb15yoC3-RP291bMktkMzrZrrKDLyFvAEXaMs"
+      type    = "TXT"
+      ttl     = 1
+      proxied = false
+    }
+  ]
+
+  context = module.label.context
+}
+
 # jrapps.org
 # data "cloudflare_zone" "jrapps_org" {
 #   name = "jrapps.org"
