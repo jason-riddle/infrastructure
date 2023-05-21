@@ -273,18 +273,18 @@ resource "hcp_hvn" "hvn" {
   }
 }
 
-# resource "hcp_vault_cluster" "vault" {
-#   count = 0
+resource "hcp_vault_cluster" "vault" {
+  count = 1
 
-#   cluster_id      = "jasons-vault-cluster"
-#   hvn_id          = hcp_hvn.hvn.*.hvn_id
-#   public_endpoint = true
-#   tier            = "dev"
+  cluster_id      = "jasons-vault-cluster"
+  hvn_id          = hcp_hvn.hvn.*.hvn_id
+  public_endpoint = true
+  tier            = "dev"
 
-#   lifecycle {
-#     prevent_destroy = true
-#   }
-# }
+  lifecycle {
+    prevent_destroy = true
+  }
+}
 
 ## Tailscale
 
