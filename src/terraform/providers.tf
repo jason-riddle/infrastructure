@@ -135,6 +135,10 @@ provider "hcp" {}
 
 ## Vault
 
+# data "hcp_vault_cluster" "vault" {
+#   cluster_id = hcp_vault_cluster.vault.id
+# }
+
 # Set `VAULT_ADDR`
 # REF: https://registry.terraform.io/providers/hashicorp/vault/latest/docs
 # provider "vault" {
