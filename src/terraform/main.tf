@@ -26,12 +26,12 @@ module "label" {
 #   pgp_key               = ""
 # }
 
-# module "aws_iam_system_user_terraform_cloud" {
+# module "aws_iam_system_user" {
 #   source  = "cloudposse/iam-system-user/aws"
 #   version = "1.1.0"
-#   enabled = false
+#   enabled = true
 
-#   name = "aws-iam-system-user-terraform-cloud"
+#   name = "aws-iam-system-user"
 #   # Copy all other fields from the base label
 #   context = module.label.context
 
