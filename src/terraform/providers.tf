@@ -68,10 +68,10 @@ terraform {
     #   source  = "twilio/twilio"
     #   version = ">= 0.18.21"
     # }
-    # vault = {
-    #   source  = "hashicorp/vault"
-    #   version = ">= 3.15.2"
-    # }
+    vault = {
+      source  = "hashicorp/vault"
+      version = ">= 3.15.2"
+    }
   }
 }
 
@@ -134,3 +134,7 @@ provider "hcp" {}
 ## Twilio
 
 ## Vault
+
+# Set `VAULT_ADDR`
+# REF: https://registry.terraform.io/providers/hashicorp/vault/latest/docs
+provider "vault" {}
