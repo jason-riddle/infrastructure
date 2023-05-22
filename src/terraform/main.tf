@@ -388,18 +388,18 @@ resource "github_branch_protection" "infrastructure" {
 
 ## HCP
 
-resource "hcp_hvn" "hvn" {
-  count = 1
+# resource "hcp_hvn" "hvn" {
+#   count = 1
 
-  hvn_id         = "hvn-aws-us-west-2"
-  cloud_provider = "aws"
-  region         = "us-west-2"
-  cidr_block     = "172.25.16.0/20"
+#   hvn_id         = "hvn-aws-us-west-2"
+#   cloud_provider = "aws"
+#   region         = "us-west-2"
+#   cidr_block     = "172.25.16.0/20"
 
-  lifecycle {
-    prevent_destroy = true
-  }
-}
+#   lifecycle {
+#     prevent_destroy = true
+#   }
+# }
 
 # resource "hcp_vault_cluster" "vault" {
 #   count = 1
