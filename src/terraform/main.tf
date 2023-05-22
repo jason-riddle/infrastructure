@@ -270,26 +270,26 @@ module "cloudflare_jasonriddle_com" {
     },
     # Fastmail
     # Allows you to receive email at standard addresses, e.g. user@jasonriddle.com
-    {
-      name     = "jasonriddle.com"
-      value    = "in2-smtp.messagingengine.com"
-      type     = "MX"
-      priority = 20
-      ttl      = 1
-      proxied  = false
-    },
+    # {
+    #   name     = "jasonriddle.com"
+    #   value    = "in2-smtp.messagingengine.com"
+    #   type     = "MX"
+    #   priority = 20
+    #   ttl      = 1
+    #   proxied  = false
+    # },
     # TODO: Not able to add these recods due to duplicate error key
     # SEE: https://github.com/jason-riddle/infrastructure/actions/runs/5042180187/jobs/9042553889#step:10:56
     # Fastmail
     # Allows you to receive email at subdomain addresses, e.g. foo@user.jasonriddle.com
-    # {
-    #   name     = "*"
-    #   value    = "in1-smtp.messagingengine.com"
-    #   type     = "MX"
-    #   priority = 10
-    #   ttl      = 1
-    #   proxied  = false
-    # },
+    {
+      name     = "*"
+      value    = "in1-smtp.messagingengine.com"
+      type     = "MX"
+      priority = 10
+      ttl      = 1
+      proxied  = false
+    },
     # Fastmail
     # Allows you to receive email at subdomain addresses, e.g. foo@user.jasonriddle.com
     # {
