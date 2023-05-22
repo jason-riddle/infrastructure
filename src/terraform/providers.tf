@@ -135,9 +135,9 @@ provider "hcp" {}
 
 ## Vault
 
-data "hcp_vault_cluster" "vault" {
-  cluster_id = hcp_vault_cluster.vault[0].cluster_id
-}
+# data "hcp_vault_cluster" "vault" {
+#   cluster_id = hcp_vault_cluster.vault[0].cluster_id
+# }
 
 # Set `VAULT_ADDR`
 # REF: https://registry.terraform.io/providers/hashicorp/vault/latest/docs
@@ -147,7 +147,7 @@ data "hcp_vault_cluster" "vault" {
 
 # Set `VAULT_ADDR` and `VAULT_TOKEN`
 # REF: https://registry.terraform.io/providers/hashicorp/vault/latest/docs
-provider "vault" {
-  address = data.hcp_vault_cluster.vault.vault_public_endpoint_url
-  token   = hcp_vault_cluster_admin_token.cluster_token[0].token
-}
+# provider "vault" {
+#   address = data.hcp_vault_cluster.vault.vault_public_endpoint_url
+#   token   = hcp_vault_cluster_admin_token.cluster_token[0].token
+# }

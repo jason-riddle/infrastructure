@@ -336,24 +336,24 @@ resource "hcp_hvn" "hvn" {
   }
 }
 
-resource "hcp_vault_cluster" "vault" {
-  count = 1
+# resource "hcp_vault_cluster" "vault" {
+#   count = 1
 
-  cluster_id      = "jasons-vault-cluster"
-  hvn_id          = hcp_hvn.hvn[0].hvn_id
-  public_endpoint = true
-  tier            = "dev"
+#   cluster_id      = "jasons-vault-cluster"
+#   hvn_id          = hcp_hvn.hvn[0].hvn_id
+#   public_endpoint = true
+#   tier            = "dev"
 
-  lifecycle {
-    prevent_destroy = true
-  }
-}
+#   lifecycle {
+#     prevent_destroy = true
+#   }
+# }
 
-resource "hcp_vault_cluster_admin_token" "cluster_token" {
-  count = 1
+# resource "hcp_vault_cluster_admin_token" "cluster_token" {
+#   count = 1
 
-  cluster_id = hcp_vault_cluster.vault[0].cluster_id
-}
+#   cluster_id = hcp_vault_cluster.vault[0].cluster_id
+# }
 
 ## Tailscale
 
@@ -363,6 +363,6 @@ resource "hcp_vault_cluster_admin_token" "cluster_token" {
 
 ## Vault
 
-resource "vault_namespace" "example" {
-  path = "example"
-}
+# resource "vault_namespace" "example" {
+#   path = "example"
+# }
