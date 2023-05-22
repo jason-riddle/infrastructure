@@ -31,8 +31,6 @@ module "aws_iam_user_jason" {
   enabled = true
 
   name = "aws-iam-user-jason"
-  # Copy all other fields from the base label
-  context = module.label.context
 
   login_profile_enabled = false
   user_name             = "aws-iam-user-jason"
@@ -42,6 +40,8 @@ module "aws_iam_user_jason" {
   password_reset_required = true
 
   groups = []
+
+  context = module.label.context
 }
 
 module "aws_iam_system_user" {
@@ -50,11 +50,11 @@ module "aws_iam_system_user" {
   enabled = true
 
   name = "aws-iam-system-user"
-  # Copy all other fields from the base label
-  context = module.label.context
 
   ssm_enabled                   = false
   ssm_ses_smtp_password_enabled = false
+
+  context = module.label.context
 }
 
 ## Cloudflare
