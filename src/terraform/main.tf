@@ -272,29 +272,67 @@ module "jasonriddle_com" {
       ttl      = 1
       proxied  = false
     },
+    # TODO: Not able to add these recods due to duplicate error key
+    # SEE: https://github.com/jason-riddle/infrastructure/actions/runs/5042180187/jobs/9042553889#step:10:56
     # Fastmail
     # Allows you to receive email at subdomain addresses, e.g. foo@user.jasonriddle.com
-    {
-      name     = "*"
-      value    = "in1-smtp.messagingengine.com"
-      type     = "MX"
-      priority = 10
-      ttl      = 1
-      proxied  = false
-    },
+    # {
+    #   name     = "*"
+    #   value    = "in1-smtp.messagingengine.com"
+    #   type     = "MX"
+    #   priority = 10
+    #   ttl      = 1
+    #   proxied  = false
+    # },
     # Fastmail
     # Allows you to receive email at subdomain addresses, e.g. foo@user.jasonriddle.com
-    {
-      name     = "*"
-      value    = "in2-smtp.messagingengine.com"
-      type     = "MX"
-      priority = 20
-      ttl      = 1
-      proxied  = false
-    }
+    # {
+    #   name     = "*"
+    #   value    = "in2-smtp.messagingengine.com"
+    #   type     = "MX"
+    #   priority = 20
+    #   ttl      = 1
+    #   proxied  = false
+    # }
   ]
 
   context = module.label.context
+}
+
+# Fastmail
+# Allows you to receive email at standard addresses, e.g. user@jasonriddle.com
+resource "cloudflare_record" "jasonriddle_com_10_in2-smtp_messagingengine_com" {
+  count = 1
+
+  zone_id  = data.cloudflare_zone.jasonriddle_com.id
+  name     = "jasonriddle.com"
+  value    = "in2-smtp.messagingengine.com"
+  type     = "MX"
+  priority = 20
+  ttl      = 1
+  proxied  = false
+
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
+# Fastmail
+# Allows you to receive email at subdomain addresses, e.g. foo@user.jasonriddle.com
+resource "cloudflare_record" "wildcard_jasonriddle_com_20_in1-smtp_messagingengine_com" {
+  count = 1
+
+  zone_id  = data.cloudflare_zone.jasonriddle_com.id
+  name     = "*"
+  value    = "in2-smtp.messagingengine.com"
+  type     = "MX"
+  priority = 20
+  ttl      = 1
+  proxied  = false
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 # jrapps.org
