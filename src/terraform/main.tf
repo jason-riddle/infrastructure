@@ -101,21 +101,21 @@ data "cloudflare_zone" "jasonriddle_com" {
 # }
 
 # newsletter.jasonriddle.com
-resource "cloudflare_record" "newsletter_jasonriddle_com" {
-  count = 1
+# resource "cloudflare_record" "newsletter_jasonriddle_com" {
+#   count = 1
 
-  zone_id = data.cloudflare_zone.jasonriddle_com.id
-  name    = "newsletter"
-  value   = "target.substack-custom-domains.com"
-  comment = "Newsletter"
-  type    = "CNAME"
-  ttl     = 1
-  proxied = false
+#   zone_id = data.cloudflare_zone.jasonriddle_com.id
+#   name    = "newsletter"
+#   value   = "target.substack-custom-domains.com"
+#   comment = "Newsletter"
+#   type    = "CNAME"
+#   ttl     = 1
+#   proxied = false
 
-  lifecycle {
-    prevent_destroy = true
-  }
-}
+#   lifecycle {
+#     prevent_destroy = true
+#   }
+# }
 
 # www.jasonriddle.com
 resource "cloudflare_record" "www_jasonriddle_com" {
@@ -233,6 +233,13 @@ module "jasonriddle_com" {
       type    = "A"
       ttl     = 1
       proxied = true
+    },
+    {
+      name    = "newsletter"
+      value   = "target.substack-custom-domains.com"
+      type    = "CNAME"
+      ttl     = 1
+      proxied = false
     }
   ]
 
