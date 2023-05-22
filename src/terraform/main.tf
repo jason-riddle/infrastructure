@@ -118,21 +118,21 @@ data "cloudflare_zone" "jasonriddle_com" {
 # }
 
 # www.jasonriddle.com
-resource "cloudflare_record" "www_jasonriddle_com" {
-  count = 1
+# resource "cloudflare_record" "www_jasonriddle_com" {
+#   count = 1
 
-  zone_id = data.cloudflare_zone.jasonriddle_com.id
-  name    = "www"
-  value   = "185.212.71.169"
-  comment = "WWW Subdomain - WordPress"
-  type    = "A"
-  ttl     = 1
-  proxied = true
+#   zone_id = data.cloudflare_zone.jasonriddle_com.id
+#   name    = "www"
+#   value   = "185.212.71.169"
+#   comment = "WWW Subdomain - WordPress"
+#   type    = "A"
+#   ttl     = 1
+#   proxied = true
 
-  lifecycle {
-    prevent_destroy = true
-  }
-}
+#   lifecycle {
+#     prevent_destroy = true
+#   }
+# }
 
 # Fastmail
 # Allows you to receive email at standard addresses, e.g. user@jasonriddle.com
@@ -239,7 +239,14 @@ module "jasonriddle_com" {
       value   = "target.substack-custom-domains.com"
       type    = "CNAME"
       ttl     = 1
-      proxied = false
+      proxied = true
+    },
+    {
+      name    = "www"
+      value   = "185.212.71.169"
+      type    = "A"
+      ttl     = 1
+      proxied = true
     }
   ]
 
