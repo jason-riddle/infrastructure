@@ -62,9 +62,9 @@ module "aws_iam_system_user" {
 # DOCS: https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs
 
 # jasonriddle.com
-data "cloudflare_zone" "jasonriddle_com" {
-  name = "jasonriddle.com"
-}
+# data "cloudflare_zone" "jasonriddle_com" {
+#   name = "jasonriddle.com"
+# }
 
 # Google Site Verification
 # resource "cloudflare_record" "google_site_verification" {
