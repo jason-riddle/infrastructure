@@ -219,7 +219,7 @@ module "jasonriddle_com" {
   account_id   = "7880ee87feea1839fb5a815cc479b080"
   zone         = "jasonriddle.com"
   zone_enabled = false
-  records      = [
+  records = [
     {
       name    = "jasonriddle.com"
       value   = "google-site-verification=bl5rOxJb15yoC3-RP291bMktkMzrZrrKDLyFvAEXaMs"
@@ -263,8 +263,8 @@ module "jrapps_org" {
   account_id   = "7880ee87feea1839fb5a815cc479b080"
   zone         = "jrapps.org"
   zone_enabled = false
-  records      = [
-  # nextcloud.jrapps.org
+  records = [
+    # nextcloud.jrapps.org
     {
       name    = "nextcloud"
       value   = "nx15310.your-storageshare.de"
