@@ -220,6 +220,7 @@ module "jasonriddle_com" {
   zone         = "jasonriddle.com"
   zone_enabled = false
   records = [
+    # Google Site Verification
     {
       name    = "jasonriddle.com"
       value   = "google-site-verification=bl5rOxJb15yoC3-RP291bMktkMzrZrrKDLyFvAEXaMs"
@@ -227,6 +228,7 @@ module "jasonriddle_com" {
       ttl     = 1
       proxied = false
     },
+    # jasonriddle.com
     {
       name    = "jasonriddle.com"
       value   = "185.212.71.169"
@@ -234,6 +236,7 @@ module "jasonriddle_com" {
       ttl     = 1
       proxied = true
     },
+    # newsletter.jasonriddle.com
     {
       name    = "newsletter"
       value   = "target.substack-custom-domains.com"
@@ -241,6 +244,7 @@ module "jasonriddle_com" {
       ttl     = 1
       proxied = true
     },
+    # www.jasonriddle.com
     {
       name    = "www"
       value   = "185.212.71.169"
@@ -248,6 +252,8 @@ module "jasonriddle_com" {
       ttl     = 1
       proxied = true
     },
+    # Fastmail
+    # Allows you to receive email at standard addresses, e.g. user@jasonriddle.com
     {
       name     = "jasonriddle.com"
       value    = "in1-smtp.messagingengine.com"
@@ -256,6 +262,8 @@ module "jasonriddle_com" {
       ttl      = 1
       proxied  = false
     },
+    # Fastmail
+    # Allows you to receive email at standard addresses, e.g. user@jasonriddle.com
     {
       name     = "jasonriddle.com"
       value    = "in2-smtp.messagingengine.com"
@@ -264,6 +272,8 @@ module "jasonriddle_com" {
       ttl      = 1
       proxied  = false
     },
+    # Fastmail
+    # Allows you to receive email at subdomain addresses, e.g. foo@user.jasonriddle.com
     {
       name     = "*"
       value    = "in1-smtp.messagingengine.com"
@@ -272,6 +282,8 @@ module "jasonriddle_com" {
       ttl      = 1
       proxied  = false
     },
+    # Fastmail
+    # Allows you to receive email at subdomain addresses, e.g. foo@user.jasonriddle.com
     {
       name     = "*"
       value    = "in2-smtp.messagingengine.com"
