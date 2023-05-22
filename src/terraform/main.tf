@@ -84,21 +84,21 @@ data "cloudflare_zone" "jasonriddle_com" {
 # }
 
 # jasonriddle.com
-resource "cloudflare_record" "jasonriddle_com" {
-  count = 1
+# resource "cloudflare_record" "jasonriddle_com" {
+#   count = 1
 
-  zone_id = data.cloudflare_zone.jasonriddle_com.id
-  name    = "jasonriddle.com"
-  value   = "185.212.71.169"
-  comment = "Root Domain - WordPress"
-  type    = "A"
-  ttl     = 1
-  proxied = true
+#   zone_id = data.cloudflare_zone.jasonriddle_com.id
+#   name    = "jasonriddle.com"
+#   value   = "185.212.71.169"
+#   comment = "Root Domain - WordPress"
+#   type    = "A"
+#   ttl     = 1
+#   proxied = true
 
-  lifecycle {
-    prevent_destroy = true
-  }
-}
+#   lifecycle {
+#     prevent_destroy = true
+#   }
+# }
 
 # newsletter.jasonriddle.com
 resource "cloudflare_record" "newsletter_jasonriddle_com" {
@@ -226,6 +226,13 @@ module "jasonriddle_com" {
       type    = "TXT"
       ttl     = 1
       proxied = false
+    },
+    {
+      name    = "jasonriddle.com"
+      value   = "185.212.71.169"
+      type    = "A"
+      ttl     = 1
+      proxied = true
     }
   ]
 
