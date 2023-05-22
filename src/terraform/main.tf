@@ -136,79 +136,79 @@ data "cloudflare_zone" "jasonriddle_com" {
 
 # Fastmail
 # Allows you to receive email at standard addresses, e.g. user@jasonriddle.com
-resource "cloudflare_record" "jasonriddle_com_10_in1-smtp_messagingengine_com" {
-  count = 1
+# resource "cloudflare_record" "jasonriddle_com_10_in1-smtp_messagingengine_com" {
+#   count = 1
 
-  zone_id  = data.cloudflare_zone.jasonriddle_com.id
-  name     = "jasonriddle.com"
-  value    = "in1-smtp.messagingengine.com"
-  comment  = "Fastmail - Allows you to receive email at standard addresses"
-  type     = "MX"
-  priority = 10
-  ttl      = 1
-  proxied  = false
+#   zone_id  = data.cloudflare_zone.jasonriddle_com.id
+#   name     = "jasonriddle.com"
+#   value    = "in1-smtp.messagingengine.com"
+#   comment  = "Fastmail - Allows you to receive email at standard addresses"
+#   type     = "MX"
+#   priority = 10
+#   ttl      = 1
+#   proxied  = false
 
-  lifecycle {
-    prevent_destroy = true
-  }
-}
+#   lifecycle {
+#     prevent_destroy = true
+#   }
+# }
 
 # Fastmail
 # Allows you to receive email at standard addresses, e.g. user@jasonriddle.com
-resource "cloudflare_record" "jasonriddle_com_10_in2-smtp_messagingengine_com" {
-  count = 1
+# resource "cloudflare_record" "jasonriddle_com_10_in2-smtp_messagingengine_com" {
+#   count = 1
 
-  zone_id  = data.cloudflare_zone.jasonriddle_com.id
-  name     = "jasonriddle.com"
-  value    = "in2-smtp.messagingengine.com"
-  comment  = "Fastmail - Allows you to receive email at standard addresses"
-  type     = "MX"
-  priority = 20
-  ttl      = 1
-  proxied  = false
+#   zone_id  = data.cloudflare_zone.jasonriddle_com.id
+#   name     = "jasonriddle.com"
+#   value    = "in2-smtp.messagingengine.com"
+#   comment  = "Fastmail - Allows you to receive email at standard addresses"
+#   type     = "MX"
+#   priority = 20
+#   ttl      = 1
+#   proxied  = false
 
-  lifecycle {
-    prevent_destroy = true
-  }
-}
-
-# Fastmail
-# Allows you to receive email at subdomain addresses, e.g. foo@user.jasonriddle.com
-resource "cloudflare_record" "wildcard_jasonriddle_com_10_in1-smtp_messagingengine_com" {
-  count = 1
-
-  zone_id  = data.cloudflare_zone.jasonriddle_com.id
-  name     = "*"
-  value    = "in1-smtp.messagingengine.com"
-  comment  = "Allows you to receive email at subdomain addresses"
-  type     = "MX"
-  priority = 10
-  ttl      = 1
-  proxied  = false
-
-  lifecycle {
-    prevent_destroy = true
-  }
-}
+#   lifecycle {
+#     prevent_destroy = true
+#   }
+# }
 
 # Fastmail
 # Allows you to receive email at subdomain addresses, e.g. foo@user.jasonriddle.com
-resource "cloudflare_record" "wildcard_jasonriddle_com_20_in1-smtp_messagingengine_com" {
-  count = 1
+# resource "cloudflare_record" "wildcard_jasonriddle_com_10_in1-smtp_messagingengine_com" {
+#   count = 1
 
-  zone_id  = data.cloudflare_zone.jasonriddle_com.id
-  name     = "*"
-  value    = "in2-smtp.messagingengine.com"
-  comment  = "Allows you to receive email at subdomain addresses"
-  type     = "MX"
-  priority = 20
-  ttl      = 1
-  proxied  = false
+#   zone_id  = data.cloudflare_zone.jasonriddle_com.id
+#   name     = "*"
+#   value    = "in1-smtp.messagingengine.com"
+#   comment  = "Allows you to receive email at subdomain addresses"
+#   type     = "MX"
+#   priority = 10
+#   ttl      = 1
+#   proxied  = false
 
-  lifecycle {
-    prevent_destroy = true
-  }
-}
+#   lifecycle {
+#     prevent_destroy = true
+#   }
+# }
+
+# Fastmail
+# Allows you to receive email at subdomain addresses, e.g. foo@user.jasonriddle.com
+# resource "cloudflare_record" "wildcard_jasonriddle_com_20_in1-smtp_messagingengine_com" {
+#   count = 1
+
+#   zone_id  = data.cloudflare_zone.jasonriddle_com.id
+#   name     = "*"
+#   value    = "in2-smtp.messagingengine.com"
+#   comment  = "Allows you to receive email at subdomain addresses"
+#   type     = "MX"
+#   priority = 20
+#   ttl      = 1
+#   proxied  = false
+
+#   lifecycle {
+#     prevent_destroy = true
+#   }
+# }
 
 # jasonriddle.com
 module "jasonriddle_com" {
@@ -247,6 +247,38 @@ module "jasonriddle_com" {
       type    = "A"
       ttl     = 1
       proxied = true
+    },
+    {
+      name     = "jasonriddle.com"
+      value    = "in1-smtp.messagingengine.com"
+      type     = "MX"
+      priority = 10
+      ttl      = 1
+      proxied  = false
+    },
+    {
+      name     = "jasonriddle.com"
+      value    = "in2-smtp.messagingengine.com"
+      type     = "MX"
+      priority = 20
+      ttl      = 1
+      proxied  = false
+    },
+    {
+      name     = "*"
+      value    = "in1-smtp.messagingengine.com"
+      type     = "MX"
+      priority = 10
+      ttl      = 1
+      proxied  = false
+    },
+    {
+      name     = "*"
+      value    = "in2-smtp.messagingengine.com"
+      type     = "MX"
+      priority = 20
+      ttl      = 1
+      proxied  = false
     }
   ]
 
