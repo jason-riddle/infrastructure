@@ -57,23 +57,23 @@ module "aws_iam_system_user" {
   context = module.label.context
 }
 
-module "vpc" {
-  source  = "cloudposse/vpc/aws"
-  version = "2.1.0"
-  enabled = false
+# module "vpc" {
+#   source  = "cloudposse/vpc/aws"
+#   version = "2.1.0"
+#   enabled = false
 
-  context = module.label.context
-}
+#   context = module.label.context
+# }
 
-module "aws_eks_cluster" {
-  source  = "cloudposse/eks-cluster/aws"
-  version = "2.8.0"
-  enabled = false
+# module "aws_eks_cluster" {
+#   source  = "cloudposse/eks-cluster/aws"
+#   version = "2.8.0"
+#   enabled = false
 
-  vpc_id = module.vpc.vpc_id
+#   vpc_id = module.vpc.vpc_id
 
-  context = module.label.context
-}
+#   context = module.label.context
+# }
 
 ## Cloudflare
 
