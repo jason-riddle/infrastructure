@@ -25,12 +25,6 @@ module "label" {
 #   name = "admin"
 # }
 
-# module "aws_eks_cluster" {
-#   source  = "cloudposse/eks-cluster/aws"
-#   version = "2.8.0"
-#   enabled = false
-# }
-
 module "aws_iam_user_jason" {
   source  = "cloudposse/iam-user/aws"
   version = "0.8.4"
@@ -62,6 +56,12 @@ module "aws_iam_system_user" {
 
   context = module.label.context
 }
+
+# module "aws_eks_cluster" {
+#   source  = "cloudposse/eks-cluster/aws"
+#   version = "2.8.0"
+#   enabled = false
+# }
 
 ## Cloudflare
 
