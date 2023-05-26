@@ -32,59 +32,54 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
-      
-      # TODO: DEBUG
-      - name: Run ls -al
+
+      - name: Install test dependencies.
+        run: pip3 install yamllint
+
+      - name: Lint code.
         run: |
-          ls -al
+          yamllint .
 
-      # - name: Install test dependencies.
-      #   run: pip3 install yamllint
+  molecule:
+    name: Molecule
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - distro: debian10 # Buster
+            playbook: converge.yml
+          - distro: ubuntu1804 # Bionic Beaver
+            playbook: converge.yml
+          # TODO: Failed to get D-Bus connection: No such file or directory
+          # - distro: centos7
+          #   playbook: converge.yml
+          - distro: centos8
+            playbook: converge.yml
 
-      # - name: Lint code.
-      #   run: |
-      #     yamllint .
+    steps:
+      - name: Check out the codebase.
+        uses: actions/checkout@v3
+        with:
+          path: 'jason_riddle.k3s'
 
-  # molecule:
-  #   name: Molecule
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       include:
-  #         - distro: debian10 # Buster
-  #           playbook: converge.yml
-  #         - distro: ubuntu1804 # Bionic Beaver
-  #           playbook: converge.yml
-  #         # TODO: Failed to get D-Bus connection: No such file or directory
-  #         # - distro: centos7
-  #         #   playbook: converge.yml
-  #         - distro: centos8
-  #           playbook: converge.yml
+      - name: Set up Python 3.
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-  #   steps:
-  #     - name: Check out the codebase.
-  #       uses: actions/checkout@v3
-  #       with:
-  #         path: 'jason_riddle.k3s'
+      - name: Install test dependencies.
+        run: pip3 install ansible molecule-plugins[docker] docker
 
-  #     - name: Set up Python 3.
-  #       uses: actions/setup-python@v4
-  #       with:
-  #         python-version: '3.x'
+      - name: Set HOSTNAME.
+        run: echo "HOSTNAME=$(cat /etc/hostname)" >> $GITHUB_ENV
 
-  #     - name: Install test dependencies.
-  #       run: pip3 install ansible molecule-plugins[docker] docker
-
-  #     - name: Set HOSTNAME.
-  #       run: echo "HOSTNAME=$(cat /etc/hostname)" >> $GITHUB_ENV
-
-  #     - name: Run Molecule default test.
-  #       run: |
-  #         molecule test --scenario-name default
-  #       env:
-  #         PY_COLORS: '1'
-  #         ANSIBLE_FORCE_COLOR: '1'
-  #         ANSIBLE_LOAD_CALLBACK_PLUGINS: true
-  #         ANSIBLE_STDOUT_CALLBACK: 'yaml'
-  #         MOLECULE_DISTRO: ${{ matrix.distro }}
-  #         MOLECULE_PLAYBOOK: ${{ matrix.playbook }}
+      - name: Run Molecule default test.
+        run: |
+          molecule test --scenario-name default
+        env:
+          PY_COLORS: '1'
+          ANSIBLE_FORCE_COLOR: '1'
+          ANSIBLE_LOAD_CALLBACK_PLUGINS: true
+          ANSIBLE_STDOUT_CALLBACK: 'yaml'
+          MOLECULE_DISTRO: ${{ matrix.distro }}
+          MOLECULE_PLAYBOOK: ${{ matrix.playbook }}
