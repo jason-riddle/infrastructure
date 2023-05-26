@@ -262,6 +262,14 @@ module "cloudflare_jasonriddle_com" {
       ttl     = 1
       proxied = true
     },
+    # store.jasonriddle.com
+    {
+      name    = "store"
+      value   = "domains.gumroad.com"
+      type    = "CNAME"
+      ttl     = 1
+      proxied = true
+    },
     # www.jasonriddle.com
     {
       name    = "www"
