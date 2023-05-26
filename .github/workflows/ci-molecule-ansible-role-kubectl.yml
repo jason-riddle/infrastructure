@@ -1,5 +1,5 @@
 ---
-name: CI - Molecule - Ansible Role for K3s
+name: CI - Molecule - Ansible Role for kubectl
 
 on:
   push:
@@ -15,7 +15,7 @@ on:
 
 defaults:
   run:
-    working-directory: 'jason_riddle.k3s/src/ansible/x/ansible-role-k3s'
+    working-directory: 'jason_riddle.kubectl/src/ansible/x/ansible-role-kubectl'
 
 jobs:
 
@@ -26,7 +26,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v3
         with:
-          path: 'jason_riddle.k3s'
+          path: 'jason_riddle.kubectl'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v4
@@ -60,7 +60,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v3
         with:
-          path: 'jason_riddle.k3s'
+          path: 'jason_riddle.kubectl'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v4
