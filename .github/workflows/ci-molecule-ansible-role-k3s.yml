@@ -1,5 +1,5 @@
 ---
-name: CI
+name: CI - Molecule - Ansible Role for K3s
 
 on:
   push:
