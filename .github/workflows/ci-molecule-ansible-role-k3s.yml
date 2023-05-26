@@ -15,7 +15,7 @@ on:
 
 defaults:
   run:
-    working-directory: 'jason_riddle.k3s'
+    working-directory: 'jason_riddle.k3s/src/ansible/ansible-role-k3s'
 
 jobs:
 
