@@ -260,7 +260,7 @@ module "cloudflare_jasonriddle_com" {
       value   = "target.substack-custom-domains.com"
       type    = "CNAME"
       ttl     = 1
-      proxied = true
+      proxied = false
     },
     # store.jasonriddle.com
     {
@@ -268,7 +268,7 @@ module "cloudflare_jasonriddle_com" {
       value   = "domains.gumroad.com"
       type    = "CNAME"
       ttl     = 1
-      proxied = true
+      proxied = false
     },
     # www.jasonriddle.com
     {
