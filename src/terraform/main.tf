@@ -262,6 +262,14 @@ module "cloudflare_jasonriddle_com" {
       ttl     = 1
       proxied = false
     },
+    # social.jasonriddle.com
+    {
+      name    = "social"
+      value   = "vip.masto.host"
+      type    = "CNAME"
+      ttl     = 1
+      proxied = false
+    },
     # store.jasonriddle.com
     {
       name    = "store"
