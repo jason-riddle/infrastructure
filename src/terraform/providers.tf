@@ -115,7 +115,9 @@ provider "github" {}
 
 ## Google
 
+# Set `GOOGLE_CREDENTIALS`
 # REF: https://registry.terraform.io/providers/hashicorp/google/latest/docs
+# REF: https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference
 provider "google" {}
 
 ## Helm
