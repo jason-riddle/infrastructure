@@ -36,6 +36,10 @@ terraform {
       source  = "integrations/github"
       version = ">= 5.24.0"
     }
+    google = {
+      source  = "hashicorp/google"
+      version = ">= 4.66.0"
+    }
     # helm = {
     #   source  = "hashicorp/helm"
     #   version = ">= 2.9.0"
@@ -108,6 +112,11 @@ provider "cloudflare" {}
 # > Token Permissions: public_repo, read:discussion, read:org
 # > Token Settings URL: https://github.com/settings/tokens
 provider "github" {}
+
+## Google
+
+# REF: https://registry.terraform.io/providers/hashicorp/google/latest/docs
+provider "google" {}
 
 ## Helm
 
