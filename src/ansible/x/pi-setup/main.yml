@@ -3,13 +3,24 @@
   become: true
 
   vars:
+    # raspberry_pi_boot_config_options:
+    #   # Set the GPU memory split value.
+    #   - regexp: "^#?gpu_mem"
+    #     line: "gpu_mem=16"
+    #   # Enable 1200ma USB current on newer model Pis.
+    #   - regexp: "^#?max_usb_current"
+    #     line: "max_usb_current=1"
     raspberry_pi_boot_config_options:
-      # Set the GPU memory split value.
-      - regexp: "^#?gpu_mem"
-        line: "gpu_mem=16"
-      # Enable 1200ma USB current on newer model Pis.
-      - regexp: "^#?max_usb_current"
-        line: "max_usb_current=1"
+      # Set the PoE hat fan speeds.
+      # REF: https://web.archive.org/web/20230504043802/https://www.jeffgeerling.com/blog/2021/taking-control-pi-poe-hats-overly-aggressive-fan
+      - regexp: "^#?dtparam=poe_fan_temp0"
+        line: "dtparam=poe_fan_temp0=50000"
+      - regexp: "^#?dtparam=poe_fan_temp1"
+        line: "dtparam=poe_fan_temp1=60000"
+      - regexp: "^#?dtparam=poe_fan_temp2"
+        line: "dtparam=poe_fan_temp2=70000"
+      - regexp: "^#?dtparam=poe_fan_temp3"
+        line: "dtparam=poe_fan_temp3=80000"
     raspberry_pi_rc_local_options:
       # Disable HDMI on startup (for power savings).
       - regexp: "^/usr/bin/tvservice"
