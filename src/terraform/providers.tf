@@ -36,10 +36,10 @@ terraform {
       source  = "integrations/github"
       version = ">= 5.24.0"
     }
-    google = {
-      source  = "hashicorp/google"
-      version = ">= 4.66.0"
-    }
+    # google = {
+    #   source  = "hashicorp/google"
+    #   version = ">= 4.66.0"
+    # }
     # helm = {
     #   source  = "hashicorp/helm"
     #   version = ">= 2.9.0"
@@ -118,7 +118,7 @@ provider "github" {}
 # Set `GOOGLE_CREDENTIALS`
 # REF: https://registry.terraform.io/providers/hashicorp/google/latest/docs
 # REF: https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference
-provider "google" {}
+# provider "google" {}
 
 ## Helm
 
