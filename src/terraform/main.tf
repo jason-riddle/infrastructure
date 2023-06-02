@@ -88,40 +88,40 @@ locals {
   tags = { "kubernetes.io/cluster/${module.label.id}" = "shared" }
 }
 
-module "vpc" {
-  source  = "cloudposse/vpc/aws"
-  version = "2.1.0"
-  enabled = false
+# module "vpc" {
+#   source  = "cloudposse/vpc/aws"
+#   version = "2.1.0"
+#   enabled = false
 
-  tags    = local.tags
-  context = module.label.context
-}
+#   tags    = local.tags
+#   context = module.label.context
+# }
 
-module "subnets" {
-  source  = "cloudposse/dynamic-subnets/aws"
-  version = "2.3.0"
-  enabled = false
+# module "subnets" {
+#   source  = "cloudposse/dynamic-subnets/aws"
+#   version = "2.3.0"
+#   enabled = false
 
-  vpc_id = module.vpc.vpc_id
+#   vpc_id = module.vpc.vpc_id
 
-  nat_gateway_enabled  = false
-  nat_instance_enabled = false
+#   nat_gateway_enabled  = false
+#   nat_instance_enabled = false
 
-  tags    = local.tags
-  context = module.label.context
-}
+#   tags    = local.tags
+#   context = module.label.context
+# }
 
-module "eks_cluster" {
-  source  = "cloudposse/eks-cluster/aws"
-  version = "2.8.1"
-  enabled = false
+# module "eks_cluster" {
+#   source  = "cloudposse/eks-cluster/aws"
+#   version = "2.8.1"
+#   enabled = false
 
-  vpc_id = module.vpc.vpc_id
+#   vpc_id = module.vpc.vpc_id
 
-  subnet_ids = module.subnets.public_subnet_ids
+#   subnet_ids = module.subnets.public_subnet_ids
 
-  context = module.label.context
-}
+#   context = module.label.context
+# }
 
 # module "ssm_patch_manager" {
 #   source  = "cloudposse/ssm-patch-manager/aws"
