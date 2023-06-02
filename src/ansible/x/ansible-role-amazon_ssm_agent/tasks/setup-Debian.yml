@@ -1,0 +1,5 @@
+---
+- name: Ensure Amazon SSM Agent is installed (Apt).
+  apt:
+    deb: "{{ amazon_ssm_agent_deb_url }}"
+    state: present
