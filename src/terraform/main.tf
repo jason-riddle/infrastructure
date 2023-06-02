@@ -83,7 +83,7 @@ data "cloudflare_zone" "jasonriddle_com" {
 }
 
 # jasonriddle.com
-module "cloudflare_jasonriddle_com" {
+module "cloudflare_zone_jasonriddle_com" {
   source  = "cloudposse/zone/cloudflare"
   version = "0.5.0"
   enabled = true
@@ -225,7 +225,7 @@ resource "cloudflare_record" "wildcard_jasonriddle_com_20_in1-smtp_messagingengi
 }
 
 # jrapps.org
-module "cloudflare_jrapps_org" {
+module "cloudflare_zone_jrapps_org" {
   source  = "cloudposse/zone/cloudflare"
   version = "0.5.0"
   enabled = true
