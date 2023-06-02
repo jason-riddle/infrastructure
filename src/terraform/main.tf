@@ -99,7 +99,7 @@ module "vpc" {
 
 module "subnets" {
   source  = "cloudposse/dynamic-subnets/aws"
-  version = "2.1.0"
+  version = "2.3.0"
   enabled = false
 
   vpc_id = module.vpc.vpc_id
@@ -110,7 +110,6 @@ module "subnets" {
   tags    = local.tags
   context = module.label.context
 }
-
 
 module "eks_cluster" {
   source  = "cloudposse/eks-cluster/aws"
