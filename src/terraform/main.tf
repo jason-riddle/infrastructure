@@ -68,6 +68,8 @@ module "iam_role" {
   version = "0.18.0"
   enabled = false
 
+  role_description = ""
+
   context = module.label.context
 }
 
@@ -101,6 +103,8 @@ module "ssm_patch_manager" {
   source  = "cloudposse/ssm-patch-manager/aws"
   version = "0.4.0"
   enabled = false
+
+  region = "us-west-1"
 
   context = module.label.context
 }
