@@ -1,2 +1,2 @@
 ping:
-	ansible all -m ping -v --ask-pass
+	ansible all --module-name ping --ask-pass
