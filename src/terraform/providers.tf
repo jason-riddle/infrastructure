@@ -72,6 +72,10 @@ terraform {
     #   source  = "twilio/twilio"
     #   version = ">= 0.18.21"
     # }
+    vantage = {
+      source  = "vantage-sh/vantage"
+      version = "0.0.2"
+    }
     # vault = {
     #   source  = "hashicorp/vault"
     #   version = ">= 3.15.2"
@@ -143,6 +147,8 @@ provider "hcp" {}
 ## Terraform Cloud/Enterprise
 
 ## Twilio
+
+## Vantage
 
 ## Vault
 
