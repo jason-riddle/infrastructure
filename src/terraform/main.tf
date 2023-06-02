@@ -123,15 +123,15 @@ module "eks_cluster" {
   context = module.label.context
 }
 
-module "ssm_patch_manager" {
-  source  = "cloudposse/ssm-patch-manager/aws"
-  version = "0.4.0"
-  enabled = false
+# module "ssm_patch_manager" {
+#   source  = "cloudposse/ssm-patch-manager/aws"
+#   version = "0.4.0"
+#   enabled = false
 
-  region = "us-west-1"
+#   region = "us-west-1"
 
-  context = module.label.context
-}
+#   context = module.label.context
+# }
 
 ## Cloudflare
 
