@@ -249,7 +249,7 @@ module "cloudflare_zone_jrapps_org" {
 
 ## DigitalOcean
 
-# resource "digitalocean_kubernetes_cluster" "k8s" {
+# resource "digitalocean_kubernetes_cluster" "k8s_cluster" {
 #   count = 0
 
 #   name    = "jasons-k8s-cluster"
