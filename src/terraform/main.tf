@@ -55,6 +55,22 @@ module "iam_system_user" {
   context = module.label.context
 }
 
+module "iam_policy" {
+  source  = "cloudposse/iam-policy/aws"
+  version = "0.4.0"
+  enabled = false
+
+  context = module.label.context
+}
+
+module "iam_role" {
+  source  = "cloudposse/iam-role/aws"
+  version = "0.18.0"
+  enabled = false
+
+  context = module.label.context
+}
+
 # module "vpc" {
 #   source  = "cloudposse/vpc/aws"
 #   version = "2.1.0"
