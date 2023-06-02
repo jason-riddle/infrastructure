@@ -44,10 +44,10 @@ terraform {
     #   source  = "hashicorp/helm"
     #   version = ">= 2.9.0"
     # }
-    hcp = {
-      source  = "hashicorp/hcp"
-      version = ">= 0.56.0"
-    }
+    # hcp = {
+    #   source  = "hashicorp/hcp"
+    #   version = ">= 0.56.0"
+    # }
     # kubernetes = {
     #   source  = "hashicorp/kubernetes"
     #   version = ">= 2.20.0"
@@ -72,10 +72,10 @@ terraform {
     #   source  = "twilio/twilio"
     #   version = ">= 0.18.21"
     # }
-    vault = {
-      source  = "hashicorp/vault"
-      version = ">= 3.15.2"
-    }
+    # vault = {
+    #   source  = "hashicorp/vault"
+    #   version = ">= 3.15.2"
+    # }
   }
 }
 
