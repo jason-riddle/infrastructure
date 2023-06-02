@@ -13,28 +13,28 @@ module "label" {
 ## AWS
 
 # TODO: bug https://github.com/cloudposse/terraform-aws-iam-assumed-roles/issues/23
-# module "aws_iam_assumed_roles" {
+# module "iam_assumed_roles" {
 #   source  = "cloudposse/iam-assumed-roles/aws"
 #   version = "0.6.0"
 #   enabled = false
 # }
 
-# resource "aws_iam_group" "admin" {
+# resource "iam_group" "admin" {
 #   count = 0
 
 #   name = "admin"
 # }
 
-module "aws_iam_user_jason" {
+module "iam_user_jason" {
   source  = "cloudposse/iam-user/aws"
   version = "0.8.4"
   enabled = false
 
-  name   = "aws-iam-user-jason"
+  name   = "iam-user-jason"
   groups = []
 
   login_profile_enabled   = false
-  user_name               = "aws-iam-user-jason"
+  user_name               = "iam-user-jason"
   pgp_key                 = ""
   password_length         = 24
   password_reset_required = true
@@ -42,12 +42,12 @@ module "aws_iam_user_jason" {
   context = module.label.context
 }
 
-module "aws_iam_system_user" {
+module "iam_system_user" {
   source  = "cloudposse/iam-system-user/aws"
   version = "1.1.0"
   enabled = false
 
-  name = "aws-iam-system-user"
+  name = "iam-system-user"
 
   ssm_enabled                   = false
   ssm_ses_smtp_password_enabled = false
@@ -63,7 +63,7 @@ module "aws_iam_system_user" {
 #   context = module.label.context
 # }
 
-# module "aws_eks_cluster" {
+# module "eks_cluster" {
 #   source  = "cloudposse/eks-cluster/aws"
 #   version = "2.8.0"
 #   enabled = false
