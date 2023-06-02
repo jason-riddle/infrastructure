@@ -1,16 +1,16 @@
 ## AWS
 
-# output "aws_iam_user_jason_user_name" {
-#   value = module.aws_iam_user_jason.user_name
+# output "iam_user_jason_user_name" {
+#   value = module.iam_user_jason.user_name
 # }
 
-output "aws_iam_system_user_access_key_id" {
-  value     = module.aws_iam_system_user.access_key_id
+output "iam_system_user_access_key_id" {
+  value     = module.iam_system_user.access_key_id
   sensitive = true
 }
 
-output "aws_iam_system_user_secret_access_key" {
-  value     = module.aws_iam_system_user.secret_access_key
+output "iam_system_user_secret_access_key" {
+  value     = module.iam_system_user.secret_access_key
   sensitive = true
 }
 
