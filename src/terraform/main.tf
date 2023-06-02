@@ -28,7 +28,7 @@ module "label" {
 module "aws_iam_user_jason" {
   source  = "cloudposse/iam-user/aws"
   version = "0.8.4"
-  enabled = true
+  enabled = false
 
   name   = "aws-iam-user-jason"
   groups = []
@@ -45,7 +45,7 @@ module "aws_iam_user_jason" {
 module "aws_iam_system_user" {
   source  = "cloudposse/iam-system-user/aws"
   version = "1.1.0"
-  enabled = true
+  enabled = false
 
   name = "aws-iam-system-user"
 
