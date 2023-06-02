@@ -73,6 +73,14 @@ module "iam_system_user" {
 #   context = module.label.context
 # }
 
+module "ssm_patch_manager" {
+  source  = "cloudposse/ssm-patch-manager/aws"
+  version = "0.4.0"
+  enabled = false
+
+  context = module.label.context
+}
+
 ## Cloudflare
 
 # DOCS: https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs
