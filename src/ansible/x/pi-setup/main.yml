@@ -26,4 +26,4 @@
   become: true
 
   tasks:
-    - import_tasks: tasks/reboot.yml
+    - import_tasks: tasks/reboot_machine.yml
