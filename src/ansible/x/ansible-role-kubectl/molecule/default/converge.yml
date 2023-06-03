@@ -14,5 +14,5 @@
 
   post_tasks:
     - name: Verify kubectl is installed.
-      command: kubectl --version
+      command: kubectl version
       changed_when: false
