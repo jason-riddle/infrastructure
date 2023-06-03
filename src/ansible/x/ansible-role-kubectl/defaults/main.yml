@@ -1,4 +1,4 @@
 ---
 # Used only for Debian/Ubuntu.
-kubectl_apt_gpg_key: "https://pkgs.kubectl.com/stable/{{ ansible_distribution|lower }}/{{ ansible_distribution_release|lower }}.gpg"
-kubectl_apt_repository: "deb https://pkgs.tailscale.com/stable/{{ ansible_distribution|lower }} {{ ansible_distribution_release|lower }} main"
+kubectl_apt_gpg_key: "https://packages.cloud.google.com/apt/doc/apt-key.gpg"
+kubectl_apt_repository: "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-{{ ansible_distribution_release|lower }} main"
