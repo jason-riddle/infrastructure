@@ -22,5 +22,8 @@
   roles:
     - geerlingguy.raspberry-pi
 
-  post_tasks:
+- hosts: all
+  become: true
+
+  tasks:
     - import_tasks: tasks/reboot.yml
