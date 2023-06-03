@@ -1,0 +1,18 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=true cache_valid_time=600
+      changed_when: false
+      when: ansible_os_family == 'Debian'
+
+  roles:
+    - role: jason_riddle.kubectl
+
+  post_tasks:
+    - name: Verify kubectl is installed.
+      command: kubectl version --client --short
+      changed_when: false
