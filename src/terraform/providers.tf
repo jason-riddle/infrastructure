@@ -145,7 +145,7 @@ provider "hcp" {}
 
 ## Tailscale
 
-# Set `TAILSCALE_API_KEY`
+# Set `TAILSCALE_API_KEY` and `TAILSCALE_TAILNET`
 # REF: https://registry.terraform.io/providers/tailscale/tailscale/latest/docs
 provider "tailscale" {}
 
