@@ -188,24 +188,6 @@ module "cloudflare_zone_jrapps_org" {
 
 ## DigitalOcean
 
-# resource "digitalocean_kubernetes_cluster" "k8s_cluster" {
-#   count = 0
-
-#   name    = "jasons-k8s-cluster"
-#   region  = "sfo3"
-#   version = "1.26.3-do.0"
-
-#   node_pool {
-#     name       = "worker-pool"
-#     size       = "s-1vcpu-2gb"
-#     node_count = 1
-#   }
-
-#   lifecycle {
-#     prevent_destroy = true
-#   }
-# }
-
 ## GitHub
 
 data "github_repository" "infrastructure" {
@@ -234,38 +216,6 @@ resource "github_branch_protection" "infrastructure" {
 
 ## HCP
 
-# resource "hcp_hvn" "hvn" {
-#   count = 1
-
-#   hvn_id         = "hvn-aws-us-west-2"
-#   cloud_provider = "aws"
-#   region         = "us-west-2"
-#   cidr_block     = "172.25.16.0/20"
-
-#   lifecycle {
-#     prevent_destroy = true
-#   }
-# }
-
-# resource "hcp_vault_cluster" "vault" {
-#   count = 1
-
-#   cluster_id      = "jasons-vault-cluster"
-#   hvn_id          = hcp_hvn.hvn[0].hvn_id
-#   public_endpoint = true
-#   tier            = "dev"
-
-#   lifecycle {
-#     prevent_destroy = true
-#   }
-# }
-
-# resource "hcp_vault_cluster_admin_token" "cluster_token" {
-#   count = 1
-
-#   cluster_id = hcp_vault_cluster.vault[0].cluster_id
-# }
-
 ## Tailscale
 
 ## Terraform Cloud/Enterprise
@@ -273,7 +223,3 @@ resource "github_branch_protection" "infrastructure" {
 ## Twilio
 
 ## Vault
-
-# resource "vault_namespace" "example" {
-#   path = "example"
-# }
