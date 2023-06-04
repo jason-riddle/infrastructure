@@ -22,6 +22,12 @@
   roles:
     - geerlingguy.raspberry-pi
 
+# - hosts: all
+#   become: true
+
+#   roles:
+#     - jason_riddle.tailscale
+
 - hosts: all
   become: true
 
