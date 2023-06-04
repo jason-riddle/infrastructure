@@ -124,3 +124,39 @@ module "iam_system_user" {
 
 #   context = module.label.context
 # }
+
+## sns.tf - SNS
+
+module "sns_topic" {
+  source  = "cloudposse/sns-topic/aws"
+  version = "0.21.0"
+  enabled = false
+
+  context = module.label.context
+}
+
+module "sns_lambda_notify_slack" {
+  source  = "cloudposse/sns-lambda-notify-slack/aws"
+  version = "0.6.0"
+  enabled = false
+
+  context = module.label.context
+}
+
+module "security_group" {
+  source  = "cloudposse/security-group/aws"
+  version = "2.2.0"
+  enabled = false
+
+  context = module.label.context
+}
+
+## s3.tf - S3
+
+module "s3_bucket" {
+  source  = "cloudposse/s3-bucket/aws"
+  version = "3.1.2"
+  enabled = false
+
+  context = module.label.context
+}
