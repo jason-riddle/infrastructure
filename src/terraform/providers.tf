@@ -61,10 +61,10 @@ terraform {
     #   source  = "hashicorp/nomad"
     #   version = ">= 1.4.20"
     # }
-    # tailscale = {
-    #   source  = "tailscale/tailscale"
-    #   version = ">= 0.13.7"
-    # }
+    tailscale = {
+      source  = "tailscale/tailscale"
+      version = ">= 0.13.7"
+    }
     # tfe = {
     #   source  = "hashicorp/tfe"
     #   version = ">= 0.44.1"
@@ -144,6 +144,10 @@ provider "hcp" {}
 ## Nomad
 
 ## Tailscale
+
+# Set `TAILSCALE_API_KEY`
+# REF: https://registry.terraform.io/providers/tailscale/tailscale/latest/docs
+provider "tailscale" {}
 
 ## Terraform Cloud/Enterprise
 
