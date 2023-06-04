@@ -10,9 +10,4 @@
       when: ansible_os_family == 'Debian'
 
   roles:
-    - role: jason_riddle.ssh_keys
-
-  # post_tasks:
-  #   - name: Verify kubectl is installed.
-  #     command: kubectl --version
-  #     changed_when: false
+    - role: jason_riddle.ssh_users
