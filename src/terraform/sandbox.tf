@@ -215,6 +215,16 @@ module "s3_bucket" {
 #   cluster_id = hcp_vault_cluster.vault[0].cluster_id
 # }
 
+## Tailscale
+
+data "tailscale_devices" "devices" {
+  name_prefix = "jasons-"
+}
+
+output "tailscale_devices" {
+  value = data.tailscale_devices.devices
+}
+
 ## Vault
 
 # resource "vault_namespace" "example" {
