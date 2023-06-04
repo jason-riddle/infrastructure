@@ -12,6 +12,10 @@ module "eks_vpc" {
   version = "2.1.0"
   enabled = false
 
+  ipv4_primary_cidr_block = "10.0.0.0/24"
+
+  assign_generated_ipv6_cidr_block = true
+
   tags    = local.tags
   context = module.label.context
 }
@@ -147,6 +151,8 @@ module "security_group" {
   source  = "cloudposse/security-group/aws"
   version = "2.2.0"
   enabled = false
+
+  vpc_id = module.eks_vpc.vpc_id
 
   context = module.label.context
 }
