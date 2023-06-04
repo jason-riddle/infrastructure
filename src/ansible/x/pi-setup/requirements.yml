@@ -2,3 +2,4 @@
 roles:
   - name: geerlingguy.docker
   - name: geerlingguy.raspberry-pi
+  - name: jason_riddle.tailscale
