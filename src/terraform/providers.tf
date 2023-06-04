@@ -49,10 +49,10 @@ terraform {
     #   version = ">= 0.56.0"
     # }
     # REF: https://github.com/cloudposse/terraform-aws-eks-cluster/issues/188#issuecomment-1574399123
-    # kubernetes = {
-    #   source  = "hashicorp/kubernetes"
-    #   version = ">= 2.10.0, != 2.21.0"
-    # }
+    kubernetes = {
+      source  = "hashicorp/kubernetes"
+      version = ">= 2.10.0, != 2.21.0"
+    }
     # namecheap = {
     #   source  = "namecheap/namecheap"
     #   version = ">= 2.1.0"
