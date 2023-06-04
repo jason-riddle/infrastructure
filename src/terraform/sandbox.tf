@@ -144,6 +144,10 @@ module "sns_lambda_notify_slack" {
   version = "0.6.0"
   enabled = false
 
+  slack_webhook_url = "https://hooks.slack.com/services/AAAAAAAA/BBBBBBBB/CCCCCCC"
+  slack_channel     = "aws-services"
+  slack_username    = "reporter"
+
   context = module.label.context
 }
 
