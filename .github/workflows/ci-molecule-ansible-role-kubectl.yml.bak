@@ -1,5 +1,5 @@
 ---
-name: CI - Molecule - Ansible Role for kubectl
+name: CI - Molecule - Ansible - Role - Kubectl
 
 on:
   push:

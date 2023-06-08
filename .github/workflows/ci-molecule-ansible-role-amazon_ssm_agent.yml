@@ -1,5 +1,5 @@
 ---
-name: CI - Molecule - Ansible Role for amazon_ssm_agent
+name: CI - Molecule - Ansible - Role - Amazon SSM Agent
 
 on:
   push:

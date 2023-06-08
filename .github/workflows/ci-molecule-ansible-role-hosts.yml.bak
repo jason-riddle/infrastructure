@@ -1,5 +1,5 @@
 ---
-name: CI - Molecule - Ansible Role for hosts
+name: CI - Molecule - Ansible - Role - Hosts
 
 on:
   push:

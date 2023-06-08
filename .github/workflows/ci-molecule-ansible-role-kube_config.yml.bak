@@ -1,5 +1,5 @@
 ---
-name: CI - Molecule - Ansible Role for kube_config
+name: CI - Molecule - Ansible - Role - Kube Config
 
 on:
   push:

@@ -1,5 +1,5 @@
 ---
-name: CI - Molecule - Ansible Role for ssh_users
+name: CI - Molecule - Ansible - Role - SSH Users
 
 on:
   push:
