@@ -13,6 +13,6 @@
     - role: jason_riddle.hosts
 
   # post_tasks:
-  #   - name: Verify kubectl is installed.
-  #     command: kubectl version --client --short
+  #   - name: Verify curl is installed.
+  #     command: curl --version
   #     changed_when: false

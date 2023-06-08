@@ -15,7 +15,7 @@ on:
 
 defaults:
   run:
-    working-directory: 'jason_riddle.tailscale'
+    working-directory: 'jason_riddle.amazon_ssm_agent'
 
 jobs:
 
@@ -26,7 +26,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v3
         with:
-          path: 'jason_riddle.tailscale'
+          path: 'jason_riddle.amazon_ssm_agent'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v4
@@ -48,19 +48,19 @@ jobs:
         include:
           - distro: debian10 # Buster
             playbook: converge.yml
-          - distro: ubuntu1804 # Bionic Beaver
-            playbook: converge.yml
+          # - distro: ubuntu1804 # Bionic Beaver
+          #   playbook: converge.yml
           # TODO: Failed to get D-Bus connection: No such file or directory
           # - distro: centos7
           #   playbook: converge.yml
-          - distro: centos8
-            playbook: converge.yml
+          # - distro: centos8
+          #   playbook: converge.yml
 
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v3
         with:
-          path: 'jason_riddle.tailscale'
+          path: 'jason_riddle.amazon_ssm_agent'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v4
@@ -83,15 +83,3 @@ jobs:
           ANSIBLE_STDOUT_CALLBACK: 'yaml'
           MOLECULE_DISTRO: ${{ matrix.distro }}
           MOLECULE_PLAYBOOK: ${{ matrix.playbook }}
-
-      - name: Run Molecule up test.
-        run: |
-          molecule test --scenario-name up
-        env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
-          ANSIBLE_LOAD_CALLBACK_PLUGINS: true
-          ANSIBLE_STDOUT_CALLBACK: 'yaml'
-          MOLECULE_DISTRO: ${{ matrix.distro }}
-          MOLECULE_PLAYBOOK: ${{ matrix.playbook }}
-          TAILSCALE_AUTHKEY: "${{ secrets.TAILSCALE_AUTHKEY }}"

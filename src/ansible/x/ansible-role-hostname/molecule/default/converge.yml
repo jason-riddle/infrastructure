@@ -10,7 +10,7 @@
       when: ansible_os_family == 'Debian'
 
   roles:
-    - role: jason_riddle.kube_config
+    - role: jason_riddle.hostname
 
   # post_tasks:
   #   - name: Verify curl is installed.

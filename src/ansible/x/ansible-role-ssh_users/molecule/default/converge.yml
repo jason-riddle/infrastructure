@@ -11,3 +11,8 @@
 
   roles:
     - role: jason_riddle.ssh_users
+
+  # post_tasks:
+  #   - name: Verify curl is installed.
+  #     command: curl --version
+  #     changed_when: false

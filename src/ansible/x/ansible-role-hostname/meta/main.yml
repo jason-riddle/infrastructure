@@ -2,10 +2,10 @@
 dependencies: []
 
 galaxy_info:
-  role_name: amazon_ssm_agent
+  role_name: hostname
   author: jason_riddle
-  description: "Amazon SSM Agent on Linux."
-  issue_tracker_url: https://github.com/jason-riddle/ansible-role-amazon_ssm_agent/issues
+  description: "Hostname on Linux."
+  issue_tracker_url: https://github.com/jason-riddle/ansible-role-hostname/issues
   license: "MIT"
   min_ansible_version: 2.4
   platforms:
@@ -21,6 +21,4 @@ galaxy_info:
         - 8
   galaxy_tags:
     - system
-    - amazon
-    - aws
-    - ssm
+    - hostname
