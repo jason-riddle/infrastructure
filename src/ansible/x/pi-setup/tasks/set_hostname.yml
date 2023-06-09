@@ -1,1 +1,4 @@
 ---
+- name: Set hostname.
+  hostname:
+    name: pi01
