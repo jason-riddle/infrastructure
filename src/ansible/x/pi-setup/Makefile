@@ -3,3 +3,6 @@ apply:
 
 ping:
 	ansible all --module-name ping --ask-pass
+
+hostname:
+	ansible all --module-name command --args "hostname" --ask-pass
