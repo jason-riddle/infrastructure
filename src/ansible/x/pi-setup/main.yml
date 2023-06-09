@@ -1,4 +1,10 @@
 ---
+# - hosts: all
+#   become: true
+
+#   tasks:
+#     - import_tasks: tasks/set_hostname.yml
+
 - hosts: all
   become: true
 
@@ -21,12 +27,6 @@
 
   roles:
     - geerlingguy.raspberry-pi
-
-# - hosts: all
-#   become: true
-
-#   tasks:
-#     - import_tasks: tasks/set_hostname.yml
 
 - hosts: all
   become: true
