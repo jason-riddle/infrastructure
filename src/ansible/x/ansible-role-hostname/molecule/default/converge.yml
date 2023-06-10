@@ -25,8 +25,11 @@
     - role: jason_riddle.hostname
 
   post_tasks:
-    - name: Reload setup facts.
+    - name: Run setup facts.
       setup:
+
+    - name: Reset ssh connection.
+      meta: reset_connection
 
     - name: Get hostname.
       command: "hostname"
