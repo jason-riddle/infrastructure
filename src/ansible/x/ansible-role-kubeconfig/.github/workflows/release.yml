@@ -14,7 +14,7 @@ on:
 
 defaults:
   run:
-    working-directory: 'jason_riddle.kube_config'
+    working-directory: 'jason_riddle.kubeconfig'
 
 jobs:
   release:
@@ -24,7 +24,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v3
         with:
-          path: 'jason_riddle.kube_config'
+          path: 'jason_riddle.kubeconfig'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v4

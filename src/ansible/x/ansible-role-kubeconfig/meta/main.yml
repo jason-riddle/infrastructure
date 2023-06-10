@@ -2,10 +2,10 @@
 dependencies: []
 
 galaxy_info:
-  role_name: kube_config
+  role_name: kubeconfig
   author: jason_riddle
   description: "Manage Kube Config File on Linux."
-  issue_tracker_url: https://github.com/jason-riddle/ansible-role-kube_config/issues
+  issue_tracker_url: https://github.com/jason-riddle/ansible-role-kubeconfig/issues
   license: "MIT"
   min_ansible_version: 2.4
   platforms:
