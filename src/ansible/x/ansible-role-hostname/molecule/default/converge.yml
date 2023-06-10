@@ -33,12 +33,12 @@
       changed_when: false
       register: hostname_command
 
-    - name: Verify hostname_command.stdout is {{ hostname }}.
+    - name: Assert that hostname_command.stdout is {{ hostname }}.
       assert:
         that:
           - hostname_command.stdout == hostname
 
-    - name: Verify ansible_hostname is {{ hostname }}.
+    - name: Assert that ansible_hostname is {{ hostname }}.
       assert:
         that:
           - ansible_hostname == hostname
