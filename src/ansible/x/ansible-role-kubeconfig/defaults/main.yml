@@ -1,2 +1,2 @@
 ---
-kubeconfig_enabled: false
+kubeconfig_configure_kubeconfig: false

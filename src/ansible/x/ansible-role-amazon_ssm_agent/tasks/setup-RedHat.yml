@@ -4,3 +4,4 @@
     name: "{{ amazon_ssm_agent_rpm_url }}"
     disable_gpg_check: true
     state: present
+  when: amazon_ssm_agent_install_agent | bool

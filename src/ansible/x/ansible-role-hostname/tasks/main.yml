@@ -3,4 +3,4 @@
   when: ansible_os_family == 'Debian'
 
 - include_tasks: hostname.yml
-  when: hostname_enabled | bool
+  when: hostname_configure_hostname | bool

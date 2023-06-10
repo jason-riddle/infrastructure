@@ -1,3 +1,3 @@
 ---
-hostname_enabled: false
+hostname_configure_hostname: false
 hostname: "foo"

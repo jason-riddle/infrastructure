@@ -15,3 +15,4 @@
   apt:
     deb: "{{ amazon_ssm_agent_deb_url }}"
     state: present
+  when: amazon_ssm_agent_install_agent | bool

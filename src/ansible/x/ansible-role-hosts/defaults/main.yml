@@ -1,5 +1,6 @@
 ---
-hosts_enabled: false
+hosts_configure_hosts: false
+
 hosts_local_entries:
   - "127.0.0.1 localhost"
 hosts_entries:
