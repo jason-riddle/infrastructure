@@ -5,6 +5,9 @@
   tasks:
     - import_tasks: tasks/configure-hostname.yml
 
+  post_tasks:
+    - import_tasks: tasks/assert-configured-hostname.yml
+
 - hosts: all
   become: true
 
