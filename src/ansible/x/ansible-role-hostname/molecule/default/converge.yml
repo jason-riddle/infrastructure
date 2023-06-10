@@ -24,7 +24,21 @@
   roles:
     - role: jason_riddle.hostname
 
-  # post_tasks:
-  #   - name: Verify curl is installed.
-  #     command: curl --version
-  #     changed_when: false
+  post_tasks:
+    - name: Reload setup facts.
+      setup:
+
+    - name: Get hostname.
+      command: "hostname"
+      changed_when: false
+      register: hostname_command
+
+    - name: Verify hostname_command.stdout is {{ hostname }}.
+      assert:
+        that:
+          - "{{ hostname }} == {{ hostname_command.stdout }}"
+
+    - name: Verify ansible_hostname is {{ hostname }}.
+      assert:
+        that:
+          - "{{ hostname }} == {{ ansible_hostname }}"
