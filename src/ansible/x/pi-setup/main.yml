@@ -1,9 +1,9 @@
 ---
-# - hosts: all
-#   become: true
+- hosts: all
+  become: true
 
-#   tasks:
-#     - import_tasks: tasks/set_hostname.yml
+  tasks:
+    - import_tasks: tasks/configure-hostname.yml
 
 - hosts: all
   become: true
@@ -32,7 +32,7 @@
   become: true
 
   tasks:
-    - import_tasks: tasks/reboot_machine.yml
+    - import_tasks: tasks/reboot.yml
 
 # - hosts: all
 #   become: true
