@@ -11,7 +11,7 @@
     state: present
   when: ansible_distribution == 'Ubuntu' or ansible_distribution_version is version('20.04', '>=')
 
-- name: Ensure Amazon SSM Agent is installed (Apt).
+- name: Install Amazon SSM Agent (Apt).
   apt:
     deb: "{{ amazon_ssm_agent_deb_url }}"
     state: present
