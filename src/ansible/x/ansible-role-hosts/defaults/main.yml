@@ -1,1 +1,7 @@
 ---
+hosts_enabled: false
+hosts_local_entries:
+  - "127.0.0.1 localhost"
+hosts_entries:
+  - "192.1.4.6 pi"
+hosts_extra_entries: []

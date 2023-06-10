@@ -1,1 +1,2 @@
 ---
+kube_config_enabled: false
