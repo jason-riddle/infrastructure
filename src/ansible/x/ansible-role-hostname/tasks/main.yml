@@ -2,5 +2,5 @@
 - include_tasks: setup-Debian.yml
   when: ansible_os_family == 'Debian'
 
-- include_tasks: hostname.yml
+- include_tasks: set-hostname.yml
   when: hostname_configure_hostname | bool

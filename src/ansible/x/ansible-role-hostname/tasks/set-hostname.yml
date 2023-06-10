@@ -1,11 +1,11 @@
 ---
-- name: Assert that hostname is not empty.
+- name: Assert that hostname_name is not empty.
   assert:
     that:
-      - hostname | length > 0
+      - hostname_name | length > 0
     quiet: true
 
-- name: Set hostname.
+- name: Set hostname to {{ hostname_name }}.
   hostname:
     name: "{{ hostname_name }}"
   register: hostname
