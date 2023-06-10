@@ -36,9 +36,9 @@
     - name: Verify hostname_command.stdout is {{ hostname }}.
       assert:
         that:
-          - "{{ hostname }} == {{ hostname_command.stdout }}"
+          - "{{ hostname }} is {{ hostname_command.stdout }}"
 
     - name: Verify ansible_hostname is {{ hostname }}.
       assert:
         that:
-          - "{{ hostname }} == {{ ansible_hostname }}"
+          - "{{ hostname }} is {{ ansible_hostname }}"
