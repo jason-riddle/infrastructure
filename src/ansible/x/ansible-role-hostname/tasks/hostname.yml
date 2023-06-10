@@ -7,4 +7,11 @@
 
 - name: Set hostname.
   hostname:
-    name: "{{ hostname }}"
+    name: "{{ hostname_name }}"
+  register: hostname
+
+- name: Reboot.
+  reboot:
+    reboot_timeout: 300
+  when:
+    - hostname is changed
