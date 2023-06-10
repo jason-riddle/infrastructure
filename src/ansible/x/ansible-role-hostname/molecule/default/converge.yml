@@ -37,8 +37,16 @@
       assert:
         that:
           - hostname_command.stdout == hostname
+        fail_msg: |
+          assert failed 'hostname_command.stdout == hostname'
+          hostname_command.stdout is '{{ hostname_command.stdout }}'
+          hostname is '{{ hostname }}'
 
     - name: Assert that ansible_hostname is {{ hostname }}.
       assert:
         that:
           - ansible_hostname == hostname
+        fail_msg: |
+          assert failed 'ansible_hostname == hostname'
+          ansible_hostname is '{{ ansible_hostname }}'
+          hostname is '{{ hostname }}'
