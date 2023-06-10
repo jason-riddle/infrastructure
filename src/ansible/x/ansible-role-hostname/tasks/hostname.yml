@@ -1,0 +1,10 @@
+---
+- name: Assert that hostname is not empty.
+  assert:
+    that:
+      - hostname | length > 0
+    quiet: true
+
+- name: Set hostname.
+  hostname:
+    name: "{{ hostname }}"
