@@ -24,7 +24,7 @@
   roles:
     - role: jason_riddle.amazon_ssm_agent
 
-  # post_tasks:
-  #   - name: Verify amazon-ssm-agent is installed.
-  #     command: amazon-ssm-agent --version
-  #     changed_when: false
+  post_tasks:
+    - name: Verify amazon-ssm-agent is installed.
+      command: amazon-ssm-agent --version
+      changed_when: false
