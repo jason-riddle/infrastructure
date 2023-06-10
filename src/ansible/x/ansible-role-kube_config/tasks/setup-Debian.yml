@@ -10,14 +10,3 @@
     name: gnupg
     state: present
   when: ansible_distribution == 'Ubuntu' or ansible_distribution_version is version('20.04', '>=')
-
-# - name: Add kubectl apt key.
-#   apt_key:
-#     url: "{{ kubectl_apt_gpg_key }}"
-#     state: present
-
-# - name: Add kubectl repository.
-#   apt_repository:
-#     repo: "{{ kubectl_apt_repository }}"
-#     state: present
-#     update_cache: true

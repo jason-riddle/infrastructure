@@ -2,7 +2,6 @@
 - include_tasks: setup-Debian.yml
   when: ansible_os_family == 'Debian'
 
-# - name: Install kubectl.
-#   package:
-#     name: kubectl
-#     state: present
+- name: Set hostname.
+  hostname:
+    name: pi01
