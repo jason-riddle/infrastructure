@@ -10,8 +10,9 @@
     name: "{{ hostname_name }}"
   register: hostname
 
-- name: Reboot.
-  reboot:
-    reboot_timeout: 300
-  when:
-    - hostname is changed
+# TODO: Add conditional to check if running on laptop?
+# - name: Reboot.
+#   reboot:
+#     reboot_timeout: 300
+#   when:
+#     - hostname is changed
