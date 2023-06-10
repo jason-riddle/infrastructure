@@ -2,10 +2,10 @@
 dependencies: []
 
 galaxy_info:
-  role_name: ssh_users
+  role_name: users
   author: jason_riddle
   description: "Manage SSH Users on Linux."
-  issue_tracker_url: https://github.com/jason-riddle/ansible-role-ssh_users/issues
+  issue_tracker_url: https://github.com/jason-riddle/ansible-role-users/issues
   license: "MIT"
   min_ansible_version: 2.4
   platforms:
