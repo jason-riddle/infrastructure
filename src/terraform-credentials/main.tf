@@ -7,9 +7,9 @@ data "tfe_workspace" "terraform_infrastructure" {
   organization = data.tfe_organization.jasonriddle.name
 }
 
-resource "tfe_variable" "foo_bar" {
-  key          = "FOO"
-  value        = "BAR"
+resource "tfe_variable" "aws_region" {
+  key          = "AWS_REGION"
+  value        = "us-west-1"
   category     = "env"
   workspace_id = data.tfe_workspace.terraform_infrastructure.id
 }
