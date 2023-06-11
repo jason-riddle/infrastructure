@@ -21,4 +21,6 @@ terraform {
 
 ## Terraform Cloud/Enterprise
 
+# Set `TFE_TOKEN`
+# REF: https://registry.terraform.io/providers/hashicorp/tfe/latest/docs
 provider "tfe" {}
