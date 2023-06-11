@@ -7,6 +7,8 @@ data "tfe_workspace" "terraform_infrastructure" {
   organization = data.tfe_organization.jasonriddle.name
 }
 
+## AWS
+
 resource "tfe_variable" "aws_region" {
   key          = "AWS_REGION"
   value        = "us-west-1"
