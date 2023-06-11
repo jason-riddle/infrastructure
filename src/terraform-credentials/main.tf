@@ -17,10 +17,9 @@ data "tfe_workspace" "terraform_infrastructure" {
   organization = "org-jasonriddle"
 }
 
-# TODO: Couldn't create env variable AWS_REGION_: resource not found
-# resource "tfe_variable" "aws_region" {
-#   key          = "AWS_REGION_"
-#   value        = "us-west-1"
-#   category     = "terraform"
-#   workspace_id = data.tfe_workspace.terraform_infrastructure.id
-# }
+resource "tfe_variable" "aws_region" {
+  key          = "AWS_REGION"
+  value        = "us-west-1"
+  category     = "env"
+  workspace_id = data.tfe_workspace.terraform_infrastructure.id
+}
