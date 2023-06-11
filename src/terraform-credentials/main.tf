@@ -1,20 +1,10 @@
-# data "tfe_organization" "jasonriddle" {
-#   name = "org-jasonriddle"
-# }
-
-# resource "tfe_workspace" "terraform_infrastructure" {
-#   name         = "terraform-infrastructure"
-#   organization = data.tfe_organization.jasonriddle.name
-# }
-
-# data "tfe_workspace" "terraform_infrastructure" {
-#   name         = "terraform-infrastructure"
-#   organization = data.tfe_organization.jasonriddle.name
-# }
+data "tfe_organization" "jasonriddle" {
+  name = "org-jasonriddle"
+}
 
 data "tfe_workspace" "terraform_infrastructure" {
   name         = "terraform-infrastructure"
-  organization = "org-jasonriddle"
+  organization = data.tfe_organization.jasonriddle.name
 }
 
 resource "tfe_variable" "aws_region" {
