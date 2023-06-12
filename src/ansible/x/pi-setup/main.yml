@@ -2,15 +2,6 @@
 - hosts: all
   become: true
 
-  tasks:
-    - import_tasks: tasks/configure-hostname.yml
-
-  post_tasks:
-    - import_tasks: tasks/assert-configured-hostname.yml
-
-- hosts: all
-  become: true
-
   vars:
     raspberry_pi_boot_config_options:
       # Set the PoE hat fan speeds.
@@ -36,6 +27,15 @@
 
   tasks:
     - import_tasks: tasks/reboot.yml
+
+- hosts: all
+  become: true
+
+  tasks:
+    - import_tasks: tasks/configure-hostname.yml
+
+  post_tasks:
+    - import_tasks: tasks/assert-configured-hostname.yml
 
 # - hosts: all
 #   become: true
