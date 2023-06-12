@@ -1,8 +1,5 @@
 ---
 github_users: []
-# You can specify an object with 'name' (required) and 'groups' (optional):
-# - name: geerlingguy
+# Specify an object with 'name' (required) and 'groups' (optional):
+# - name: ansible
 #   groups: www-data,sudo
-
-# Or you can specify a GitHub username directly:
-# - geerlingguy

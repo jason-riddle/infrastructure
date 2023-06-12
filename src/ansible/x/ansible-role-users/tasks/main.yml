@@ -4,10 +4,10 @@
 
 - name: Ensure user accounts are present.
   user:
-    name: "{{ item.name | default(item) }}"
+    name: "{{ item.name }}"
     shell: /bin/bash
     createhome: true
     groups: "{{ item.groups | default(omit) }}"
-    home: "/home/{{ item.name | default(item) }}"
+    home: "/home/{{ item.name }}"
     state: present
   with_items: "{{ github_users }}"
