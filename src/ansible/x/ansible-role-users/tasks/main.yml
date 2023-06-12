@@ -2,7 +2,7 @@
 - include_tasks: setup-Debian.yml
   when: ansible_os_family == 'Debian'
 
-- name: Ensure user accounts are present.
+- name: Ensure users are present.
   user:
     name: "{{ item.name }}"
     shell: /bin/bash
