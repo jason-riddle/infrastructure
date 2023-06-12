@@ -3,3 +3,7 @@ github_users: []
 # Specify an object with 'name' (required) and 'groups' (optional):
 # - name: ansible
 #   groups: www-data,sudo
+
+github_users_authorized_keys_exclusive: true
+
+github_keys_url: "https://github.com/jason-riddle.keys"

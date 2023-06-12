@@ -11,3 +11,11 @@
     home: "/home/{{ item.name }}"
     state: present
   with_items: "{{ github_users }}"
+
+- name: Ensure authorized keys for are present.
+  authorized_key:
+    user: "{{ item.name }}"
+    key: "{{ github_keys_url }}"
+    manage_dir: true
+    exclusive: "{{ github_users_authorized_keys_exclusive }}"
+  with_items: "{{ github_users }}"
