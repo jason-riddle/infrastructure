@@ -1,1 +1,1 @@
-# Ansible Role for Managing SSH Users
+# Ansible Role for Managing Users
