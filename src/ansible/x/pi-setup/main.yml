@@ -22,11 +22,11 @@
   roles:
     - geerlingguy.raspberry-pi
 
-- hosts: all
-  become: true
+# - hosts: all
+#   become: true
 
-  tasks:
-    - import_tasks: tasks/reboot.yml
+#   tasks:
+#     - import_tasks: tasks/reboot.yml
 
 - hosts: all
   become: true
@@ -37,8 +37,8 @@
   post_tasks:
     - import_tasks: tasks/assert-configured-hostname.yml
 
-# - hosts: all
-#   become: true
+- hosts: all
+  become: true
 
-#   roles:
-#     - jason_riddle.tailscale
+  roles:
+    - jason_riddle.tailscale
