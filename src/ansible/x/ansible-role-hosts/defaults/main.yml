@@ -1,6 +1,4 @@
 ---
-hosts_configure_hosts: false
-
 hosts_localhost: |
   ##
   # Host Database

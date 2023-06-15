@@ -1,3 +1,2 @@
 ---
-hostname_configure_hostname: false
 hostname_name: "foo"

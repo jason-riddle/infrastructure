@@ -15,4 +15,3 @@
   apt:
     deb: "{{ amazon_ecs_agent_deb_url }}"
     state: present
-  when: amazon_ecs_agent_install_agent | bool

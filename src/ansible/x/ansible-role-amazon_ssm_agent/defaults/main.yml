@@ -7,9 +7,6 @@ amazon_ssm_agent_deb_url: "https://s3.amazonaws.com/ec2-downloads-windows/SSMAge
 amazon_ssm_agent_rpm: "amazon-ssm-agent.rpm"
 amazon_ssm_agent_rpm_url: "https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/{{ amazon_ssm_agent_rpm }}"
 
-# Install options.
-amazon_ssm_agent_install_agent: true
-
 # Service options.
 amazon_ssm_agent_service_name: "amazon-ssm-agent"
 amazon_ssm_agent_service_state: "started"
