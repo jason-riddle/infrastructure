@@ -7,9 +7,9 @@
 
 - name: Ensure service is running as desired.
   service:
-    name: "{{ amazon_ssm_agent_service_name }}"
-    state: "{{ amazon_ssm_agent_service_state }}"
-    enabled: "{{ amazon_ssm_agent_service_enabled }}"
+    name: "{{ amazon_ecs_agent_service_name }}"
+    state: "{{ amazon_ecs_agent_service_state }}"
+    enabled: "{{ amazon_ecs_agent_service_enabled }}"
 
 - include_tasks: register.yml
-  when: amazon_ssm_agent_register_agent | bool
+  when: amazon_ecs_agent_register_agent | bool

@@ -2,10 +2,10 @@
 dependencies: []
 
 galaxy_info:
-  role_name: amazon_ssm_agent
+  role_name: amazon_ecs_agent
   author: jason_riddle
-  description: "Amazon SSM Agent on Linux."
-  issue_tracker_url: https://github.com/jason-riddle/ansible-role-amazon_ssm_agent/issues
+  description: "Amazon ECS Agent on Linux."
+  issue_tracker_url: https://github.com/jason-riddle/ansible-role-amazon_ecs_agent/issues
   license: "MIT"
   min_ansible_version: 2.4
   platforms:
@@ -23,4 +23,4 @@ galaxy_info:
     - system
     - amazon
     - aws
-    - ssm
+    - ecs

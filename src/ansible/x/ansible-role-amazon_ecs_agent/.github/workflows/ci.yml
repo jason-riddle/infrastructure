@@ -15,7 +15,7 @@ on:
 
 defaults:
   run:
-    working-directory: 'jason_riddle.amazon_ssm_agent'
+    working-directory: 'jason_riddle.amazon_ecs_agent'
 
 jobs:
 
@@ -26,7 +26,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v3
         with:
-          path: 'jason_riddle.amazon_ssm_agent'
+          path: 'jason_riddle.amazon_ecs_agent'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v4
@@ -60,7 +60,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v3
         with:
-          path: 'jason_riddle.amazon_ssm_agent'
+          path: 'jason_riddle.amazon_ecs_agent'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v4

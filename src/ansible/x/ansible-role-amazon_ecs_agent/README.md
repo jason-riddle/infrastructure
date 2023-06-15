@@ -1,1 +1,1 @@
-# Ansible Role for Amazon SSM Agent
+# Ansible Role for Amazon ECS Agent

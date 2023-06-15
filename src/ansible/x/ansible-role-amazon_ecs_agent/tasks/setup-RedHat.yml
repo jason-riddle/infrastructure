@@ -1,7 +1,7 @@
 ---
 - name: Install Amazon SSM Agent (Yum).
   yum:
-    name: "{{ amazon_ssm_agent_rpm_url }}"
+    name: "{{ amazon_ecs_agent_rpm_url }}"
     disable_gpg_check: true
     state: present
-  when: amazon_ssm_agent_install_agent | bool
+  when: amazon_ecs_agent_install_agent | bool

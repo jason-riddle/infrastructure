@@ -22,9 +22,9 @@
       failed_when: systemctl_status.rc > 1
 
   roles:
-    - role: jason_riddle.amazon_ssm_agent
+    - role: jason_riddle.amazon_ecs_agent
 
   post_tasks:
-    - name: Verify amazon-ssm-agent is installed.
-      command: amazon-ssm-agent --version
+    - name: Verify amazon-ecs-agent is installed.
+      command: amazon-ecs-agent --version
       changed_when: false
