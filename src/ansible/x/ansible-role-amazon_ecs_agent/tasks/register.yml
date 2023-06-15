@@ -1,0 +1,26 @@
+---
+- name: Assert that amazon_ssm_agent_register_region is not empty.
+  assert:
+    that:
+      - amazon_ssm_agent_register_region | length > 0
+    quiet: true
+
+- name: Assert that amazon_ssm_agent_register_id is not empty.
+  assert:
+    that:
+      - amazon_ssm_agent_register_id | length > 0
+    quiet: true
+
+- name: Assert that amazon_ssm_agent_register_code is not empty.
+  assert:
+    that:
+      - amazon_ssm_agent_register_code | length > 0
+    quiet: true
+
+- name: Run register.
+  become: true
+  command: |
+    amazon-ssm-agent -register -region "{{ amazon_ssm_agent_register_region }}" -id "{{ amazon_ssm_agent_register_id }}" -code "{{ amazon_ssm_agent_register_code }}"
+  tags:
+    - molecule-idempotence-notest
+  no_log: "{{ amazon_ssm_agent_register_no_log }}"

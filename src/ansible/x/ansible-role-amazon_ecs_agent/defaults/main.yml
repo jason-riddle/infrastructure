@@ -1,0 +1,23 @@
+---
+# Used only for Debian/Ubuntu.
+amazon_ssm_agent_deb: "amazon-ssm-agent.deb"
+amazon_ssm_agent_deb_url: "https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/debian_amd64/{{ amazon_ssm_agent_deb }}"
+
+# Used only for RedHat/CentOS.
+amazon_ssm_agent_rpm: "amazon-ssm-agent.rpm"
+amazon_ssm_agent_rpm_url: "https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/{{ amazon_ssm_agent_rpm }}"
+
+# Install options.
+amazon_ssm_agent_install_agent: true
+
+# Service options.
+amazon_ssm_agent_service_name: "amazon-ssm-agent"
+amazon_ssm_agent_service_state: "started"
+amazon_ssm_agent_service_enabled: true
+
+# Register options.
+amazon_ssm_agent_register_agent: false
+amazon_ssm_agent_register_region: ""
+amazon_ssm_agent_register_id: ""
+amazon_ssm_agent_register_activation_code: ""
+amazon_ssm_agent_register_no_log: true

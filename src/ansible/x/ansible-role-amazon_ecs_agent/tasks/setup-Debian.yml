@@ -1,0 +1,18 @@
+---
+- name: Ensure additional dependencies are installed (on Ubuntu < 20.04 and any other systems).
+  apt:
+    name: gnupg2
+    state: present
+  when: ansible_distribution != 'Ubuntu' or ansible_distribution_version is version('20.04', '<')
+
+- name: Ensure additional dependencies are installed (on Ubuntu >= 20.04).
+  apt:
+    name: gnupg
+    state: present
+  when: ansible_distribution == 'Ubuntu' or ansible_distribution_version is version('20.04', '>=')
+
+- name: Install Amazon SSM Agent (Apt).
+  apt:
+    deb: "{{ amazon_ssm_agent_deb_url }}"
+    state: present
+  when: amazon_ssm_agent_install_agent | bool
