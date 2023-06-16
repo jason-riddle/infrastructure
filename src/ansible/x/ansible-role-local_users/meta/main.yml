@@ -2,10 +2,10 @@
 dependencies: []
 
 galaxy_info:
-  role_name: users
+  role_name: local_users
   author: jason_riddle
-  description: "User Accounts on Linux."
-  issue_tracker_url: https://github.com/jason-riddle/ansible-role-users/issues
+  description: "Manage Local Users on Linux."
+  # issue_tracker_url: https://github.com/jason-riddle/ansible-role-users/issues
   license: "MIT"
   min_ansible_version: 2.4
   platforms:
@@ -21,4 +21,3 @@ galaxy_info:
         - 8
   galaxy_tags:
     - system
-    - ssh

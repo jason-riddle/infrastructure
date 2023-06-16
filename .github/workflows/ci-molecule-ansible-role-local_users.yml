@@ -1,5 +1,5 @@
 ---
-name: CI - Molecule - Ansible - Role - User Accounts
+name: CI - Molecule - Ansible - Role - Local Users
 
 on:
   push:
@@ -14,7 +14,7 @@ on:
 
 defaults:
   run:
-    working-directory: 'jason_riddle.user_accounts/src/ansible/x/ansible-role-user_accounts'
+    working-directory: 'jason_riddle.local_users/src/ansible/x/ansible-role-local_users'
 
 jobs:
 
@@ -25,7 +25,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v3
         with:
-          path: 'jason_riddle.user_accounts'
+          path: 'jason_riddle.local_users'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v4
@@ -59,7 +59,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v3
         with:
-          path: 'jason_riddle.user_accounts'
+          path: 'jason_riddle.local_users'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v4
