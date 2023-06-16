@@ -4,5 +4,5 @@
 
 - include_tasks: configure.yml
 
-- include_tasks: asserts.yml
-  when: hostname_run_asserts | bool
+- include_tasks: assert.yml
+  when: hostname_assert | bool
