@@ -8,7 +8,7 @@ amazon_ecs_agent_rpm: "amazon-ecs-init-latest.x86_64.rpm"
 amazon_ecs_agent_rpm_url: "https://s3.us-east-2.amazonaws.com/amazon-ecs-agent-us-east-2/{{ amazon_ecs_agent_rpm }}"
 
 # Service options.
-amazon_ecs_agent_service_name: "amazon-ecs-agent"
+amazon_ecs_agent_service_name: "ecs"
 amazon_ecs_agent_service_state: "started"
 amazon_ecs_agent_service_enabled: true
 
