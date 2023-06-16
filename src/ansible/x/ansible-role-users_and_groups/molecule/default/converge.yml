@@ -22,7 +22,7 @@
       failed_when: systemctl_status.rc > 1
 
   roles:
-    - role: jason_riddle.local_users
+    - role: jason_riddle.users_and_groups
 
   # post_tasks:
   #   - name: Verify curl is installed.

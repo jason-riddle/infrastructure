@@ -1,5 +1,5 @@
 ---
-name: CI
+name: CI - Molecule - Ansible - Role - Users and Groups
 
 on:
   push:
@@ -9,13 +9,12 @@ on:
     branches:
       - '*'
   schedule:
-    # Run at 3pm on Friday.
-    # REF: https://crontab.guru/#0_3_*_*_5
-    - cron: "0 3 * * 5"
+    # REF: https://crontab.guru/#0_8_*_*_5
+    - cron: "0 8 * * 5"
 
 defaults:
   run:
-    working-directory: 'jason_riddle.users'
+    working-directory: 'jason_riddle.users_and_groups/src/ansible/x/ansible-role-users_and_groups'
 
 jobs:
 
@@ -26,7 +25,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v3
         with:
-          path: 'jason_riddle.users'
+          path: 'jason_riddle.users_and_groups'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v4
@@ -60,7 +59,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v3
         with:
-          path: 'jason_riddle.users'
+          path: 'jason_riddle.users_and_groups'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v4

@@ -2,10 +2,10 @@
 dependencies: []
 
 galaxy_info:
-  role_name: local_users
+  role_name: users_and_groups
   author: jason_riddle
-  description: "Manage Local Users on Linux."
-  # issue_tracker_url: https://github.com/jason-riddle/ansible-role-users/issues
+  description: "Manage Users and Groups on Linux."
+  # issue_tracker_url: https://github.com/jason-riddle/ansible-role-users_and_groups/issues
   license: "MIT"
   min_ansible_version: 2.4
   platforms:
