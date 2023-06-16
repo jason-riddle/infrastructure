@@ -26,6 +26,6 @@
     - role: jason_riddle.amazon_ecs_agent
 
   post_tasks:
-    - name: Verify amazon-ecs-agent is installed.
-      command: amazon-ecs-agent --version
+    - name: Verify ecs is installed.
+      command: ecs --version
       changed_when: false
