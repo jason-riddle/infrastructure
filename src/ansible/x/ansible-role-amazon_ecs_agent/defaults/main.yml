@@ -1,11 +1,11 @@
 ---
 # Used only for Debian/Ubuntu.
-amazon_ecs_agent_deb: "amazon-ecs-agent.deb"
-amazon_ecs_agent_deb_url: "https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/debian_amd64/{{ amazon_ecs_agent_deb }}"
+amazon_ecs_agent_deb: "amazon-ecs-init-latest.amd64.deb"
+amazon_ecs_agent_deb_url: "https://s3.us-east-2.amazonaws.com/amazon-ecs-agent-us-east-2/{{ amazon_ecs_agent_deb }}"
 
 # Used only for RedHat/CentOS.
-amazon_ecs_agent_rpm: "amazon-ecs-agent.rpm"
-amazon_ecs_agent_rpm_url: "https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/{{ amazon_ecs_agent_rpm }}"
+amazon_ecs_agent_rpm: "amazon-ecs-init-latest.x86_64.rpm"
+amazon_ecs_agent_rpm_url: "https://s3.us-east-2.amazonaws.com/amazon-ecs-agent-us-east-2/{{ amazon_ecs_agent_rpm }}"
 
 # Service options.
 amazon_ecs_agent_service_name: "amazon-ecs-agent"
