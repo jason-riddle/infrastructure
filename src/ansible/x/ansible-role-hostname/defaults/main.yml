@@ -1,2 +1,3 @@
 ---
 hostname_name: "foo"
+hostname_run_asserts: false
