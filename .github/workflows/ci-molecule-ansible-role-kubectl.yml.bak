@@ -14,7 +14,7 @@ on:
 
 defaults:
   run:
-    working-directory: 'jason_riddle.kubectl/src/ansible/x/ansible-role-kubectl'
+    working-directory: 'jason_riddle.kubectl/src/ansible/sandbox/roles/ansible-role-kubectl'
 
 jobs:
 

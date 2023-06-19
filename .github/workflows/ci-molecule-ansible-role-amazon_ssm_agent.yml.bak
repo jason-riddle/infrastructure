@@ -14,7 +14,7 @@ on:
 
 defaults:
   run:
-    working-directory: 'jason_riddle.amazon_ssm_agent/src/ansible/x/ansible-role-amazon_ssm_agent'
+    working-directory: 'jason_riddle.amazon_ssm_agent/src/ansible/sandbox/roles/ansible-role-amazon_ssm_agent'
 
 jobs:
 

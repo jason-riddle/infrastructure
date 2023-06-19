@@ -14,7 +14,7 @@ on:
 
 defaults:
   run:
-    working-directory: 'jason_riddle.users_and_groups/src/ansible/x/ansible-role-users_and_groups'
+    working-directory: 'jason_riddle.users_and_groups/src/ansible/sandbox/roles/ansible-role-users_and_groups'
 
 jobs:
 

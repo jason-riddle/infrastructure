@@ -14,7 +14,7 @@ on:
 
 defaults:
   run:
-    working-directory: 'jason_riddle.hostname/src/ansible/x/ansible-role-hostname'
+    working-directory: 'jason_riddle.hostname/src/ansible/sandbox/roles/ansible-role-hostname'
 
 jobs:
 
