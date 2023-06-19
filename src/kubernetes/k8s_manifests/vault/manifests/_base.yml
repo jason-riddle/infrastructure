@@ -1,20 +1,13 @@
 apiVersion: v1
-kind: Namespace
-metadata:
-  labels:
-    app: vault
-  name: vault
----
-apiVersion: v1
 kind: ServiceAccount
 metadata:
   labels:
     app: vault
-    app.kubernetes.io/instance: vault
+    app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault
-    helm.sh/chart: vault-0.24.0
-  name: vault
+    helm.sh/chart: vault-0.24.1
+  name: release-name-vault
   namespace: vault
 ---
 apiVersion: v1
@@ -22,10 +15,10 @@ kind: ServiceAccount
 metadata:
   labels:
     app: vault
-    app.kubernetes.io/instance: vault
+    app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault-agent-injector
-  name: vault-agent-injector
+  name: release-name-vault-agent-injector
   namespace: vault
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -33,10 +26,10 @@ kind: ClusterRole
 metadata:
   labels:
     app: vault
-    app.kubernetes.io/instance: vault
+    app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault-agent-injector
-  name: vault-agent-injector-clusterrole
+  name: release-name-vault-agent-injector-clusterrole
 rules:
 - apiGroups:
   - admissionregistration.k8s.io
@@ -53,17 +46,17 @@ kind: ClusterRoleBinding
 metadata:
   labels:
     app: vault
-    app.kubernetes.io/instance: vault
+    app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault-agent-injector
-  name: vault-agent-injector-binding
+  name: release-name-vault-agent-injector-binding
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: vault-agent-injector-clusterrole
+  name: release-name-vault-agent-injector-clusterrole
 subjects:
 - kind: ServiceAccount
-  name: vault-agent-injector
+  name: release-name-vault-agent-injector
   namespace: vault
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -71,18 +64,18 @@ kind: ClusterRoleBinding
 metadata:
   labels:
     app: vault
-    app.kubernetes.io/instance: vault
+    app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault
-    helm.sh/chart: vault-0.24.0
-  name: vault-server-binding
+    helm.sh/chart: vault-0.24.1
+  name: release-name-vault-server-binding
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
   name: system:auth-delegator
 subjects:
 - kind: ServiceAccount
-  name: vault
+  name: release-name-vault
   namespace: vault
 ---
 apiVersion: v1
@@ -90,10 +83,10 @@ kind: Service
 metadata:
   labels:
     app: vault
-    app.kubernetes.io/instance: vault
+    app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault-agent-injector
-  name: vault-agent-injector-svc
+  name: release-name-vault-agent-injector-svc
   namespace: vault
 spec:
   ports:
@@ -102,7 +95,7 @@ spec:
     targetPort: 8080
   selector:
     app: vault
-    app.kubernetes.io/instance: vault
+    app.kubernetes.io/instance: release-name
     app.kubernetes.io/name: vault-agent-injector
     component: webhook
 ---
@@ -111,25 +104,25 @@ kind: Deployment
 metadata:
   labels:
     app: vault
-    app.kubernetes.io/instance: vault
+    app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault-agent-injector
     component: webhook
-  name: vault-agent-injector
+  name: release-name-vault-agent-injector
   namespace: vault
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: vault
-      app.kubernetes.io/instance: vault
+      app.kubernetes.io/instance: release-name
       app.kubernetes.io/name: vault-agent-injector
       component: webhook
   template:
     metadata:
       labels:
         app: vault
-        app.kubernetes.io/instance: vault
+        app.kubernetes.io/instance: release-name
         app.kubernetes.io/name: vault-agent-injector
         component: webhook
     spec:
@@ -139,7 +132,7 @@ spec:
           - labelSelector:
               matchLabels:
                 app: vault
-                app.kubernetes.io/instance: vault
+                app.kubernetes.io/instance: release-name
                 app.kubernetes.io/name: vault-agent-injector
                 component: webhook
             topologyKey: kubernetes.io/hostname
@@ -159,9 +152,9 @@ spec:
         - name: AGENT_INJECT_VAULT_IMAGE
           value: hashicorp/vault:1.13.1
         - name: AGENT_INJECT_TLS_AUTO
-          value: vault-agent-injector-cfg
+          value: release-name-vault-agent-injector-cfg
         - name: AGENT_INJECT_TLS_AUTO_HOSTS
-          value: vault-agent-injector-svc,vault-agent-injector-svc.vault,vault-agent-injector-svc.vault.svc
+          value: release-name-vault-agent-injector-svc,release-name-vault-agent-injector-svc.default,release-name-vault-agent-injector-svc.default.svc
         - name: AGENT_INJECT_LOG_FORMAT
           value: standard
         - name: AGENT_INJECT_REVOKE_ON_SHUTDOWN
@@ -226,17 +219,17 @@ spec:
         runAsGroup: 1000
         runAsNonRoot: true
         runAsUser: 100
-      serviceAccountName: vault-agent-injector
+      serviceAccountName: release-name-vault-agent-injector
 ---
 apiVersion: admissionregistration.k8s.io/v1
 kind: MutatingWebhookConfiguration
 metadata:
   labels:
     app: vault
-    app.kubernetes.io/instance: vault
+    app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: vault-agent-injector
-  name: vault-agent-injector-cfg
+  name: release-name-vault-agent-injector-cfg
 webhooks:
 - admissionReviewVersions:
   - v1
@@ -244,7 +237,7 @@ webhooks:
   clientConfig:
     caBundle: ""
     service:
-      name: vault-agent-injector-svc
+      name: release-name-vault-agent-injector-svc
       namespace: vault
       path: /mutate
   failurePolicy: Ignore
